@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/swen421a1.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/swen421a1.gpr</vfs_project>
+      <vfs_file>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/src/pump.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 5" >
+      <vfs_project>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/swen421a1.gpr</vfs_project>
+      <vfs_file>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/src/pump_unit.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/swen421a1.gpr</vfs_project>
+      <vfs_file>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/src/device_driver.ads</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>
