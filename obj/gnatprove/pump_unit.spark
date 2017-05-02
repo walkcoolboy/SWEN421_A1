@@ -1,0 +1,94 @@
+{
+  "spark": [
+    {
+      "name": "Pump_Unit.Lift_Nozzle",
+      "sloc": [
+        {
+          "file": "pump_unit.ads",
+          "line": 15
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pump_Unit.Replace_Nozzle",
+      "sloc": [
+        {
+          "file": "pump_unit.ads",
+          "line": 23
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pump_Unit",
+      "sloc": [
+        {
+          "file": "pump_unit.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Pump.setCradle",
+            "sloc": [
+              {
+                "file": "pump.ads",
+                "line": 8
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pump_Unit.Replace_Nozzle",
+          "sloc": [
+            {
+              "file": "pump_unit.ads",
+              "line": 23
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Pump.setCradle",
+            "sloc": [
+              {
+                "file": "pump.ads",
+                "line": 8
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pump_Unit.Lift_Nozzle",
+          "sloc": [
+            {
+              "file": "pump_unit.ads",
+              "line": 15
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

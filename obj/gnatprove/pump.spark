@@ -1,0 +1,44 @@
+{
+  "spark": [
+    {
+      "name": "Pump.setCradle",
+      "sloc": [
+        {
+          "file": "pump.ads",
+          "line": 8
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pump",
+      "sloc": [
+        {
+          "file": "pump.ads",
+          "line": 2
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pump.setCradle",
+          "sloc": [
+            {
+              "file": "pump.ads",
+              "line": 8
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "spark": [
+    {
+      "name": "Pump_type",
+      "sloc": [
+        {
+          "file": "pump_type.ads",
+          "line": 2
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+  ],
+  "assumptions": [
+  ]
+}

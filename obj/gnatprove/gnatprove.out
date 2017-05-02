@@ -1,0 +1,30 @@
+Summary of SPARK analysis
+=========================
+
+----------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total      Flow   Interval   CodePeer   Provers   Justified   Unproved
+----------------------------------------------------------------------------------------------------
+Data Dependencies                 .         .          .          .         .           .          .
+Flow Dependencies                 .         .          .          .         .           .          .
+Initialization                    .         .          .          .         .           .          .
+Non-Aliasing                      .         .          .          .         .           .          .
+Run-time Checks                   .         .          .          .         .           .          .
+Assertions                        .         .          .          .         .           .          .
+Functional Contracts              .         .          .          .         .           .          .
+LSP Verification                  .         .          .          .         .           .          .
+----------------------------------------------------------------------------------------------------
+Total                             .         .          .          .         .           .          .
+
+
+Analyzed 4 units
+in unit main, 0 subprograms and packages out of 1 analyzed
+  Main at main.adb:3 skipped
+in unit pump, 2 subprograms and packages out of 2 analyzed
+  Pump at pump.ads:2 flow analyzed (0 errors and 0 warnings)
+  Pump.setCradle at pump.ads:8 flow analyzed (0 errors and 0 warnings)
+in unit pump_type, 1 subprograms and packages out of 1 analyzed
+  Pump_type at pump_type.ads:2 flow analyzed (0 errors and 0 warnings)
+in unit pump_unit, 3 subprograms and packages out of 3 analyzed
+  Pump_Unit at pump_unit.ads:5 flow analyzed (0 errors and 0 warnings)
+  Pump_Unit.Lift_Nozzle at pump_unit.ads:15 flow analyzed (0 errors and 0 warnings)
+  Pump_Unit.Replace_Nozzle at pump_unit.ads:23 flow analyzed (0 errors and 0 warnings)

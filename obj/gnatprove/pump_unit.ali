@@ -1,0 +1,82 @@
+V "GNAT Lib v2016"
+A -gnatc
+P GP ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV SPARK_05
+
+U pump_unit%b		pump_unit.adb		533edc54 OO PK
+W pump%s		pump.adb		pump.ali
+W pump_type%s		pump_type.ads		pump_type.ali
+W system%s		system.ads		system.ali
+
+U pump_unit%s		pump_unit.ads		19266033 EE OO PK
+W pump%s		pump.adb		pump.ali
+W pump_type%s		pump_type.ads		pump_type.ali
+
+D pump.ads		20170502085616 7e7c2b41 pump%s
+D pump_type.ads		20170502070258 6fac45b5 pump_type%s
+D pump_unit.ads		20170502075031 08f60ec7 pump_unit%s
+D pump_unit.adb		20170502085549 4a18bc67 pump_unit%b
+D system.ads		20160516092929 6326c08a system%s
+X 1 pump.ads
+2K9*Pump 25e9 3|2w6 2r16 4|3w6 3r16
+6R9*nozzle 22e16 3|7r45
+8U14*setCradle 4|9s7 14s7
+X 2 pump_type.ads
+2K9*Pump_type 8e14 3|3w6 3r21 4|2w6 2r21
+4E9*fuel_type 4e50 3|7r31 8r35 11r35 15r41 23r44 4|7r41 12r44
+5F9*fuel_volume<float> 3|8r49
+6F9*price<float> 3|10r26
+X 3 pump_unit.ads
+5K9*Pump_Unit 34l5 34e14 4|5b14 17l5 17t14
+7A9*Three_pumps(1|6R9)<2|4E9> 13r15
+8A9*Three_reservoir(2|5F9)<2|4E9>
+10F12*fuel_price{2|6F9} 11r49
+11A9*fuel_unit_price(10F12)<2|4E9>
+13a4*curr_pump{7A9} 17r29 18r20 25r29 26r20 4|9m17 9r17 14m17 14r17
+15U14*Lift_Nozzle 15>27 4|7b14 10l8 10t19
+15e27 curr_fuel{2|4E9} 18r34 4|7b27 9r27
+23U14*Replace_Nozzle 23>30 4|12b14 15l8 15t22
+23e30 curr_fuel{2|4E9} 26r34 4|12b30 14r27
+FD 1 pump.ads
+FS .1 2K9 pump
+FS .2 8U14 pump__setcradle
+FD 2 pump_type.ads
+FS .1 2K9 pump_type
+FD 3 pump_unit.ads
+FS .1 5K9 pump_unit
+FS .2 15U14 pump_unit__lift_nozzle
+FS .3 23U14 pump_unit__replace_nozzle
+FD 4 pump_unit.adb
+FS .1 5K14 standard__pump_unit -> 3.1
+FS .2 7U14 pump_unit__lift_nozzle -> 3.2
+FS .3 12U14 pump_unit__replace_nozzle -> 3.3
+FD 5 system.ads
+FS .1 37K9 system
+FS .2 77V13 system__Olt
+FS .3 78V13 system__Ole
+FS .4 79V13 system__Ogt
+FS .5 80V13 system__Oge
+FS .6 81V13 system__Oeq
+FX 1 pump.ads .1 pump
+F 8*14 pump__setcradle 4|.2:9s7 .3:14s7
+FX 3 pump_unit.ads .1 pump_unit
+F 13*4 pump_unit__curr_pump .2:17r29 18r20 .3:25r29 26r20 4|.2:9m17 9r17
+. .3:14m17 14r17
+FX 3 pump_unit.ads .2 pump_unit__lift_nozzle
+F 15>27 pump_unit__lift_nozzle__curr_fuel 18c34 4|.2:9c27
+FX 3 pump_unit.ads .3 pump_unit__replace_nozzle
+F 23>30 pump_unit__replace_nozzle__curr_fuel 26c34 4|.3:14c27
+
+GG EK_REMOTE_STATES
+GG EK_GLOBALS pump_unit KIND_PACKAGE_BODY ORIGIN_FLOW c:local_var [ pump_unit__curr_pump ] c:local_sub [ pump_unit__lift_nozzle pump_unit__replace_nozzle ] c:local_init [ pump_unit__curr_pump ]
+GG EK_VOLATILES
+GG EK_TASKING_NONBLOCKING [ pump_unit__lift_nozzle pump_unit__replace_nozzle ]
+GG EK_TASKING_INFO pump_unit__lift_nozzle c:UNSYNCH_ACCESSES [ pump_unit__curr_pump ]
+GG EK_TASKING_INFO pump_unit__replace_nozzle c:UNSYNCH_ACCESSES [ pump_unit__curr_pump ]
+GG EK_END_MARKER
