@@ -9,15 +9,23 @@ package Pump_Unit is
 
    subtype fuel_price is price range 0.0..5.0;
    type fuel_unit_price is array (fuel_type) of fuel_price;
+   curr_price:fuel_unit_price;
 
    curr_pump: Three_pumps;
    fuel_needed: fuel_price:=0.0;
+   fuel_pumped: fuel_price:=0.0;
    cashInRegister: fuel_price:=0.0;
 
    procedure setFuelVolume (f: in price)
      with
        Global => (In_Out => fuel_needed),
      Depends => (fuel_needed =>+ f);
+
+   procedure setFuelPrice (P91, P95, PD: in fuel_price)
+     with
+       Global => (Out => curr_price),
+       Depends => (curr_price => (P91, P95, PD));
+
 
    --response to customer action to lift nozzle of particular fuel type
    procedure liftNozzle (curr_fuel: in fuel_type)
@@ -39,8 +47,9 @@ package Pump_Unit is
    procedure requestPumping (curr_fuel: in fuel_type, f: in price)
      with
        Global => (Input => fuel_needed,
-                    In_Out => curr_pump),
+                    In_Out => (curr_pump,fuel_pumped)),
        Depends => (curr_pump =>+ (curr_fuel,f))
+       Pre =>
    ;
 
    --set full tank sensor signal on

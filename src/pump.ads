@@ -12,8 +12,8 @@ package Pump is
        Pre => (((n.S=Base) or (n.S=Waiting))
              and n.C=True);
 
-   function pumpingRequestCheck (n: in nozzle, v: in fuel_volume)
-     return Boolean;
+   function fuelLeftInReserve (n: in nozzle)
+     return fuel_volume;
 
    procedure startPumping (n: in out nozzle, v: in fuel_volume)
      with
