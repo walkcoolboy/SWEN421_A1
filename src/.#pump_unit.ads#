@@ -38,8 +38,9 @@ package Pump_Unit is
 
    procedure requestPumping (curr_fuel: in fuel_type, f: in price)
      with
-       Global => (In_Out => curr_pump),
-       Depends => (curr_pump =>+ curr_fuel)
+       Global => (Input => fuel_needed,
+                    In_Out => curr_pump),
+       Depends => (curr_pump =>+ (curr_fuel,f))
    ;
 
    --set full tank sensor signal on

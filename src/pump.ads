@@ -9,14 +9,18 @@ package Pump is
      with
        Global => null,
        Depends => (n =>+ null)
-     Pre => (((n.S=Base) or (n.S=Waiting))
+       Pre => (((n.S=Base) or (n.S=Waiting))
              and n.C=True);
 
-   procedure enterPumpingState (n: in out nozzle, v: in fuel_volume)
+   function pumpingRequestCheck (n: in nozzle, v: in fuel_volume)
+     return Boolean;
+
+   procedure startPumping (n: in out nozzle, v: in fuel_volume)
      with
        Global => null,
        Depends => (n =>+ null)
-       Pre => ();
+     --Pre => ()
+   ;
 
    procedure enterWaitingState (n: in out nozzle)
      with
@@ -24,6 +28,16 @@ package Pump is
        Depends => (n=>+ null);
 
    procedure enterBaseState (n: in out nozzle)
+     with
+       Global => null,
+       Depends => (n=>+ null);
+
+   procedure tankSensorOn (n: in out nozzle)
+     with
+       Global => null,
+       Depends => (n=>+ null);
+
+   procedure tankSensorOff (n: in out nozzle)
      with
        Global => null,
        Depends => (n=>+ null);
