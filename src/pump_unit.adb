@@ -6,7 +6,7 @@ package body Pump_unit is
 
    procedure Lift_Nozzle (curr_fuel: in fuel_type) is
    begin
-      setCradle(curr_pump(curr_fuel));
+      enterReadyState(curr_pump(curr_fuel));
    end Lift_Nozzle;
 
    procedure Replace_Nozzle (curr_fuel: in fuel_type) is
