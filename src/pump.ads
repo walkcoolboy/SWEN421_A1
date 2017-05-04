@@ -1,24 +1,20 @@
 pragma SPARK_Mode (On);
+with Pump_type; use Pump_type;
 package Pump is
-
-
 
    type nozzle is private;
 
    procedure enterReadyState (n: in out nozzle)
      with
        Global => null,
-       Depends => (n =>+ null)
-       Pre => (((n.S=Base) or (n.S=Waiting))
-             and n.C=True);
+       Depends => (n =>+ null),
+     Pre => (((n.S=Base or n.S=Waiting) and n.C=True)
+             or (n.S=Pumping and n.C=False));
 
-   function fuelLeftInReserve (n: in nozzle)
-     return fuel_volume;
-
-   procedure startPumping (n: in out nozzle, v: in fuel_volume)
+   procedure startPumping (n: in out nozzle; v: in out fuel_volume)
      with
        Global => null,
-       Depends => (n =>+ null)
+       Depends => (n =>+ v, v =>+ n)
      --Pre => ()
    ;
 
@@ -32,15 +28,10 @@ package Pump is
        Global => null,
        Depends => (n=>+ null);
 
-   procedure tankSensorOn (n: in out nozzle)
+   procedure registerTankSensor (n: in out nozzle; s: in Boolean)
      with
        Global => null,
-       Depends => (n=>+ null);
-
-   procedure tankSensorOff (n: in out nozzle)
-     with
-       Global => null,
-       Depends => (n=>+ null);
+       Depends => (n=>+ s);
 
    private
 

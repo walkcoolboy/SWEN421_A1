@@ -13,6 +13,6 @@ begin
    setFuelVolume(0.0(fuel_price));
    liftNozzle(Petrol95);
    requestPumping(Petrol95, 10.0);
-   setTankFull(Petrol95);
+   TankSensorInput(Petrol95);
 
 end Main;

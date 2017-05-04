@@ -52,24 +52,27 @@ package Pump_Unit is
        Pre =>
    ;
 
-   --set full tank sensor signal on
-   procedure setTankFull (curr_fuel: in fuel_type)
+   procedure requestStopPumping (curr_fuel: in fuel_type)
      with
        Global => (In_Out => curr_pump),
        Depends => (curr_pump =>+ curr_fuel)
+       --Pre =>
+       --Post=>
    ;
 
-   --set full tank sensor signal off
-   procedure setTankNotFull (curr_fuel: in fuel_type)
+   -- full tank sensor signal
+   procedure TankSensorInput (curr_fuel: in fuel_type, signal: in Boolean)
      with
        Global => (In_Out => curr_pump),
-       Depends => (curr_pump =>+ curr_fuel)
+       Depends => (curr_pump =>+ (curr_fuel, signal))
    ;
 
+   --customer must pay full amount of fuel pumped
    procedure setPayment (curr_fuel: in fuel_type, payment: in price)
       with
-       Global => (In_Out => curr_pump),
-       Depends => (curr_pump =>+ curr_fuel)
+       Global => (In_Out => (curr_pump, cashInRegister)),
+       Depends => (curr_pump =>+ curr_fuel,
+                  cashInRegister =>+ payment)
    ;
 
 end Pump_Unit;
