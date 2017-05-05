@@ -1,0 +1,1 @@
+pump_unit.adb:14:27: medium: "curr_price" might not be initialized[#0]

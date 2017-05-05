@@ -18,12 +18,12 @@ package Pump_Unit is
 
    procedure setFuelVolume (f: in price)
      with
-       Global => (In_Out => fuel_needed),
-     Depends => (fuel_needed =>+ f);
+       Global => (Output => fuel_needed),
+     Depends => (fuel_needed => f);
 
    procedure setFuelPrice (P91, P95, PD: in fuel_price)
      with
-       Global => (Out => curr_price),
+       Global => (Output => curr_price),
        Depends => (curr_price => (P91, P95, PD));
 
 
@@ -44,12 +44,13 @@ package Pump_Unit is
        --Post=>
    ;
 
-   procedure requestPumping (curr_fuel: in fuel_type, f: in price)
+   procedure requestPumping (curr_fuel: in fuel_type; f: in price)
      with
-       Global => (Input => fuel_needed,
+       Global => (Input => (fuel_needed,curr_price),
                     In_Out => (curr_pump,fuel_pumped)),
-       Depends => (curr_pump =>+ (curr_fuel,f))
-       Pre =>
+       Depends => (curr_pump =>+ (curr_fuel,fuel_needed,f,curr_price, fuel_pumped),
+                   fuel_pumped =>+ (fuel_needed,f,curr_price, curr_fuel, curr_pump))
+       --Pre =>
    ;
 
    procedure requestStopPumping (curr_fuel: in fuel_type)
@@ -61,18 +62,20 @@ package Pump_Unit is
    ;
 
    -- full tank sensor signal
-   procedure TankSensorInput (curr_fuel: in fuel_type, signal: in Boolean)
+   procedure TankSensorInput (curr_fuel: in fuel_type; signal: in Boolean)
      with
        Global => (In_Out => curr_pump),
        Depends => (curr_pump =>+ (curr_fuel, signal))
    ;
 
    --customer must pay full amount of fuel pumped
-   procedure setPayment (curr_fuel: in fuel_type, payment: in price)
+   procedure setPayment (curr_fuel: in fuel_type; payment: in price)
       with
-       Global => (In_Out => (curr_pump, cashInRegister)),
+       Global => (In_Out => (curr_pump, cashInRegister),
+                  Output => (fuel_pumped, fuel_needed)),
        Depends => (curr_pump =>+ curr_fuel,
-                  cashInRegister =>+ payment)
+                   cashInRegister =>+ payment,
+                   (fuel_pumped, fuel_needed) => null)
    ;
 
 end Pump_Unit;

@@ -1,6 +1,18 @@
 pragma SPARK_Mode (On);
 package body Pump is
 
+   function inBaseState (n: in nozzle) return Boolean is
+      (n.S=Base and n.C=True);
+
+   function inReadyState(n:in nozzle) return Boolean is
+      (n.S=Ready and n.C=False);
+
+   function inPumpingState (n: in nozzle) return Boolean is
+      (n.S=Pumping and n.C=False);
+
+   function inWaitingState (n: in nozzle) return Boolean is
+     (n.S=Waiting and n.C=True);
+
    procedure enterReadyState (n: in out nozzle) is
    begin
       n.C:=False;
@@ -17,10 +29,10 @@ package body Pump is
          if (v>n.R) then
             --reservior fuel less than requested
             v:=n.R;
+         else
+            --call pumping driver
+            n.R:=n.R-v;
          end if;
-         --call pumping driver
-         n.PF:= n.PF+v;
-         n.R:=n.R-v;
       end if;
    end startPumping;
 
@@ -32,7 +44,7 @@ package body Pump is
 
    procedure enterBaseState (n: in out nozzle) is
    begin
-      n.S:=Ready;
+      n.S:=Base;
    end enterBaseState;
 
    procedure registerTankSensor (n: in out nozzle; s: in Boolean) is

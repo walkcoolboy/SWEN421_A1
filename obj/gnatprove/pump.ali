@@ -3,53 +3,137 @@ A -gnatc
 P GP ZX
 
 RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_FLOATING_POINT
 RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U pump%b		pump.adb		6a202103 OO PK
+U pump%b		pump.adb		32e30343 OO PK
 W system%s		system.ads		system.ali
 
-U pump%s		pump.ads		7e7c2b41 EE OO PK
+U pump%s		pump.ads		dbb4b62a EE OO PK
+W pump_type%s		pump_type.ads		pump_type.ali
 
-D pump.ads		20170502085616 7e7c2b41 pump%s
-D pump.adb		20170502085549 145c0a42 pump%b
+D pump.ads		20170505001247 b418f39f pump%s
+D pump.adb		20170505001336 86fbf0dc pump%b
+D pump_type.ads		20170502070258 6fac45b5 pump_type%s
 D system.ads		20160516092929 6326c08a system%s
 X 1 pump.ads
-2K9*Pump 25l5 25e9 2|2b14 9l5 9t9
-6R9*nozzle 8r35 18c11 22e16 2|4r35
-8U14*setCradle 8=25 2|4b14 7l8 7t17
-8r25 n{6R9} 2|4b25 6m7
-14E11 state 14e51 19r11
-14n21 Base{14E11} 19r18
-14n27 Ready{14E11}
-14n34 Pumping{14E11}
-14n43 Waiting{14E11}
-15B11 nozzle_in_cradle<boolean> 20r11
-16B11 full_tank_sensor<boolean> 21r11
-19e7*S{14E11}
-20b7*C{15E11} 2|6m9
-21b7*F{16E11}
+3K9*Pump 67l5 67e9 2|2b14 59l5 59t9
+5R9*nozzle 7r32 10r33 13r35 16r35 19r41 26r38 34r43 41r40 48r44 59c11 64e16
+. 2|4r32 7r31 10r35 13r35 16r41 22r38 39r43 45r40 50r44
+7V13*inBaseState{boolean} 7>26 23s16 46s15 2|4b13
+7r26 n{5R9} 2|5r8 5r21
+10V13*inReadyState{boolean} 10>27 24s17 30s16 38s14 2|7b13
+10r27 n{5R9} 2|8r8 8r22
+13V13*inPumpingState{boolean} 13>29 23s34 30s35 31s17 2|10b13
+13r29 n{5R9} 2|11r8 11r24
+16V13*inWaitingState{boolean} 16>29 23s55 39s15 45s14 2|13b13
+16r29 n{5R9} 2|14r7 14r23
+19U14*enterReadyState 19=31 2|16b14 20l8 20t23
+19r31 n{5R9} 22r20 23r28 23r49 23r70 24r30 2|16b31 18m7 19m7
+26U14*startPumping 26=28 26=46 2|22b14 37l8 37t20
+26r28 n{5R9} 29r20 29r35 30r29 30r50 31r32 2|22b28 24m7 25r11 29r16 31r16
+. 34m13 34r18
+26f46 v{3|5F9} 29r26 29r29 31r39 31r42 2|22b46 27m10 29r14 31m13 34r22
+34U14*enterWaitingState 34=33 2|39b14 43l8 43t25
+34r33 n{5R9} 37r20 38r27 39r30 2|39b33 41m7 42m7
+41U14*enterBaseState 41=30 2|45b14 48l8 48t22
+41r30 n{5R9} 44r20 45r29 46r27 2|45b30 47m7
+48U14*registerTankSensor 48=34 48>52 2|50b14 57l8 57t26
+48r34 n{5R9} 51r20 2|50b34 53m10 55m10
+48b52 s{boolean} 51r25 2|50b52 52r10
+55E11 state 55e51 60r11
+55n21 Base{55E11} 60r18 2|5r12 47r12
+55n27 Ready{55E11} 2|8r12 19r12
+55n34 Pumping{55E11} 2|11r12 24r12
+55n43 Waiting{55E11} 2|14r11 42r12
+56B11 nozzle_in_cradle<boolean> 61r11
+57B11 full_tank_sensor<boolean> 62r11
+60e7*S{55E11} 2|5r10 8r10 11r10 14r9 19m9 24m9 42m9 47m9
+61b7*C{56E11} 2|5r23 8r24 11r26 14r25 18m9 41m9
+62b7*F{57E11} 2|25r13 53m12 55m12
+63f7*R{3|5F9} 2|29r18 31r18 34m15 34r20
+X 3 pump_type.ads
+2K9*Pump_type 1|2w6 2r21 3|8e14
+5F9*fuel_volume<float> 1|26r56 63r11 2|22r55
 FD 1 pump.ads
-FS .1 2K9 pump
-FS .2 8U14 pump__setcradle
+FS .1 3K9 pump
+FS .2 7V13 pump__inbasestate
+FS .3 10V13 pump__inreadystate
+FS .4 13V13 pump__inpumpingstate
+FS .5 16V13 pump__inwaitingstate
+FS .6 19U14 pump__enterreadystate
+FS .7 26U14 pump__startpumping
+FS .8 34U14 pump__enterwaitingstate
+FS .9 41U14 pump__enterbasestate
+FS .10 48U14 pump__registertanksensor
 FD 2 pump.adb
 FS .1 2K14 standard__pump -> 1.1
-FS .2 4U14 pump__setcradle -> 1.2
-FD 3 system.ads
+FS .2 4V13 pump__inbasestate -> 1.2
+FS .3 7V13 pump__inreadystate -> 1.3
+FS .4 10V13 pump__inpumpingstate -> 1.4
+FS .5 13V13 pump__inwaitingstate -> 1.5
+FS .6 16U14 pump__enterreadystate -> 1.6
+FS .7 22U14 pump__startpumping -> 1.7
+FS .8 39U14 pump__enterwaitingstate -> 1.8
+FS .9 45U14 pump__enterbasestate -> 1.9
+FS .10 50U14 pump__registertanksensor -> 1.10
+FD 3 pump_type.ads
+FS .1 2K9 pump_type
+FD 4 system.ads
 FS .1 37K9 system
 FS .2 77V13 system__Olt
 FS .3 78V13 system__Ole
 FS .4 79V13 system__Ogt
 FS .5 80V13 system__Oge
 FS .6 81V13 system__Oeq
-FX 1 pump.ads .2 pump__setcradle
-F 8=25 pump__setcradle__n 2|.2:6m7
+FX 1 pump.ads .1 pump
+F 7*13 pump__inbasestate .6:23s16 .9:46s15
+F 10*13 pump__inreadystate .6:24s17 .7:30s16 .8:38s14
+F 13*13 pump__inpumpingstate .6:23s34 .7:30s35 31s17
+F 16*13 pump__inwaitingstate .6:23s55 .8:39s15 .9:45s14
+FX 1 pump.ads .2 pump__inbasestate
+F 7>26 pump__inbasestate__n 2|.2:5c8 5c21
+FX 1 pump.ads .3 pump__inreadystate
+F 10>27 pump__inreadystate__n 2|.3:8c8 8c22
+FX 1 pump.ads .4 pump__inpumpingstate
+F 13>29 pump__inpumpingstate__n 2|.4:11c8 11c24
+FX 1 pump.ads .5 pump__inwaitingstate
+F 16>29 pump__inwaitingstate__n 2|.5:14c7 14c23
+FX 1 pump.ads .6 pump__enterreadystate
+F 19=31 pump__enterreadystate__n 22r20 23r28 23r49 23r70 24r30 2|.6:18m7
+. 19m7
+FX 1 pump.ads .7 pump__startpumping
+F 26=28 pump__startpumping__n 29r20 29r35 30r29 30r50 31r32 2|.7:24m7 25r11
+. 29r16 31r16 34m13 34r18
+F 26=46 pump__startpumping__v 29r26 29r29 31r39 31r42 2|.7:27m10 29r14 31m13
+. 34r22
+FX 1 pump.ads .8 pump__enterwaitingstate
+F 34=33 pump__enterwaitingstate__n 37r20 38r27 39r30 2|.8:41m7 42m7
+FX 1 pump.ads .9 pump__enterbasestate
+F 41=30 pump__enterbasestate__n 44r20 45r29 46r27 2|.9:47m7
+FX 1 pump.ads .10 pump__registertanksensor
+F 48=34 pump__registertanksensor__n 51r20 2|.10:53m10 55m10
+F 48>52 pump__registertanksensor__s 51c25 2|.10:52c10
 
 GG EK_REMOTE_STATES
-GG EK_GLOBALS pump KIND_PACKAGE_BODY ORIGIN_FLOW c:local_sub [ pump__setcradle ]
+GG EK_GLOBALS pump KIND_PACKAGE_BODY ORIGIN_FLOW c:local_sub [ pump__enterreadystate pump__inreadystate pump__startpumping pump__inwaitingstate pump__enterwaitingstate pump__inpumpingstate pump__enterbasestate pump__inbasestate pump__registertanksensor ]
+GG EK_GLOBALS pump__inbasestate KIND_SUBPROGRAM ORIGIN_FLOW c:local_var [ pump__inbasestate__n ]
+GG EK_GLOBALS pump__inwaitingstate KIND_SUBPROGRAM ORIGIN_FLOW c:local_var [ pump__inwaitingstate__n ]
+GG EK_GLOBALS pump__inreadystate KIND_SUBPROGRAM ORIGIN_FLOW c:local_var [ pump__inreadystate__n ]
+GG EK_GLOBALS pump__inpumpingstate KIND_SUBPROGRAM ORIGIN_FLOW c:local_var [ pump__inpumpingstate__n ]
 GG EK_VOLATILES
-GG EK_TASKING_NONBLOCKING [ pump__setcradle ]
-GG EK_TASKING_INFO pump__setcradle
+GG EK_TASKING_NONBLOCKING [ pump__enterreadystate pump__inreadystate pump__startpumping pump__inwaitingstate pump__enterwaitingstate pump__inpumpingstate pump__enterbasestate pump__inbasestate pump__registertanksensor ]
+GG EK_TASKING_INFO pump__inreadystate
+GG EK_TASKING_INFO pump__enterreadystate
+GG EK_TASKING_INFO pump__inwaitingstate
+GG EK_TASKING_INFO pump__startpumping
+GG EK_TASKING_INFO pump__inpumpingstate
+GG EK_TASKING_INFO pump__enterwaitingstate
+GG EK_TASKING_INFO pump__inbasestate
+GG EK_TASKING_INFO pump__enterbasestate
+GG EK_TASKING_INFO pump__registertanksensor
 GG EK_END_MARKER

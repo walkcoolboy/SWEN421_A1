@@ -1,21 +1,81 @@
 {
   "spark": [
     {
-      "name": "Pump_Unit.Lift_Nozzle",
+      "name": "Pump_Unit.setFuelVolume",
       "sloc": [
         {
           "file": "pump_unit.ads",
-          "line": 15
+          "line": 19
         }
       ],
       "spark": "all"
     },
     {
-      "name": "Pump_Unit.Replace_Nozzle",
+      "name": "Pump_Unit.setFuelPrice",
       "sloc": [
         {
           "file": "pump_unit.ads",
-          "line": 23
+          "line": 24
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pump_Unit.liftNozzle",
+      "sloc": [
+        {
+          "file": "pump_unit.ads",
+          "line": 31
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pump_Unit.replaceNozzle",
+      "sloc": [
+        {
+          "file": "pump_unit.ads",
+          "line": 39
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pump_Unit.requestPumping",
+      "sloc": [
+        {
+          "file": "pump_unit.ads",
+          "line": 47
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pump_Unit.requestStopPumping",
+      "sloc": [
+        {
+          "file": "pump_unit.ads",
+          "line": 56
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pump_Unit.TankSensorInput",
+      "sloc": [
+        {
+          "file": "pump_unit.ads",
+          "line": 65
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pump_Unit.setPayment",
+      "sloc": [
+        {
+          "file": "pump_unit.ads",
+          "line": 72
         }
       ],
       "spark": "all"
@@ -32,6 +92,205 @@
     }
   ],
   "flow": [
+    {
+      "file": "pump_unit.ads",
+      "line": 75,
+      "col": 43,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pump_Unit.setPayment",
+        "sloc": [
+          {
+            "file": "pump_unit.ads",
+            "line": 72
+          }
+        ]
+      },
+      "tracefile": "pump_unit__flow__26.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "pump_unit.ads",
+      "line": 75,
+      "col": 30,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pump_Unit.setPayment",
+        "sloc": [
+          {
+            "file": "pump_unit.ads",
+            "line": 72
+          }
+        ]
+      },
+      "tracefile": "pump_unit__flow__26.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "pump_unit.ads",
+      "line": 26,
+      "col": 29,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pump_Unit.setFuelPrice",
+        "sloc": [
+          {
+            "file": "pump_unit.ads",
+            "line": 24
+          }
+        ]
+      },
+      "tracefile": "pump_unit__flow__62.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "pump_unit.adb",
+      "line": 14,
+      "col": 27,
+      "rule": "UNINITIALIZED",
+      "severity": "medium",
+      "entity": {
+        "name": "Pump_Unit.setFuelPrice",
+        "sloc": [
+          {
+            "file": "pump_unit.ads",
+            "line": 24
+          }
+        ]
+      },
+      "tracefile": "pump_unit__flow__62.trace",
+      "msg_id": 0,
+      "how_proved": "flow"
+    },
+    {
+      "file": "pump_unit.adb",
+      "line": 15,
+      "col": 27,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pump_Unit.setFuelPrice",
+        "sloc": [
+          {
+            "file": "pump_unit.ads",
+            "line": 24
+          }
+        ]
+      },
+      "tracefile": "pump_unit__flow__62.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "pump_unit.adb",
+      "line": 16,
+      "col": 25,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pump_Unit.setFuelPrice",
+        "sloc": [
+          {
+            "file": "pump_unit.ads",
+            "line": 24
+          }
+        ]
+      },
+      "tracefile": "pump_unit__flow__62.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "pump_unit.adb",
+      "line": 40,
+      "col": 43,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pump_Unit.requestPumping",
+        "sloc": [
+          {
+            "file": "pump_unit.ads",
+            "line": 47
+          }
+        ]
+      },
+      "tracefile": "pump_unit__flow__121.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "pump_unit.adb",
+      "line": 42,
+      "col": 41,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pump_Unit.requestPumping",
+        "sloc": [
+          {
+            "file": "pump_unit.ads",
+            "line": 47
+          }
+        ]
+      },
+      "tracefile": "pump_unit__flow__121.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "pump_unit.adb",
+      "line": 44,
+      "col": 11,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pump_Unit.requestPumping",
+        "sloc": [
+          {
+            "file": "pump_unit.ads",
+            "line": 47
+          }
+        ]
+      },
+      "tracefile": "pump_unit__flow__121.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "pump_unit.adb",
+      "line": 45,
+      "col": 50,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pump_Unit.requestPumping",
+        "sloc": [
+          {
+            "file": "pump_unit.ads",
+            "line": 47
+          }
+        ]
+      },
+      "tracefile": "pump_unit__flow__121.trace",
+      "how_proved": "flow"
+    },
+    {
+      "file": "pump_unit.ads",
+      "line": 21,
+      "col": 29,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pump_Unit.setFuelVolume",
+        "sloc": [
+          {
+            "file": "pump_unit.ads",
+            "line": 19
+          }
+        ]
+      },
+      "tracefile": "pump_unit__flow__178.trace",
+      "how_proved": "flow"
+    }
   ],
   "assumptions": [
     {
@@ -39,11 +298,11 @@
         {
           "predicate": "CLAIM_EFFECTS",
           "arg": {
-            "name": "Pump.setCradle",
+            "name": "Pump.registerTankSensor",
             "sloc": [
               {
                 "file": "pump.ads",
-                "line": 8
+                "line": 48
               }
             ]
           }
@@ -52,11 +311,11 @@
       "claim": {
         "predicate": "CLAIM_EFFECTS",
         "arg": {
-          "name": "Pump_Unit.Replace_Nozzle",
+          "name": "Pump_Unit.TankSensorInput",
           "sloc": [
             {
               "file": "pump_unit.ads",
-              "line": 23
+              "line": 65
             }
           ]
         }
@@ -67,11 +326,11 @@
         {
           "predicate": "CLAIM_EFFECTS",
           "arg": {
-            "name": "Pump.setCradle",
+            "name": "Pump.enterWaitingState",
             "sloc": [
               {
                 "file": "pump.ads",
-                "line": 8
+                "line": 34
               }
             ]
           }
@@ -80,11 +339,151 @@
       "claim": {
         "predicate": "CLAIM_EFFECTS",
         "arg": {
-          "name": "Pump_Unit.Lift_Nozzle",
+          "name": "Pump_Unit.replaceNozzle",
           "sloc": [
             {
               "file": "pump_unit.ads",
-              "line": 15
+              "line": 39
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Pump.enterBaseState",
+            "sloc": [
+              {
+                "file": "pump.ads",
+                "line": 41
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pump_Unit.setPayment",
+          "sloc": [
+            {
+              "file": "pump_unit.ads",
+              "line": 72
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pump_Unit.setFuelVolume",
+          "sloc": [
+            {
+              "file": "pump_unit.ads",
+              "line": 19
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Pump.enterReadyState",
+            "sloc": [
+              {
+                "file": "pump.ads",
+                "line": 19
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pump_Unit.requestStopPumping",
+          "sloc": [
+            {
+              "file": "pump_unit.ads",
+              "line": 56
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Pump.enterReadyState",
+            "sloc": [
+              {
+                "file": "pump.ads",
+                "line": 19
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Pump.startPumping",
+            "sloc": [
+              {
+                "file": "pump.ads",
+                "line": 26
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pump_Unit.requestPumping",
+          "sloc": [
+            {
+              "file": "pump_unit.ads",
+              "line": 47
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Pump.enterReadyState",
+            "sloc": [
+              {
+                "file": "pump.ads",
+                "line": 19
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pump_Unit.liftNozzle",
+          "sloc": [
+            {
+              "file": "pump_unit.ads",
+              "line": 31
             }
           ]
         }
