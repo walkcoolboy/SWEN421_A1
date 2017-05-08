@@ -1,0 +1,23 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr
+20170503152050
+[BOUND OBJECT FILES]
+D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\obj\pump_type.o
+D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\obj\pump.o
+D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\obj\pump_unit.o
+D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\obj\boundary.o
+D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\obj\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LD:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\obj\
+-LD:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\obj\
+-LC:/gnat/2016/lib/gcc/i686-pc-mingw32/4.9.4/adalib/
+-static
+-static-libgcc
+C:/gnat/2016/lib/gcc/i686-pc-mingw32/4.9.4/adalib/libgnat.a
+-Wl,--stack=0x2000000

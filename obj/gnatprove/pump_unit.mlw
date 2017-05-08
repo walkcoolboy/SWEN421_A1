@@ -1663,9 +1663,9 @@ module Pump__nozzle
  use        Pump_type__full_tank_sensor
 
  type __split_fields #"pump_type.ads" 8 0 0# =
-  { rec__s "model_trace:.3554" : Pump_type__state.state; rec__c "model_trace:.3565" : Pump_type__nozzle_in_cradle.nozzle_in_cradle; rec__f "model_trace:.3576" : Pump_type__full_tank_sensor.full_tank_sensor; rec__r "model_trace:.3587" : Pump_type__price.price; rec__p "model_trace:.3598" : Pump_type__price.price; rec__cash "model_trace:.3609" : Pump_type__price.price }
+  { rec__s "model_trace:.3729" : Pump_type__state.state; rec__c "model_trace:.3740" : Pump_type__nozzle_in_cradle.nozzle_in_cradle; rec__f "model_trace:.3751" : Pump_type__full_tank_sensor.full_tank_sensor; rec__r "model_trace:.3762" : Pump_type__price.price; rec__p "model_trace:.3773" : Pump_type__price.price; rec__cash "model_trace:.3784" : Pump_type__price.price }
  
- function __split_fields_S__projection #"pump_type.ads" 5 0 0# "model_trace:.3554" 
+ function __split_fields_S__projection #"pump_type.ads" 5 0 0# "model_trace:.3729" 
    (a : __split_fields) : Pump_type__state.state =
   a.rec__s
  
@@ -1673,7 +1673,7 @@ module Pump__nozzle
  
  meta "inline : no" function __split_fields_S__projection
  
- function __split_fields_C__projection #"pump.ads" 83 0 0# "model_trace:.3565" 
+ function __split_fields_C__projection #"pump.ads" 83 0 0# "model_trace:.3740" 
    (a : __split_fields) : Pump_type__nozzle_in_cradle.nozzle_in_cradle =
   a.rec__c
  
@@ -1681,7 +1681,7 @@ module Pump__nozzle
  
  meta "inline : no" function __split_fields_C__projection
  
- function __split_fields_F__projection #"pump.ads" 83 0 0# "model_trace:.3576" 
+ function __split_fields_F__projection #"pump.ads" 83 0 0# "model_trace:.3751" 
    (a : __split_fields) : Pump_type__full_tank_sensor.full_tank_sensor =
   a.rec__f
  
@@ -1689,7 +1689,7 @@ module Pump__nozzle
  
  meta "inline : no" function __split_fields_F__projection
  
- function __split_fields_R__projection #"pump.ads" 83 0 0# "model_trace:.3587" 
+ function __split_fields_R__projection #"pump.ads" 83 0 0# "model_trace:.3762" 
    (a : __split_fields) : Pump_type__price.price =
   a.rec__r
  
@@ -1697,7 +1697,7 @@ module Pump__nozzle
  
  meta "inline : no" function __split_fields_R__projection
  
- function __split_fields_P__projection #"pump.ads" 83 0 0# "model_trace:.3598" 
+ function __split_fields_P__projection #"pump.ads" 83 0 0# "model_trace:.3773" 
    (a : __split_fields) : Pump_type__price.price =
   a.rec__p
  
@@ -1705,7 +1705,7 @@ module Pump__nozzle
  
  meta "inline : no" function __split_fields_P__projection
  
- function __split_fields_Cash__projection #"pump.ads" 83 0 0# "model_trace:.3609" 
+ function __split_fields_Cash__projection #"pump.ads" 83 0 0# "model_trace:.3784" 
    (a : __split_fields) : Pump_type__price.price =
   a.rec__cash
  
@@ -1979,7 +1979,7 @@ end
 module Pump__inrange__v
  use import "_gnatprove_standard".Main
 
- function v #"pump.ads" 27 0 0# "model" "model_trace:3119" 
+ function v #"pump.ads" 27 0 0# "model" "model_trace:3294" 
    : int
  
  function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 5 0 0# 
@@ -2038,7 +2038,7 @@ end
 module Pump__registertanksensor__s
  use import "_gnatprove_standard".Main
 
- function s #"pump.ads" 52 0 0# "model" "model_trace:3301" 
+ function s #"pump.ads" 52 0 0# "model" "model_trace:3476" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"pump.ads" 52 0 0# 
@@ -2077,7 +2077,7 @@ end
 module Pump__balancecheck__payment
  use import "_gnatprove_standard".Main
 
- function payment #"pump.ads" 57 0 0# "model" "model_trace:3340" 
+ function payment #"pump.ads" 57 0 0# "model" "model_trace:3515" 
    : int
  
  function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 5 0 0# 
@@ -2106,7 +2106,7 @@ end
 module Pump__setbalance__payment
  use import "_gnatprove_standard".Main
 
- function payment #"pump.ads" 61 0 0# "model" "model_trace:3387" 
+ function payment #"pump.ads" 61 0 0# "model" "model_trace:3562" 
    : int
  
  function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 5 0 0# 
@@ -2331,6 +2331,306 @@ module Pump__balance
 
 end
 
+(* Module for axiomatizing the array theory associated to type "Tthree_pumpsB" defined at pump_unit.ads:7, created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
+module Array__Int__Pump__nozzle
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Pump__nozzle
+
+ function index_I1_one #"pump.ads" 83 0 0# 
+   : int =
+  1
+ 
+ type component_type #"pump.ads" 83 0 0# =
+  Pump__nozzle.nozzle
+ 
+ clone export "_gnatprove_standard".Array__1 with
+ type I1.t = int, 
+ predicate I1.le = Int.(<=), 
+ predicate I1.lt = Int.(<), 
+ predicate I1.gt = Int.(>), 
+ function I1.add = Int.(+), 
+ function I1.sub = Int.(-), 
+ function I1.one = index_I1_one, 
+ type component_type = component_type
+
+end
+
+(* Module for axiomatizing type "Tthree_pumpsB" defined at pump_unit.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Pump_unit__Tthree_pumpsB
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Pump_type__fuel_type
+ use        Pump__nozzle
+ use        Array__Int__Pump__nozzle
+
+ type component_type #"pump.ads" 83 0 0# =
+  Pump__nozzle.nozzle
+ 
+ function index_1_id #"pump.ads" 83 0 0# 
+   (x : int) : int =
+  x
+ 
+ clone export "ada__model".Unconstr_Array with
+ type map = Array__Int__Pump__nozzle.map, 
+ function array_bool_eq = Array__Int__Pump__nozzle.bool_eq, 
+ type index_base_type = Pump_type__fuel_type.fuel_type, 
+ type index_rep_type = int, 
+ function to_rep = Pump_type__fuel_type.to_rep, 
+ function rep_to_int = index_1_id, 
+ predicate in_range_base = Pump_type__fuel_type.in_range, 
+ predicate index_dynamic_property = Pump_type__fuel_type.dynamic_property, 
+ predicate index_rep_le = Int.(<=)
+ 
+ type tthree_pumpsB #"pump_unit.ads" 7 0 0# =
+  __t
+ 
+ meta "model_projection" function to_array
+ 
+ meta "inline : no" function to_array
+ 
+ meta "model_projection" function first
+ 
+ meta "inline : no" function first
+ 
+ meta "model_projection" function last
+ 
+ meta "inline : no" function last
+ 
+ type tthree_pumpsB__ref #"pump_unit.ads" 7 0 0# =
+  { mutable tthree_pumpsB__content "model_trace:" : tthree_pumpsB }
+ 
+ function tthree_pumpsB__ref___projection #"pump_unit.ads" 7 0 0# 
+   (a : tthree_pumpsB__ref) : tthree_pumpsB =
+  a.tthree_pumpsB__content
+ 
+ meta "model_projection" function tthree_pumpsB__ref___projection
+ 
+ meta "inline : no" function tthree_pumpsB__ref___projection
+ 
+ val tthree_pumpsB__havoc #"pump_unit.ads" 7 0 0# 
+   (x : tthree_pumpsB__ref) : unit
+  writes {x}
+
+end
+
+(* Module for axiomatizing type "three_pumps" defined at pump_unit.ads:7, created in Gnat2Why.Types.Translate_Type *)
+module Pump_unit__three_pumps
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Pump__nozzle
+ use        Array__Int__Pump__nozzle
+
+ type component_type #"pump_unit.ads" 7 0 0# =
+  Pump__nozzle.nozzle
+ 
+ function first #"pump.ads" 83 0 0# 
+   : int =
+  0
+ 
+ function last #"pump.ads" 83 0 0# 
+   : int =
+  2
+ 
+ clone export "ada__model".Constr_Array with
+ type map = Array__Int__Pump__nozzle.map, 
+ function array_bool_eq = Array__Int__Pump__nozzle.bool_eq, 
+ function first = first, 
+ function last = last, 
+ type index_rep_type = int
+
+end
+
+(* Module for defining the constant "f" defined at pump_unit.ads:13, created in Gnat2Why.Decls.Translate_Constant *)
+module Pump_unit__setfuelvolume__f
+ use import "_gnatprove_standard".Main
+
+ function f #"pump_unit.ads" 13 0 0# "model" "model_trace:2672" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 5 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "f" defined at pump_unit.ads:13, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__setfuelvolume__f__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "curr_fuel" defined at pump_unit.ads:21, created in Gnat2Why.Decls.Translate_Constant *)
+module Pump_unit__liftnozzle__curr_fuel
+ use import "_gnatprove_standard".Main
+
+ function curr_fuel #"pump_unit.ads" 21 0 0# "model" "model_trace:2709" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 4 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "curr_fuel" defined at pump_unit.ads:21, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__liftnozzle__curr_fuel__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "curr_fuel" defined at pump_unit.ads:33, created in Gnat2Why.Decls.Translate_Constant *)
+module Pump_unit__replacenozzle__curr_fuel
+ use import "_gnatprove_standard".Main
+
+ function curr_fuel #"pump_unit.ads" 33 0 0# "model" "model_trace:2782" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 4 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "curr_fuel" defined at pump_unit.ads:33, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__replacenozzle__curr_fuel__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "curr_fuel" defined at pump_unit.ads:42, created in Gnat2Why.Decls.Translate_Constant *)
+module Pump_unit__requestpumping__curr_fuel
+ use import "_gnatprove_standard".Main
+
+ function curr_fuel #"pump_unit.ads" 42 0 0# "model" "model_trace:2829" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 4 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "curr_fuel" defined at pump_unit.ads:42, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__requestpumping__curr_fuel__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "f" defined at pump_unit.ads:42, created in Gnat2Why.Decls.Translate_Constant *)
+module Pump_unit__requestpumping__f
+ use import "_gnatprove_standard".Main
+
+ function f #"pump_unit.ads" 42 0 0# "model" "model_trace:2838" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 5 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "f" defined at pump_unit.ads:42, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__requestpumping__f__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "curr_fuel" defined at pump_unit.ads:54, created in Gnat2Why.Decls.Translate_Constant *)
+module Pump_unit__requeststoppumping__curr_fuel
+ use import "_gnatprove_standard".Main
+
+ function curr_fuel #"pump_unit.ads" 54 0 0# "model" "model_trace:2931" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 4 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "curr_fuel" defined at pump_unit.ads:54, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__requeststoppumping__curr_fuel__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "curr_fuel" defined at pump_unit.ads:63, created in Gnat2Why.Decls.Translate_Constant *)
+module Pump_unit__tanksensorinput__curr_fuel
+ use import "_gnatprove_standard".Main
+
+ function curr_fuel #"pump_unit.ads" 63 0 0# "model" "model_trace:2978" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 4 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "curr_fuel" defined at pump_unit.ads:63, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__tanksensorinput__curr_fuel__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "signal" defined at pump_unit.ads:63, created in Gnat2Why.Decls.Translate_Constant *)
+module Pump_unit__tanksensorinput__signal
+ use import "_gnatprove_standard".Main
+
+ function signal #"pump_unit.ads" 63 0 0# "model" "model_trace:2987" 
+   : bool
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_unit.ads" 63 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "signal" defined at pump_unit.ads:63, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__tanksensorinput__signal__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "curr_fuel" defined at pump_unit.ads:71, created in Gnat2Why.Decls.Translate_Constant *)
+module Pump_unit__setpayment__curr_fuel
+ use import "_gnatprove_standard".Main
+
+ function curr_fuel #"pump_unit.ads" 71 0 0# "model" "model_trace:3035" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 4 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "curr_fuel" defined at pump_unit.ads:71, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__setpayment__curr_fuel__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining the constant "payment" defined at pump_unit.ads:71, created in Gnat2Why.Decls.Translate_Constant *)
+module Pump_unit__setpayment__payment
+ use import "_gnatprove_standard".Main
+
+ function payment #"pump_unit.ads" 71 0 0# "model" "model_trace:3044" 
+   : int
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 5 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "payment" defined at pump_unit.ads:71, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__setpayment__payment__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
 (* Module for axiomatizing type "name" defined at system.ads:46, created in Gnat2Why.Types.Translate_Type *)
 module System__name
  use import "_gnatprove_standard".Main
@@ -2381,7 +2681,7 @@ end
 module System__system_name
  use import "_gnatprove_standard".Main
 
- function system_name #"system.ads" 47 0 0# "model" "model_trace:4675" 
+ function system_name #"system.ads" 47 0 0# "model" "model_trace:5120" 
    : int
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 46 0 0# 
@@ -2765,7 +3065,7 @@ end
 module System__default_bit_order
  use import "_gnatprove_standard".Main
 
- function default_bit_order #"system.ads" 92 0 0# "model" "model_trace:5024" 
+ function default_bit_order #"system.ads" 92 0 0# "model" "model_trace:5469" 
    : int
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 91 0 0# 
@@ -2777,7 +3077,7 @@ end
 module System__max_priority
  use import "_gnatprove_standard".Main
 
- function max_priority #"system.ads" 97 0 0# "model" "model_trace:5040" 
+ function max_priority #"system.ads" 97 0 0# "model" "model_trace:5485" 
    : int
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
@@ -2789,7 +3089,7 @@ end
 module System__max_interrupt_priority
  use import "_gnatprove_standard".Main
 
- function max_interrupt_priority #"system.ads" 98 0 0# "model" "model_trace:5050" 
+ function max_interrupt_priority #"system.ads" 98 0 0# "model" "model_trace:5495" 
    : int
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 1 0 0# 
@@ -2939,7 +3239,7 @@ end
 module System__default_priority
  use import "_gnatprove_standard".Main
 
- function default_priority #"system.ads" 104 0 0# "model" "model_trace:5102" 
+ function default_priority #"system.ads" 104 0 0# "model" "model_trace:5547" 
    : int
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 101 0 0# 
@@ -2951,7 +3251,7 @@ end
 module System__backend_divide_checks
  use import "_gnatprove_standard".Main
 
- function backend_divide_checks #"system.ads" 121 0 0# "model" "model_trace:5132" 
+ function backend_divide_checks #"system.ads" 121 0 0# "model" "model_trace:5577" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 121 0 0# 
@@ -2963,7 +3263,7 @@ end
 module System__backend_overflow_checks
  use import "_gnatprove_standard".Main
 
- function backend_overflow_checks #"system.ads" 122 0 0# "model" "model_trace:5142" 
+ function backend_overflow_checks #"system.ads" 122 0 0# "model" "model_trace:5587" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 122 0 0# 
@@ -2975,7 +3275,7 @@ end
 module System__command_line_args
  use import "_gnatprove_standard".Main
 
- function command_line_args #"system.ads" 123 0 0# "model" "model_trace:5152" 
+ function command_line_args #"system.ads" 123 0 0# "model" "model_trace:5597" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 123 0 0# 
@@ -2987,7 +3287,7 @@ end
 module System__configurable_run_time
  use import "_gnatprove_standard".Main
 
- function configurable_run_time #"system.ads" 124 0 0# "model" "model_trace:5162" 
+ function configurable_run_time #"system.ads" 124 0 0# "model" "model_trace:5607" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 124 0 0# 
@@ -2999,7 +3299,7 @@ end
 module System__denorm
  use import "_gnatprove_standard".Main
 
- function denorm #"system.ads" 125 0 0# "model" "model_trace:5172" 
+ function denorm #"system.ads" 125 0 0# "model" "model_trace:5617" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 125 0 0# 
@@ -3011,7 +3311,7 @@ end
 module System__duration_32_bits
  use import "_gnatprove_standard".Main
 
- function duration_32_bits #"system.ads" 126 0 0# "model" "model_trace:5182" 
+ function duration_32_bits #"system.ads" 126 0 0# "model" "model_trace:5627" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 126 0 0# 
@@ -3023,7 +3323,7 @@ end
 module System__exit_status_supported
  use import "_gnatprove_standard".Main
 
- function exit_status_supported #"system.ads" 127 0 0# "model" "model_trace:5192" 
+ function exit_status_supported #"system.ads" 127 0 0# "model" "model_trace:5637" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 127 0 0# 
@@ -3035,7 +3335,7 @@ end
 module System__fractional_fixed_ops
  use import "_gnatprove_standard".Main
 
- function fractional_fixed_ops #"system.ads" 128 0 0# "model" "model_trace:5202" 
+ function fractional_fixed_ops #"system.ads" 128 0 0# "model" "model_trace:5647" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 128 0 0# 
@@ -3047,7 +3347,7 @@ end
 module System__frontend_layout
  use import "_gnatprove_standard".Main
 
- function frontend_layout #"system.ads" 129 0 0# "model" "model_trace:5212" 
+ function frontend_layout #"system.ads" 129 0 0# "model" "model_trace:5657" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 129 0 0# 
@@ -3059,7 +3359,7 @@ end
 module System__machine_overflows
  use import "_gnatprove_standard".Main
 
- function machine_overflows #"system.ads" 130 0 0# "model" "model_trace:5222" 
+ function machine_overflows #"system.ads" 130 0 0# "model" "model_trace:5667" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 130 0 0# 
@@ -3071,7 +3371,7 @@ end
 module System__machine_rounds
  use import "_gnatprove_standard".Main
 
- function machine_rounds #"system.ads" 131 0 0# "model" "model_trace:5232" 
+ function machine_rounds #"system.ads" 131 0 0# "model" "model_trace:5677" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 131 0 0# 
@@ -3083,7 +3383,7 @@ end
 module System__preallocated_stacks
  use import "_gnatprove_standard".Main
 
- function preallocated_stacks #"system.ads" 132 0 0# "model" "model_trace:5242" 
+ function preallocated_stacks #"system.ads" 132 0 0# "model" "model_trace:5687" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 132 0 0# 
@@ -3095,7 +3395,7 @@ end
 module System__signed_zeros
  use import "_gnatprove_standard".Main
 
- function signed_zeros #"system.ads" 133 0 0# "model" "model_trace:5252" 
+ function signed_zeros #"system.ads" 133 0 0# "model" "model_trace:5697" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 133 0 0# 
@@ -3107,7 +3407,7 @@ end
 module System__stack_check_default
  use import "_gnatprove_standard".Main
 
- function stack_check_default #"system.ads" 134 0 0# "model" "model_trace:5262" 
+ function stack_check_default #"system.ads" 134 0 0# "model" "model_trace:5707" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 134 0 0# 
@@ -3119,7 +3419,7 @@ end
 module System__stack_check_probes
  use import "_gnatprove_standard".Main
 
- function stack_check_probes #"system.ads" 135 0 0# "model" "model_trace:5272" 
+ function stack_check_probes #"system.ads" 135 0 0# "model" "model_trace:5717" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 135 0 0# 
@@ -3131,7 +3431,7 @@ end
 module System__stack_check_limits
  use import "_gnatprove_standard".Main
 
- function stack_check_limits #"system.ads" 136 0 0# "model" "model_trace:5282" 
+ function stack_check_limits #"system.ads" 136 0 0# "model" "model_trace:5727" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 136 0 0# 
@@ -3143,7 +3443,7 @@ end
 module System__support_aggregates
  use import "_gnatprove_standard".Main
 
- function support_aggregates #"system.ads" 137 0 0# "model" "model_trace:5292" 
+ function support_aggregates #"system.ads" 137 0 0# "model" "model_trace:5737" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 137 0 0# 
@@ -3155,7 +3455,7 @@ end
 module System__support_atomic_primitives
  use import "_gnatprove_standard".Main
 
- function support_atomic_primitives #"system.ads" 138 0 0# "model" "model_trace:5302" 
+ function support_atomic_primitives #"system.ads" 138 0 0# "model" "model_trace:5747" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 138 0 0# 
@@ -3167,7 +3467,7 @@ end
 module System__support_composite_assign
  use import "_gnatprove_standard".Main
 
- function support_composite_assign #"system.ads" 139 0 0# "model" "model_trace:5312" 
+ function support_composite_assign #"system.ads" 139 0 0# "model" "model_trace:5757" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 139 0 0# 
@@ -3179,7 +3479,7 @@ end
 module System__support_composite_compare
  use import "_gnatprove_standard".Main
 
- function support_composite_compare #"system.ads" 140 0 0# "model" "model_trace:5322" 
+ function support_composite_compare #"system.ads" 140 0 0# "model" "model_trace:5767" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 140 0 0# 
@@ -3191,7 +3491,7 @@ end
 module System__support_long_shifts
  use import "_gnatprove_standard".Main
 
- function support_long_shifts #"system.ads" 141 0 0# "model" "model_trace:5332" 
+ function support_long_shifts #"system.ads" 141 0 0# "model" "model_trace:5777" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 141 0 0# 
@@ -3203,7 +3503,7 @@ end
 module System__always_compatible_rep
  use import "_gnatprove_standard".Main
 
- function always_compatible_rep #"system.ads" 142 0 0# "model" "model_trace:5342" 
+ function always_compatible_rep #"system.ads" 142 0 0# "model" "model_trace:5787" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 142 0 0# 
@@ -3215,7 +3515,7 @@ end
 module System__suppress_standard_library
  use import "_gnatprove_standard".Main
 
- function suppress_standard_library #"system.ads" 143 0 0# "model" "model_trace:5352" 
+ function suppress_standard_library #"system.ads" 143 0 0# "model" "model_trace:5797" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 143 0 0# 
@@ -3227,7 +3527,7 @@ end
 module System__use_ada_main_program_name
  use import "_gnatprove_standard".Main
 
- function use_ada_main_program_name #"system.ads" 144 0 0# "model" "model_trace:5362" 
+ function use_ada_main_program_name #"system.ads" 144 0 0# "model" "model_trace:5807" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 144 0 0# 
@@ -3239,7 +3539,7 @@ end
 module System__frontend_exceptions
  use import "_gnatprove_standard".Main
 
- function frontend_exceptions #"system.ads" 145 0 0# "model" "model_trace:5372" 
+ function frontend_exceptions #"system.ads" 145 0 0# "model" "model_trace:5817" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 145 0 0# 
@@ -3251,7 +3551,7 @@ end
 module System__zcx_by_default
  use import "_gnatprove_standard".Main
 
- function zcx_by_default #"system.ads" 146 0 0# "model" "model_trace:5382" 
+ function zcx_by_default #"system.ads" 146 0 0# "model" "model_trace:5827" 
    : bool
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 146 0 0# 
@@ -3466,7 +3766,7 @@ module System__underlying_priorities
  use import "_gnatprove_standard".Main
  use        Array__Int__Standard__integer
 
- function underlying_priorities #"system.ads" 165 0 0# "model_projected" "model_trace:5408" 
+ function underlying_priorities #"system.ads" 165 0 0# "model_projected" "model_trace:5853" 
    : Array__Int__Standard__integer.map
  
  function attr__ATTRIBUTE_ADDRESS #"system.ads" 161 0 0# 
@@ -3515,7 +3815,7 @@ end
 module Pump__startpumping__v
  use import "_gnatprove_standard".Main
 
- val v #"pump.ads" 29 0 0# "model" "model_trace:3147"  : int__ref 
+ val v #"pump.ads" 29 0 0# "model" "model_trace:3322"  : int__ref 
  
  function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 5 0 0# 
    : int
@@ -3604,13 +3904,86 @@ module Pump__setbalance__n__axiom
 
 
 end
+
+(* Module for defining a ref holding the value of variable "curr_pump" defined at pump_unit.ads:9, created in Gnat2Why.Decls.Translate_Variable *)
+module Pump_unit__curr_pump
+ use import "_gnatprove_standard".Main
+ use        Array__Int__Pump__nozzle
+
+ val curr_pump #"pump_unit.ads" 9 0 0# "model_projected" "model_trace:2636"  : Array__Int__Pump__nozzle.map__ref 
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_unit.ads" 7 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "curr_pump" defined at pump_unit.ads:9, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__curr_pump__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining a ref holding the value of variable "fuel_needed" defined at pump_unit.ads:10, created in Gnat2Why.Decls.Translate_Variable *)
+module Pump_unit__fuel_needed
+ use import "_gnatprove_standard".Main
+
+ val fuel_needed #"pump_unit.ads" 10 0 0# "model" "model_trace:2645"  : int__ref 
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 5 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "fuel_needed" defined at pump_unit.ads:10, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__fuel_needed__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining a ref holding the value of variable "fuel_pumped" defined at pump_unit.ads:11, created in Gnat2Why.Decls.Translate_Variable *)
+module Pump_unit__fuel_pumped
+ use import "_gnatprove_standard".Main
+
+ val fuel_pumped #"pump_unit.ads" 11 0 0# "model" "model_trace:2655"  : int__ref 
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 5 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "fuel_pumped" defined at pump_unit.ads:11, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__fuel_pumped__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for defining a ref holding the value of variable "fuel_to_be_pumped" defined at pump_unit.adb:24, created in Gnat2Why.Decls.Translate_Variable *)
+module Pump_unit__requestpumping__fuel_to_be_pumped
+ use import "_gnatprove_standard".Main
+
+ val fuel_to_be_pumped #"pump_unit.adb" 24 0 0# "model" "model_trace:2423"  : int__ref 
+ 
+ function attr__ATTRIBUTE_ADDRESS #"pump_type.ads" 5 0 0# 
+   : int
+
+end
+
+(* Module giving an empty axiom for the entity "fuel_to_be_pumped" defined at pump_unit.adb:24, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pump_unit__requestpumping__fuel_to_be_pumped__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
 (* Module giving axioms for type "short_short_integer", created in Gnat2Why.Types.Generate_Type_Completion *)
 module Standard__short_short_integer__axiom
  use import "_gnatprove_standard".Main
  use import "int".Int
  use        Standard__short_short_integer
 
- predicate dynamic_invariant #"pump.ads" 83 0 0# "inline" 
+ predicate dynamic_invariant #"pump_type.ads" 5 0 0# "inline" 
    (temp___expr_3 : int) (temp___is_init_0 : bool) (temp___do_constant_1 : bool) (temp___do_toplevel_2 : bool)  =
   (if (( temp___is_init_0 \/ (Standard__short_short_integer.first <= Standard__short_short_integer.last) )) then (
    (Standard__short_short_integer.dynamic_property Standard__short_short_integer.first Standard__short_short_integer.last temp___expr_3)) else true)
@@ -4033,11 +4406,60 @@ module Pump__setbalance
 
 end
 
+(* Module for possibly declaring a logic function for "setfuelvolume" defined at pump_unit.ads:13, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Pump_unit__setfuelvolume
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "liftnozzle" defined at pump_unit.ads:21, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Pump_unit__liftnozzle
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "replacenozzle" defined at pump_unit.ads:33, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Pump_unit__replacenozzle
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "requestpumping" defined at pump_unit.ads:42, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Pump_unit__requestpumping
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "requeststoppumping" defined at pump_unit.ads:54, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Pump_unit__requeststoppumping
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "tanksensorinput" defined at pump_unit.ads:63, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Pump_unit__tanksensorinput
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module for possibly declaring a logic function for "setpayment" defined at pump_unit.ads:71, created in Gnat2Why.Subprograms.Translate_Subprogram_Spec *)
+module Pump_unit__setpayment
+ use import "_gnatprove_standard".Main
+
+
+end
+
 (* Module for defining the constant "min_int" defined at system.ads:51, created in Gnat2Why.Decls.Translate_Constant *)
 module System__min_int
  use import "_gnatprove_standard".Main
 
- function min_int #"system.ads" 51 0 0# "model" "model_trace:4685" 
+ function min_int #"system.ads" 51 0 0# "model" "model_trace:5130" 
    : int
 
 end
@@ -4046,7 +4468,7 @@ end
 module System__max_int
  use import "_gnatprove_standard".Main
 
- function max_int #"system.ads" 52 0 0# "model" "model_trace:4696" 
+ function max_int #"system.ads" 52 0 0# "model" "model_trace:5141" 
    : int
 
 end
@@ -4055,7 +4477,7 @@ end
 module System__max_binary_modulus
  use import "_gnatprove_standard".Main
 
- function max_binary_modulus #"system.ads" 54 0 0# "model" "model_trace:4707" 
+ function max_binary_modulus #"system.ads" 54 0 0# "model" "model_trace:5152" 
    : int
 
 end
@@ -4064,7 +4486,7 @@ end
 module System__max_nonbinary_modulus
  use import "_gnatprove_standard".Main
 
- function max_nonbinary_modulus #"system.ads" 55 0 0# "model" "model_trace:4720" 
+ function max_nonbinary_modulus #"system.ads" 55 0 0# "model" "model_trace:5165" 
    : int
 
 end
@@ -4073,7 +4495,7 @@ end
 module System__max_base_digits
  use import "_gnatprove_standard".Main
 
- function max_base_digits #"system.ads" 57 0 0# "model" "model_trace:4735" 
+ function max_base_digits #"system.ads" 57 0 0# "model" "model_trace:5180" 
    : int
 
 end
@@ -4082,7 +4504,7 @@ end
 module System__max_digits
  use import "_gnatprove_standard".Main
 
- function max_digits #"system.ads" 58 0 0# "model" "model_trace:4745" 
+ function max_digits #"system.ads" 58 0 0# "model" "model_trace:5190" 
    : int
 
 end
@@ -4091,7 +4513,7 @@ end
 module System__max_mantissa
  use import "_gnatprove_standard".Main
 
- function max_mantissa #"system.ads" 60 0 0# "model" "model_trace:4755" 
+ function max_mantissa #"system.ads" 60 0 0# "model" "model_trace:5200" 
    : int
 
 end
@@ -4120,7 +4542,7 @@ end
 module System__storage_unit
  use import "_gnatprove_standard".Main
 
- function storage_unit #"system.ads" 71 0 0# "model" "model_trace:4806" 
+ function storage_unit #"system.ads" 71 0 0# "model" "model_trace:5251" 
    : int
 
 end
@@ -4129,7 +4551,7 @@ end
 module System__word_size
  use import "_gnatprove_standard".Main
 
- function word_size #"system.ads" 72 0 0# "model" "model_trace:4815" 
+ function word_size #"system.ads" 72 0 0# "model" "model_trace:5260" 
    : int
 
 end
@@ -4138,7 +4560,7 @@ end
 module System__memory_size
  use import "_gnatprove_standard".Main
 
- function memory_size #"system.ads" 73 0 0# "model" "model_trace:4824" 
+ function memory_size #"system.ads" 73 0 0# "model" "model_trace:5269" 
    : int
 
 end
@@ -4333,6 +4755,47 @@ module Pump__nozzle__axiom
 
 end
 
+(* Module giving axioms for type "Tthree_pumpsB" defined at pump_unit.ads:7, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Pump_unit__Tthree_pumpsB__axiom
+ use import "_gnatprove_standard".Main
+
+
+end
+
+(* Module giving axioms for type "three_pumps" defined at pump_unit.ads:7, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Pump_unit__three_pumps__axiom
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Pump_type__fuel_type
+ use        Pump_type__price
+ use        Pump_type__state
+ use        Pump_type__nozzle_in_cradle
+ use        Pump_type__full_tank_sensor
+ use        Pump__nozzle
+ use        Array__Int__Pump__nozzle
+ use        Array__Int__Pump__nozzle
+ use        Array__Int__Pump__nozzle
+
+ predicate dynamic_invariant #"pump.ads" 83 0 0# "inline" 
+   (temp___expr_210 : Array__Int__Pump__nozzle.map) (temp___is_init_207 : bool) (temp___do_constant_208 : bool) (temp___do_toplevel_209 : bool)  =
+  true
+ 
+ predicate default_initial_assumption #"pump_unit.ads" 7 0 0# "inline" 
+   (temp___212 : Array__Int__Pump__nozzle.map) (temp___213 : bool)  =
+  (forall temp___214 : int.
+   (if (( (Pump_type__fuel_type.first <= temp___214) /\ (temp___214 <= Pump_type__fuel_type.last) )) then (
+    (let temp___215 = (Array__Int__Pump__nozzle.get temp___212 temp___214) in (
+     ( ( ( ( ( (if ((Pump__nozzle.s__pred temp___215)) then (
+      ((Pump_type__state.to_rep (Pump__nozzle.rec__s (Pump__nozzle.__split_fields temp___215))) = 0)) else true) /\ (if ((Pump__nozzle.c__pred temp___215)) then (
+      ((Pump_type__nozzle_in_cradle.to_rep (Pump__nozzle.rec__c (Pump__nozzle.__split_fields temp___215))) = 1)) else true) ) /\ (if ((Pump__nozzle.f__pred temp___215)) then (
+      ((Pump_type__full_tank_sensor.to_rep (Pump__nozzle.rec__f (Pump__nozzle.__split_fields temp___215))) = 0)) else true) ) /\ (if ((Pump__nozzle.r__pred temp___215)) then (
+      ((Pump_type__price.to_rep (Pump__nozzle.rec__r (Pump__nozzle.__split_fields temp___215))) = 1000)) else true) ) /\ (if ((Pump__nozzle.p__pred temp___215)) then (
+      ((Pump_type__price.to_rep (Pump__nozzle.rec__p (Pump__nozzle.__split_fields temp___215))) = 0)) else true) ) /\ (if ((Pump__nozzle.cash__pred temp___215)) then (
+      ((Pump_type__price.to_rep (Pump__nozzle.rec__cash (Pump__nozzle.__split_fields temp___215))) = 0)) else true) )))
+   ) else true))
+
+end
+
 (* Module giving axioms for type "name" defined at system.ads:46, created in Gnat2Why.Types.Generate_Type_Completion *)
 module System__name__axiom
  use import "_gnatprove_standard".Main
@@ -4340,12 +4803,12 @@ module System__name__axiom
  use        System__name
 
  predicate dynamic_invariant #"pump.ads" 83 0 0# "inline" 
-   (temp___expr_210 : int) (temp___is_init_207 : bool) (temp___do_constant_208 : bool) (temp___do_toplevel_209 : bool)  =
-  (if (( temp___is_init_207 \/ (System__name.first <= System__name.last) )) then (
-   (System__name.dynamic_property System__name.first System__name.last temp___expr_210)) else true)
+   (temp___expr_219 : int) (temp___is_init_216 : bool) (temp___do_constant_217 : bool) (temp___do_toplevel_218 : bool)  =
+  (if (( temp___is_init_216 \/ (System__name.first <= System__name.last) )) then (
+   (System__name.dynamic_property System__name.first System__name.last temp___expr_219)) else true)
  
  predicate default_initial_assumption #"system.ads" 46 0 0# "inline" 
-   (temp___211 : int) (temp___212 : bool)  =
+   (temp___220 : int) (temp___221 : bool)  =
   true
 
 end
@@ -4357,12 +4820,12 @@ module System__address__axiom
  use        System__address
 
  predicate dynamic_invariant #"system.ads" 46 0 0# "inline" 
-   (temp___expr_216 : BV32.t) (temp___is_init_213 : bool) (temp___do_constant_214 : bool) (temp___do_toplevel_215 : bool)  =
-  (if (( temp___is_init_213 \/ (BV32.ule System__address.first System__address.last) )) then (
-   (System__address.dynamic_property System__address.first System__address.last temp___expr_216)) else true)
+   (temp___expr_225 : BV32.t) (temp___is_init_222 : bool) (temp___do_constant_223 : bool) (temp___do_toplevel_224 : bool)  =
+  (if (( temp___is_init_222 \/ (BV32.ule System__address.first System__address.last) )) then (
+   (System__address.dynamic_property System__address.first System__address.last temp___expr_225)) else true)
  
  predicate default_initial_assumption #"system.ads" 108 0 0# "inline" 
-   (temp___217 : BV32.t) (temp___218 : bool)  =
+   (temp___226 : BV32.t) (temp___227 : bool)  =
   true
 
 end
@@ -4374,12 +4837,12 @@ module System__bit_order__axiom
  use        System__bit_order
 
  predicate dynamic_invariant #"system.ads" 108 0 0# "inline" 
-   (temp___expr_222 : int) (temp___is_init_219 : bool) (temp___do_constant_220 : bool) (temp___do_toplevel_221 : bool)  =
-  (if (( temp___is_init_219 \/ (System__bit_order.first <= System__bit_order.last) )) then (
-   (System__bit_order.dynamic_property System__bit_order.first System__bit_order.last temp___expr_222)) else true)
+   (temp___expr_231 : int) (temp___is_init_228 : bool) (temp___do_constant_229 : bool) (temp___do_toplevel_230 : bool)  =
+  (if (( temp___is_init_228 \/ (System__bit_order.first <= System__bit_order.last) )) then (
+   (System__bit_order.dynamic_property System__bit_order.first System__bit_order.last temp___expr_231)) else true)
  
  predicate default_initial_assumption #"system.ads" 91 0 0# "inline" 
-   (temp___223 : int) (temp___224 : bool)  =
+   (temp___232 : int) (temp___233 : bool)  =
   true
 
 end
@@ -4391,12 +4854,12 @@ module System__any_priority__axiom
  use        System__any_priority
 
  predicate dynamic_invariant #"system.ads" 91 0 0# "inline" 
-   (temp___expr_228 : int) (temp___is_init_225 : bool) (temp___do_constant_226 : bool) (temp___do_toplevel_227 : bool)  =
-  (if (( temp___is_init_225 \/ (System__any_priority.first <= System__any_priority.last) )) then (
-   (System__any_priority.dynamic_property System__any_priority.first System__any_priority.last temp___expr_228)) else true)
+   (temp___expr_237 : int) (temp___is_init_234 : bool) (temp___do_constant_235 : bool) (temp___do_toplevel_236 : bool)  =
+  (if (( temp___is_init_234 \/ (System__any_priority.first <= System__any_priority.last) )) then (
+   (System__any_priority.dynamic_property System__any_priority.first System__any_priority.last temp___expr_237)) else true)
  
  predicate default_initial_assumption #"system.ads" 100 0 0# "inline" 
-   (temp___229 : int) (temp___230 : bool)  =
+   (temp___238 : int) (temp___239 : bool)  =
   true
 
 end
@@ -4408,12 +4871,12 @@ module System__priority__axiom
  use        System__priority
 
  predicate dynamic_invariant #"system.ads" 100 0 0# "inline" 
-   (temp___expr_234 : int) (temp___is_init_231 : bool) (temp___do_constant_232 : bool) (temp___do_toplevel_233 : bool)  =
-  (if (( temp___is_init_231 \/ (System__priority.first <= System__priority.last) )) then (
-   (System__priority.dynamic_property System__priority.first System__priority.last temp___expr_234)) else true)
+   (temp___expr_243 : int) (temp___is_init_240 : bool) (temp___do_constant_241 : bool) (temp___do_toplevel_242 : bool)  =
+  (if (( temp___is_init_240 \/ (System__priority.first <= System__priority.last) )) then (
+   (System__priority.dynamic_property System__priority.first System__priority.last temp___expr_243)) else true)
  
  predicate default_initial_assumption #"system.ads" 101 0 0# "inline" 
-   (temp___235 : int) (temp___236 : bool)  =
+   (temp___244 : int) (temp___245 : bool)  =
   true
 
 end
@@ -4425,12 +4888,12 @@ module System__interrupt_priority__axiom
  use        System__interrupt_priority
 
  predicate dynamic_invariant #"system.ads" 101 0 0# "inline" 
-   (temp___expr_240 : int) (temp___is_init_237 : bool) (temp___do_constant_238 : bool) (temp___do_toplevel_239 : bool)  =
-  (if (( temp___is_init_237 \/ (System__interrupt_priority.first <= System__interrupt_priority.last) )) then (
-   (System__interrupt_priority.dynamic_property System__interrupt_priority.first System__interrupt_priority.last temp___expr_240)) else true)
+   (temp___expr_249 : int) (temp___is_init_246 : bool) (temp___do_constant_247 : bool) (temp___do_toplevel_248 : bool)  =
+  (if (( temp___is_init_246 \/ (System__interrupt_priority.first <= System__interrupt_priority.last) )) then (
+   (System__interrupt_priority.dynamic_property System__interrupt_priority.first System__interrupt_priority.last temp___expr_249)) else true)
  
  predicate default_initial_assumption #"system.ads" 102 0 0# "inline" 
-   (temp___241 : int) (temp___242 : bool)  =
+   (temp___250 : int) (temp___251 : bool)  =
   true
 
 end
@@ -4449,11 +4912,11 @@ module System__priorities_mapping__axiom
  use        Array__Int__Standard__integer
 
  predicate dynamic_invariant #"system.ads" 102 0 0# "inline" 
-   (temp___expr_246 : Array__Int__Standard__integer.map) (temp___is_init_243 : bool) (temp___do_constant_244 : bool) (temp___do_toplevel_245 : bool)  =
+   (temp___expr_255 : Array__Int__Standard__integer.map) (temp___is_init_252 : bool) (temp___do_constant_253 : bool) (temp___do_toplevel_254 : bool)  =
   true
  
  predicate default_initial_assumption #"system.ads" 161 0 0# "inline" 
-   (temp___248 : Array__Int__Standard__integer.map) (temp___249 : bool)  =
+   (temp___257 : Array__Int__Standard__integer.map) (temp___258 : bool)  =
   true
 
 end
@@ -4998,83 +5461,55 @@ module System__underlying_priorities__axiom
 
 end
 
-(* Module giving a program function and a defining axiom for the expression function "inbasestate" defined at pump.ads:7, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+(* Module for declaring a program function (and possibly an axiom) for "inbasestate" defined at pump.ads:7, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Pump__inbasestate__axiom
  use import "_gnatprove_standard".Main
- use import "int".Int
- use        Pump_type__state
- use        Pump_type__nozzle_in_cradle
  use        Pump__nozzle
  use        Pump__inbasestate
 
  val inbasestate #"pump.ads" 7 0 0# 
    (n : Pump__nozzle.nozzle) : bool
   requires { true }
-  ensures { ( (result = (Pump__inbasestate.inbasestate n)) /\ ( (result = True) <-> ( ((Pump_type__state.to_rep (Pump__nozzle.rec__s (Pump__nozzle.__split_fields n))) = 0) /\ ((Pump_type__nozzle_in_cradle.to_rep (Pump__nozzle.rec__c (Pump__nozzle.__split_fields n))) = 1) ) ) ) }
- 
- axiom inbasestate__def_axiom :
-  (forall n : Pump__nozzle.nozzle [(Pump__inbasestate.inbasestate n)].
-   ( ((Pump__inbasestate.inbasestate n) = True) <-> ( ((Pump_type__state.to_rep (Pump__nozzle.rec__s (Pump__nozzle.__split_fields n))) = 0) /\ ((Pump_type__nozzle_in_cradle.to_rep (Pump__nozzle.rec__c (Pump__nozzle.__split_fields n))) = 1) ) ))
+  ensures { (result = (Pump__inbasestate.inbasestate n)) }
 
 end
 
-(* Module giving a program function and a defining axiom for the expression function "inreadystate" defined at pump.ads:10, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+(* Module for declaring a program function (and possibly an axiom) for "inreadystate" defined at pump.ads:10, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Pump__inreadystate__axiom
  use import "_gnatprove_standard".Main
- use import "int".Int
- use        Pump_type__state
- use        Pump_type__nozzle_in_cradle
  use        Pump__nozzle
  use        Pump__inreadystate
 
  val inreadystate #"pump.ads" 10 0 0# 
    (n : Pump__nozzle.nozzle) : bool
   requires { true }
-  ensures { ( (result = (Pump__inreadystate.inreadystate n)) /\ ( (result = True) <-> ( ((Pump_type__state.to_rep (Pump__nozzle.rec__s (Pump__nozzle.__split_fields n))) = 1) /\ ((Pump_type__nozzle_in_cradle.to_rep (Pump__nozzle.rec__c (Pump__nozzle.__split_fields n))) = 0) ) ) ) }
- 
- axiom inreadystate__def_axiom :
-  (forall n : Pump__nozzle.nozzle [(Pump__inreadystate.inreadystate n)].
-   ( ((Pump__inreadystate.inreadystate n) = True) <-> ( ((Pump_type__state.to_rep (Pump__nozzle.rec__s (Pump__nozzle.__split_fields n))) = 1) /\ ((Pump_type__nozzle_in_cradle.to_rep (Pump__nozzle.rec__c (Pump__nozzle.__split_fields n))) = 0) ) ))
+  ensures { (result = (Pump__inreadystate.inreadystate n)) }
 
 end
 
-(* Module giving a program function and a defining axiom for the expression function "inpumpingstate" defined at pump.ads:13, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+(* Module for declaring a program function (and possibly an axiom) for "inpumpingstate" defined at pump.ads:13, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Pump__inpumpingstate__axiom
  use import "_gnatprove_standard".Main
- use import "int".Int
- use        Pump_type__state
- use        Pump_type__nozzle_in_cradle
  use        Pump__nozzle
  use        Pump__inpumpingstate
 
  val inpumpingstate #"pump.ads" 13 0 0# 
    (n : Pump__nozzle.nozzle) : bool
   requires { true }
-  ensures { ( (result = (Pump__inpumpingstate.inpumpingstate n)) /\ ( (result = True) <-> ( ((Pump_type__state.to_rep (Pump__nozzle.rec__s (Pump__nozzle.__split_fields n))) = 2) /\ ((Pump_type__nozzle_in_cradle.to_rep (Pump__nozzle.rec__c (Pump__nozzle.__split_fields n))) = 0) ) ) ) }
- 
- axiom inpumpingstate__def_axiom :
-  (forall n : Pump__nozzle.nozzle [(Pump__inpumpingstate.inpumpingstate n)].
-   ( ((Pump__inpumpingstate.inpumpingstate n) = True) <-> ( ((Pump_type__state.to_rep (Pump__nozzle.rec__s (Pump__nozzle.__split_fields n))) = 2) /\ ((Pump_type__nozzle_in_cradle.to_rep (Pump__nozzle.rec__c (Pump__nozzle.__split_fields n))) = 0) ) ))
+  ensures { (result = (Pump__inpumpingstate.inpumpingstate n)) }
 
 end
 
-(* Module giving a program function and a defining axiom for the expression function "inwaitingstate" defined at pump.ads:16, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+(* Module for declaring a program function (and possibly an axiom) for "inwaitingstate" defined at pump.ads:16, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Pump__inwaitingstate__axiom
  use import "_gnatprove_standard".Main
- use import "int".Int
- use        Pump_type__state
- use        Pump_type__nozzle_in_cradle
  use        Pump__nozzle
  use        Pump__inwaitingstate
 
  val inwaitingstate #"pump.ads" 16 0 0# 
    (n : Pump__nozzle.nozzle) : bool
   requires { true }
-  ensures { ( (result = (Pump__inwaitingstate.inwaitingstate n)) /\ ( (result = True) <-> ( ((Pump_type__state.to_rep (Pump__nozzle.rec__s (Pump__nozzle.__split_fields n))) = 3) /\ ((Pump_type__nozzle_in_cradle.to_rep (Pump__nozzle.rec__c (Pump__nozzle.__split_fields n))) = 1) ) ) ) }
- 
- axiom inwaitingstate__def_axiom :
-  (forall n : Pump__nozzle.nozzle [(Pump__inwaitingstate.inwaitingstate n)].
-   ( ((Pump__inwaitingstate.inwaitingstate n) = True) <-> ( ((Pump_type__state.to_rep (Pump__nozzle.rec__s (Pump__nozzle.__split_fields n))) = 3) /\ ((Pump_type__nozzle_in_cradle.to_rep (Pump__nozzle.rec__c (Pump__nozzle.__split_fields n))) = 1) ) ))
+  ensures { (result = (Pump__inwaitingstate.inwaitingstate n)) }
 
 end
 
@@ -5096,23 +5531,16 @@ module Pump__enterreadystate__axiom
 
 end
 
-(* Module giving a program function and a defining axiom for the expression function "inrange" defined at pump.ads:27, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+(* Module for declaring a program function (and possibly an axiom) for "inrange" defined at pump.ads:27, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Pump__inrange__axiom
  use import "_gnatprove_standard".Main
- use import "int".Int
- use        Pump_type__price
  use        Pump__nozzle
  use        Pump__inrange
 
  val inrange #"pump.ads" 27 0 0# 
    (n : Pump__nozzle.nozzle) (v : int) : bool
   requires { true }
-  ensures { ( (result = (Pump__inrange.inrange n v)) /\ ( (result = True) <-> ( ((Pump_type__price.to_rep (Pump__nozzle.rec__p (Pump__nozzle.__split_fields n))) <= 1000) /\ (v <= 1000) ) ) ) }
- 
- axiom inrange__def_axiom :
-  (forall n : Pump__nozzle.nozzle.
-  (forall v : int [(Pump__inrange.inrange n v)].
-   ( ((Pump__inrange.inrange n v) = True) <-> ( ((Pump_type__price.to_rep (Pump__nozzle.rec__p (Pump__nozzle.__split_fields n))) <= 1000) /\ (v <= 1000) ) )))
+  ensures { (result = (Pump__inrange.inrange n v)) }
 
 end
 
@@ -5151,22 +5579,16 @@ module Pump__enterwaitingstate__axiom
 
 end
 
-(* Module giving a program function and a defining axiom for the expression function "nounpaid" defined at pump.ads:59, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+(* Module for declaring a program function (and possibly an axiom) for "nounpaid" defined at pump.ads:59, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Pump__nounpaid__axiom
  use import "_gnatprove_standard".Main
- use import "int".Int
- use        Pump_type__price
  use        Pump__nozzle
  use        Pump__nounpaid
 
  val nounpaid #"pump.ads" 59 0 0# 
    (n : Pump__nozzle.nozzle) : bool
   requires { true }
-  ensures { ( (result = (Pump__nounpaid.nounpaid n)) /\ ( (result = True) <-> ((Pump_type__price.to_rep (Pump__nozzle.rec__p (Pump__nozzle.__split_fields n))) = 0) ) ) }
- 
- axiom nounpaid__def_axiom :
-  (forall n : Pump__nozzle.nozzle [(Pump__nounpaid.nounpaid n)].
-   ( ((Pump__nounpaid.nounpaid n) = True) <-> ((Pump_type__price.to_rep (Pump__nozzle.rec__p (Pump__nozzle.__split_fields n))) = 0) ))
+  ensures { (result = (Pump__nounpaid.nounpaid n)) }
 
 end
 
@@ -5201,23 +5623,16 @@ module Pump__registertanksensor__axiom
 
 end
 
-(* Module giving a program function and a defining axiom for the expression function "balancecheck" defined at pump.ads:57, created in Gnat2Why.Subprograms.Translate_Expression_Function_Body *)
+(* Module for declaring a program function (and possibly an axiom) for "balancecheck" defined at pump.ads:57, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module Pump__balancecheck__axiom
  use import "_gnatprove_standard".Main
- use import "int".Int
- use        Pump_type__price
  use        Pump__nozzle
  use        Pump__balancecheck
 
  val balancecheck #"pump.ads" 57 0 0# 
    (n : Pump__nozzle.nozzle) (payment : int) : bool
   requires { true }
-  ensures { ( (result = (Pump__balancecheck.balancecheck n payment)) /\ ( (result = True) <-> ( ( (payment = (Pump_type__price.to_rep (Pump__nozzle.rec__p (Pump__nozzle.__split_fields n)))) /\ ((Pump_type__price.to_rep (Pump__nozzle.rec__cash (Pump__nozzle.__split_fields n))) <= 1000) ) /\ (payment <= 1000) ) ) ) }
- 
- axiom balancecheck__def_axiom :
-  (forall n : Pump__nozzle.nozzle.
-  (forall payment : int [(Pump__balancecheck.balancecheck n payment)].
-   ( ((Pump__balancecheck.balancecheck n payment) = True) <-> ( ( (payment = (Pump_type__price.to_rep (Pump__nozzle.rec__p (Pump__nozzle.__split_fields n)))) /\ ((Pump_type__price.to_rep (Pump__nozzle.rec__cash (Pump__nozzle.__split_fields n))) <= 1000) ) /\ (payment <= 1000) ) )))
+  ensures { (result = (Pump__balancecheck.balancecheck n payment)) }
 
 end
 
@@ -5383,6 +5798,172 @@ module Pump__balance__axiom
 
 end
 
+(* Module for declaring a program function (and possibly an axiom) for "setfuelvolume" defined at pump_unit.ads:13, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Pump_unit__setfuelvolume__axiom
+ use        Pump_unit__fuel_needed
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Pump_type__price__axiom
+ use        Pump_unit__fuel_needed
+
+ val setfuelvolume #"pump_unit.ads" 13 0 0# 
+   (f : int) : unit
+  requires { (f <= 200) }
+  ensures { (Pump_type__price__axiom.dynamic_invariant Pump_unit__fuel_needed.fuel_needed.int__content True True True) }
+  writes {Pump_unit__fuel_needed.fuel_needed}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "liftnozzle" defined at pump_unit.ads:21, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Pump_unit__liftnozzle__axiom
+ use        Pump_unit__curr_pump
+ use        Pump_unit__curr_pump
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Pump__nozzle
+ use        Pump__inbasestate
+ use        Pump__inreadystate
+ use        Pump__inwaitingstate
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+
+ val liftnozzle #"pump_unit.ads" 21 0 0# 
+   (curr_fuel : int) : unit
+  requires { ( ( ((Pump__inbasestate.inbasestate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) \/ ((Pump__inwaitingstate.inwaitingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) ) /\ (forall f : int.
+   ( ( (0 <= f) /\ (f <= 2) ) -> ( (f <> curr_fuel) /\ ((Pump__inbasestate.inbasestate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content f)) = True) ) )) ) }
+  ensures { ( ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) /\ (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content True True True) ) }
+  reads {Pump_unit__curr_pump.curr_pump}
+  writes {Pump_unit__curr_pump.curr_pump}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "replacenozzle" defined at pump_unit.ads:33, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Pump_unit__replacenozzle__axiom
+ use        Pump_unit__curr_pump
+ use        Pump_unit__curr_pump
+ use import "_gnatprove_standard".Main
+ use        Pump__nozzle
+ use        Pump__inreadystate
+ use        Pump__inwaitingstate
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+
+ val replacenozzle #"pump_unit.ads" 33 0 0# 
+   (curr_fuel : int) : unit
+  requires { ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) }
+  ensures { ( ((Pump__inwaitingstate.inwaitingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) /\ (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content True True True) ) }
+  reads {Pump_unit__curr_pump.curr_pump}
+  writes {Pump_unit__curr_pump.curr_pump}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "requestpumping" defined at pump_unit.ads:42, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Pump_unit__requestpumping__axiom
+ use        Pump_unit__fuel_needed
+ use        Pump_unit__fuel_pumped
+ use        Pump_unit__curr_pump
+ use        Pump_unit__fuel_pumped
+ use        Pump_unit__curr_pump
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Pump_type__price__axiom
+ use        Pump__nozzle
+ use        Pump__inreadystate
+ use        Pump__inpumpingstate
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+ use        Pump_unit__fuel_needed
+ use        Pump_unit__fuel_pumped
+
+ val requestpumping #"pump_unit.ads" 42 0 0# 
+   (curr_fuel : int) (f : int) : unit
+  requires { ( ( ( ( ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) \/ ((Pump__inpumpingstate.inpumpingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) ) /\ (f <= 100) ) /\ (Pump_unit__fuel_pumped.fuel_pumped.int__content <= 200) ) /\ ( (Pump_unit__fuel_needed.fuel_needed.int__content = 0) \/ (Pump_unit__fuel_needed.fuel_needed.int__content > Pump_unit__fuel_pumped.fuel_pumped.int__content) ) ) }
+  ensures { ( ( ((Pump__inpumpingstate.inpumpingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) \/ ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) ) /\ ( (Pump_type__price__axiom.dynamic_invariant Pump_unit__fuel_pumped.fuel_pumped.int__content True True True) /\ (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content True True True) ) ) }
+  reads {Pump_unit__fuel_needed.fuel_needed, Pump_unit__fuel_pumped.fuel_pumped, Pump_unit__curr_pump.curr_pump}
+  writes {Pump_unit__fuel_pumped.fuel_pumped, Pump_unit__curr_pump.curr_pump}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "requeststoppumping" defined at pump_unit.ads:54, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Pump_unit__requeststoppumping__axiom
+ use        Pump_unit__curr_pump
+ use        Pump_unit__curr_pump
+ use import "_gnatprove_standard".Main
+ use        Pump__nozzle
+ use        Pump__inreadystate
+ use        Pump__inpumpingstate
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+
+ val requeststoppumping #"pump_unit.ads" 54 0 0# 
+   (curr_fuel : int) : unit
+  requires { ((Pump__inpumpingstate.inpumpingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) }
+  ensures { ( ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) /\ (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content True True True) ) }
+  reads {Pump_unit__curr_pump.curr_pump}
+  writes {Pump_unit__curr_pump.curr_pump}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "tanksensorinput" defined at pump_unit.ads:63, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Pump_unit__tanksensorinput__axiom
+ use        Pump_unit__curr_pump
+ use        Pump_unit__curr_pump
+ use import "_gnatprove_standard".Main
+ use        Pump__nozzle
+ use        Pump__inreadystate
+ use        Pump__inpumpingstate
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+
+ val tanksensorinput #"pump_unit.ads" 63 0 0# 
+   (curr_fuel : int) (signal : bool) : unit
+  requires { ( ((Pump__inpumpingstate.inpumpingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) \/ ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) ) }
+  ensures { (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content True True True) }
+  reads {Pump_unit__curr_pump.curr_pump}
+  writes {Pump_unit__curr_pump.curr_pump}
+
+end
+
+(* Module for declaring a program function (and possibly an axiom) for "setpayment" defined at pump_unit.ads:71, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
+module Pump_unit__setpayment__axiom
+ use        Pump_unit__fuel_pumped
+ use        Pump_unit__curr_pump
+ use        Pump_unit__fuel_needed
+ use        Pump_unit__fuel_pumped
+ use        Pump_unit__curr_pump
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Pump_type__price__axiom
+ use        Pump__nozzle
+ use        Pump__inbasestate
+ use        Pump__inwaitingstate
+ use        Pump__balancecheck
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+ use        Pump_unit__fuel_needed
+ use        Pump_unit__fuel_pumped
+
+ val setpayment #"pump_unit.ads" 71 0 0# 
+   (curr_fuel : int) (payment : int) : unit
+  requires { ( ((Pump__inwaitingstate.inwaitingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) /\ ((Pump__balancecheck.balancecheck (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel) payment) = True) ) }
+  ensures { ( ( ( ((Pump__inbasestate.inbasestate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content curr_fuel)) = True) /\ (Pump_unit__fuel_pumped.fuel_pumped.int__content = 0) ) /\ (Pump_unit__fuel_needed.fuel_needed.int__content = 0) ) /\ ( ( (Pump_type__price__axiom.dynamic_invariant Pump_unit__fuel_needed.fuel_needed.int__content True True True) /\ (Pump_type__price__axiom.dynamic_invariant Pump_unit__fuel_pumped.fuel_pumped.int__content True True True) ) /\ (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content True True True) ) ) }
+  reads {Pump_unit__fuel_pumped.fuel_pumped, Pump_unit__curr_pump.curr_pump}
+  writes {Pump_unit__fuel_needed.fuel_needed, Pump_unit__fuel_pumped.fuel_pumped, Pump_unit__curr_pump.curr_pump}
+
+end
+
 (* Module for declaring a program function (and possibly an axiom) for "Olt" defined at system.ads:77, created in Gnat2Why.Subprograms.Generate_Subprogram_Completion *)
 module System__Olt__axiom
  use import "_gnatprove_standard".Main
@@ -5448,1234 +6029,618 @@ module System__Oeq__axiom
 
 end
 
-(* Module for checking absence of run-time errors and package initial condition on package elaboration of "pump" defined at pump.ads:3, created in Gnat2Why.Subprograms.Generate_VCs_For_Package_Elaboration *)
-module Pump__package_def
- use import "_gnatprove_standard".Main
-
- let def #"system.ads" 81 0 0# "GP_Subp:pump.ads:3" "W:diverges:N" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( "GP_Sloc:pump.adb:107:1" () )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "inbasestate" defined at pump.ads:7, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__inbasestate__subprogram_def
+(* Module for checking absence of run-time errors and package initial condition on package elaboration of "pump_unit" defined at pump_unit.ads:5, created in Gnat2Why.Subprograms.Generate_VCs_For_Package_Elaboration *)
+module Pump_unit__package_def
  use import "_gnatprove_standard".Main
  use import "int".Int
- use        "_gnatprove_standard".Boolean
- use        Pump_type__state
- use        Pump_type__nozzle_in_cradle
+ use        Pump_type__fuel_type
+ use        Pump_type__price__axiom
  use        Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+ use        Pump_unit__fuel_needed
+ use        Pump_unit__fuel_pumped
+ use        Pump_unit__three_pumps__axiom
+ use        Pump_unit__curr_pump__axiom
+ use        Pump_unit__fuel_needed__axiom
+ use        Pump_unit__fuel_pumped__axiom
  use        Pump__nozzle__axiom
- use        Pump__inbasestate__n
- use        Pump__inbasestate__n__axiom
- use        Pump__nozzle__axiom
+ use        Pump_type__fuel_type__axiom
  use        Pump_type__price__axiom
  use        Pump_type__state__axiom
  use        Pump_type__nozzle_in_cradle__axiom
  use        Pump_type__full_tank_sensor__axiom
 
- val pump__inbasestate__result #"system.ads" 81 0 0# "model" "model_trace:2979@result"  : bool__ref 
- 
- let def #"system.ads" 81 0 0# "W:diverges:N" "GP_Subp:pump.ads:7" 
+ let def #"system.ads" 81 0 0# "GP_Subp:pump_unit.ads:5" "W:diverges:N" 
    (__void_param : unit)
   requires { true }
   ensures { true }
    =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:7 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__inbasestate__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:7 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:7 *)
-  ;
-  #"pump.ads" 7 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:7 *)
-  ;
-  #"pump.ads" 7 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:7 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:5:17" ( #"pump.adb" 5 0 0# pump__inbasestate__result.bool__content <- ( (Boolean.andb(((Pump_type__state.to_rep((Pump__nozzle.rec__s((Pump__nozzle.__split_fields(Pump__inbasestate__n.n)))))) = 0)) (((Pump_type__nozzle_in_cradle.to_rep((Pump__nozzle.rec__c((Pump__nozzle.__split_fields(Pump__inbasestate__n.n)))))) = 1))) );
-   #"pump.adb" 5 0 0# raise Return__exc ) );
-   #"pump.adb" 4 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:7 *)
-  ;
-  #"pump.adb" 4 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__inbasestate__result.bool__content )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "inreadystate" defined at pump.ads:10, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__inreadystate__subprogram_def
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        "_gnatprove_standard".Boolean
- use        Pump_type__state
- use        Pump_type__nozzle_in_cradle
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__inreadystate__n
- use        Pump__inreadystate__n__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- val pump__inreadystate__result #"pump.adb" 4 0 0# "model" "model_trace:2998@result"  : bool__ref 
- 
- let def #"pump.adb" 4 0 0# "W:diverges:N" "GP_Subp:pump.ads:10" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:10 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__inreadystate__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:10 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:10 *)
-  ;
-  #"pump.ads" 10 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:10 *)
-  ;
-  #"pump.ads" 10 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:10 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:8:18" ( #"pump.adb" 8 0 0# pump__inreadystate__result.bool__content <- ( (Boolean.andb(((Pump_type__state.to_rep((Pump__nozzle.rec__s((Pump__nozzle.__split_fields(Pump__inreadystate__n.n)))))) = 1)) (((Pump_type__nozzle_in_cradle.to_rep((Pump__nozzle.rec__c((Pump__nozzle.__split_fields(Pump__inreadystate__n.n)))))) = 0))) );
-   #"pump.adb" 8 0 0# raise Return__exc ) );
-   #"pump.adb" 7 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:10 *)
-  ;
-  #"pump.adb" 7 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__inreadystate__result.bool__content )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "inpumpingstate" defined at pump.ads:13, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__inpumpingstate__subprogram_def
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        "_gnatprove_standard".Boolean
- use        Pump_type__state
- use        Pump_type__nozzle_in_cradle
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__inpumpingstate__n
- use        Pump__inpumpingstate__n__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- val pump__inpumpingstate__result #"pump.adb" 7 0 0# "model" "model_trace:3017@result"  : bool__ref 
- 
- let def #"pump.adb" 7 0 0# "W:diverges:N" "GP_Subp:pump.ads:13" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:13 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__inpumpingstate__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:13 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:13 *)
-  ;
-  #"pump.ads" 13 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:13 *)
-  ;
-  #"pump.ads" 13 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:13 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:11:20" ( #"pump.adb" 11 0 0# pump__inpumpingstate__result.bool__content <- ( (Boolean.andb(((Pump_type__state.to_rep((Pump__nozzle.rec__s((Pump__nozzle.__split_fields(Pump__inpumpingstate__n.n)))))) = 2)) (((Pump_type__nozzle_in_cradle.to_rep((Pump__nozzle.rec__c((Pump__nozzle.__split_fields(Pump__inpumpingstate__n.n)))))) = 0))) );
-   #"pump.adb" 11 0 0# raise Return__exc ) );
-   #"pump.adb" 10 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:13 *)
-  ;
-  #"pump.adb" 10 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__inpumpingstate__result.bool__content )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "inwaitingstate" defined at pump.ads:16, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__inwaitingstate__subprogram_def
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        "_gnatprove_standard".Boolean
- use        Pump_type__state
- use        Pump_type__nozzle_in_cradle
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__inwaitingstate__n
- use        Pump__inwaitingstate__n__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- val pump__inwaitingstate__result #"pump.adb" 10 0 0# "model" "model_trace:3036@result"  : bool__ref 
- 
- let def #"pump.adb" 10 0 0# "W:diverges:N" "GP_Subp:pump.ads:16" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:16 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__inwaitingstate__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:16 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:16 *)
-  ;
-  #"pump.ads" 16 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:16 *)
-  ;
-  #"pump.ads" 16 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:16 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:14:19" ( #"pump.adb" 14 0 0# pump__inwaitingstate__result.bool__content <- ( (Boolean.andb(((Pump_type__state.to_rep((Pump__nozzle.rec__s((Pump__nozzle.__split_fields(Pump__inwaitingstate__n.n)))))) = 3)) (((Pump_type__nozzle_in_cradle.to_rep((Pump__nozzle.rec__c((Pump__nozzle.__split_fields(Pump__inwaitingstate__n.n)))))) = 1))) );
-   #"pump.adb" 14 0 0# raise Return__exc ) );
-   #"pump.adb" 13 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:16 *)
-  ;
-  #"pump.adb" 13 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__inwaitingstate__result.bool__content )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "enterreadystate" defined at pump.ads:20, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__enterreadystate__subprogram_def
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        "_gnatprove_standard".Boolean
- use        Pump_type__state
- use        Pump_type__nozzle_in_cradle
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__inbasestate
- use        Pump__inbasestate__axiom
- use        Pump__inreadystate
- use        Pump__inreadystate__axiom
- use        Pump__inpumpingstate
- use        Pump__inpumpingstate__axiom
- use        Pump__inwaitingstate
- use        Pump__inwaitingstate__axiom
- use        Pump__enterreadystate__n
- use        Pump__inbasestate__axiom
- use        Pump__inreadystate__axiom
- use        Pump__inpumpingstate__axiom
- use        Pump__inwaitingstate__axiom
- use        Pump__enterreadystate__n__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- let def #"pump.adb" 13 0 0# "W:diverges:N" "GP_Subp:pump.ads:20" 
-   (__void_param : unit)
-  requires { true }
-  ensures { ( #"pump.ads" 25 0 0# "model_vc_post" "keep_on_simp" "GP_Sloc:pump.ads:25:16" "GP_Reason:VC_POSTCONDITION" "GP_Id:0" "comment:       Post => (inReadyState(n));
-               ^ pump.ads:25:16:VC_POSTCONDITION" "GP_Shape:pragargs__call_inreadystate" ( "GP_Pretty_Ada:3977" "GP_Sloc:pump.ads:25:16" ((Pump__inreadystate.inreadystate { Pump__nozzle.__split_fields = Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) ) ) }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:20 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant { Pump__nozzle.__split_fields = Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content } True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:20 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:20 *)
-  ;
-  #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Boolean.orb((Boolean.orb((Pump__inbasestate__axiom.inbasestate({ Pump__nozzle.__split_fields = Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content }))) ((Pump__inpumpingstate__axiom.inpumpingstate({ Pump__nozzle.__split_fields = Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content }))))) ((Pump__inwaitingstate__axiom.inwaitingstate({ Pump__nozzle.__split_fields = Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content })))) in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:20 *)
-  ;
-  #"pump.ads" 83 0 0# assume { ( ( ((Pump__inbasestate.inbasestate { Pump__nozzle.__split_fields = Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) \/ ((Pump__inpumpingstate.inpumpingstate { Pump__nozzle.__split_fields = Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) ) \/ ((Pump__inwaitingstate.inwaitingstate { Pump__nozzle.__split_fields = Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) ) };
-  () (* checking of pragma precondition pump.ads:20 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:18:10" (let temp___253 = (let temp___252 = { Pump__nozzle.__split_fields = Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-    ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__c((Pump__nozzle.__split_fields(temp___252)))) in (
-     ()))
-     end ;
-    { ( temp___252 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___252)) ) with Pump__nozzle.rec__c = (Pump_type__nozzle_in_cradle.of_rep 0) } } )))
+  ( #"system.ads" 81 0 0# abstract ensures {true}(let _ = #"pump_unit.ads" 9 0 0# abstract ensures {true}(let _ = (if (((if ((Pump_type__fuel_type.first <= Pump_type__fuel_type.last)) then (
+   ((Pump_type__fuel_type.last - Pump_type__fuel_type.first) + 1)) else (
+   0)) > 0)) then (
+   #"pump_unit.ads" 7 0 0# abstract ensures {true}(let _ = (let temp___261 = #"pump.ads" 83 0 0# (any Pump__nozzle.nozzle
+   requires {true} 
+   ensures {true} 
+   ) in (
+    ( (if ((Pump__nozzle.s__pred(temp___261))) then (
+     #"pump.ads" 83 0 0# abstract ensures {true}(let _ = 0 in (
+      ()))
+      end ));
+    (if ((Pump__nozzle.c__pred(temp___261))) then (
+     #"pump.ads" 83 0 0# abstract ensures {true}(let _ = 1 in (
+      ()))
+      end ));
+    (if ((Pump__nozzle.f__pred(temp___261))) then (
+     #"pump.ads" 83 0 0# abstract ensures {true}(let _ = 0 in (
+      ()))
+      end ));
+    (if ((Pump__nozzle.r__pred(temp___261))) then (
+     #"pump.ads" 83 0 0# abstract ensures {true}(let _ = 1000 in (
+      ()))
+      end ));
+    (if ((Pump__nozzle.p__pred(temp___261))) then (
+     #"pump.ads" 83 0 0# abstract ensures {true}(let _ = 0 in (
+      ()))
+      end ));
+    (if ((Pump__nozzle.cash__pred(temp___261))) then (
+     #"pump.ads" 83 0 0# abstract ensures {true}(let _ = 0 in (
+      ()))
+      end )) )))
     in (
-    #"pump.adb" 18 0 0# Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___253)) )))
-    );
-   ( "GP_Sloc:pump.adb:19:10" (let temp___255 = (let temp___254 = { Pump__nozzle.__split_fields = Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-    ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__s((Pump__nozzle.__split_fields(temp___254)))) in (
-     ()))
-     end ;
-    { ( temp___254 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___254)) ) with Pump__nozzle.rec__s = (Pump_type__state.of_rep 1) } } )))
-    in (
-    #"pump.adb" 19 0 0# Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___255)) )))
-    );
-   #"pump.adb" 16 0 0# raise Return__exc )
+    ()))
+    end )) in (
+   ()))
+   end  in (
+   ()))
+   end ;
+  #"pump_unit.ads" 9 0 0# assume { (Pump_unit__three_pumps__axiom.default_initial_assumption Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content False) };
+  #"pump_unit.ads" 7 0 0# assume { (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content False False True) };
+  #"pump_unit.ads" 10 0 0# Pump_unit__fuel_needed.fuel_needed.int__content <- ( 0 );
+  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump_unit__fuel_needed.fuel_needed.int__content True False True) };
+  #"pump_unit.ads" 11 0 0# Pump_unit__fuel_pumped.fuel_pumped.int__content <- ( 0 );
+  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump_unit__fuel_pumped.fuel_pumped.int__content True False True) };
+  ( "GP_Sloc:pump_unit.adb:61:1" () ) )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "setfuelvolume" defined at pump_unit.ads:13, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Pump_unit__setfuelvolume__subprogram_def
+ use import "_gnatprove_standard".Main
+ use import "int".Int
+ use        Pump_type__price__axiom
+ use        Pump_unit__fuel_needed
+ use        Pump_unit__setfuelvolume__f
+ use        Pump_unit__fuel_needed__axiom
+ use        Pump_unit__setfuelvolume__f__axiom
+ use        Pump_type__price__axiom
+
+ let def #"pump_type.ads" 5 0 0# "W:diverges:N" "GP_Subp:pump_unit.ads:13" 
+   (__void_param : unit)
+  requires { true }
+  ensures { true }
+   =
+  ( () (* Assume dynamic invariants of inputs of the subprogram pump_unit.ads:13 *)
+  ;
+  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump_unit__fuel_needed.fuel_needed.int__content False False True) };
+  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump_unit__setfuelvolume__f.f True False True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram pump_unit.ads:13 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram pump_unit.ads:13 *)
+  ;
+  #"pump_unit.ads" 13 0 0# abstract ensures {true}(let _ = (Pump_unit__setfuelvolume__f.f <= 200) in (
+   ()))
+   end ;
+  () (* Assume Pre of the subprogram pump_unit.ads:13 *)
+  ;
+  #"pump_unit.ads" 13 0 0# assume { (Pump_unit__setfuelvolume__f.f <= 200) };
+  () (* checking of pragma precondition pump_unit.ads:13 *)
+  ;
+  try
+   ( ( "GP_Sloc:pump_unit.adb:9:19" #"pump_unit.adb" 9 0 0# Pump_unit__fuel_needed.fuel_needed.int__content <- ( Pump_unit__setfuelvolume__f.f ) );
+   #"pump_unit.adb" 7 0 0# raise Return__exc )
   with
    Return__exc -> ()
   end;
-  () (* checking of pragma postcondition pump.ads:20 *)
+  () (* checking of pragma postcondition pump_unit.ads:13 *)
   ;
-  #"pump.adb" 16 0 0# abstract ensures {true}(let _ = (Pump__inreadystate__axiom.inreadystate({ Pump__nozzle.__split_fields = Pump__enterreadystate__n.n__split_fields.Pump__nozzle.__split_fields__content })) in (
+  #"pump_unit.adb" 7 0 0# abstract ensures {true}(let _ = True in (
    ()))
    end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "inrange" defined at pump.ads:27, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__inrange__subprogram_def
+(* Module for checking contracts and absence of run-time errors in subprogram "liftnozzle" defined at pump_unit.ads:21, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Pump_unit__liftnozzle__subprogram_def
  use import "_gnatprove_standard".Main
  use import "int".Int
  use        "_gnatprove_standard".Boolean
- use        Pump_type__price
- use        Pump_type__price__axiom
+ use        Pump_type__fuel_type__axiom
  use        Pump__nozzle
+ use        Pump__inbasestate
+ use        Pump__inbasestate__axiom
+ use        Pump__inreadystate
+ use        Pump__inreadystate__axiom
+ use        Pump__inwaitingstate
+ use        Pump__inwaitingstate__axiom
+ use        Pump__enterreadystate__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+ use        Pump_unit__liftnozzle__curr_fuel
+ use        Pump_unit__three_pumps__axiom
+ use        Pump_unit__curr_pump__axiom
+ use        Pump_unit__liftnozzle__curr_fuel__axiom
+ use        Pump__inbasestate__axiom
+ use        Pump__inreadystate__axiom
+ use        Pump__inpumpingstate__axiom
+ use        Pump__inwaitingstate__axiom
+ use        Pump__enterreadystate__axiom
  use        Pump__nozzle__axiom
- use        Pump__inrange__n
- use        Pump__inrange__v
- use        Pump__inrange__n__axiom
- use        Pump__inrange__v__axiom
- use        Pump__nozzle__axiom
+ use        Pump_type__fuel_type__axiom
  use        Pump_type__price__axiom
  use        Pump_type__state__axiom
  use        Pump_type__nozzle_in_cradle__axiom
  use        Pump_type__full_tank_sensor__axiom
 
- val pump__inrange__result #"pump.ads" 83 0 0# "model" "model_trace:3103@result"  : bool__ref 
- 
- let def #"pump.ads" 83 0 0# "W:diverges:N" "GP_Subp:pump.ads:27" 
+ let def #"pump_unit.adb" 7 0 0# "W:diverges:N" "GP_Subp:pump_unit.ads:21" 
    (__void_param : unit)
   requires { true }
-  ensures { true }
+  ensures { ( #"pump_unit.ads" 30 0 0# "model_vc_post" "keep_on_simp" "GP_Sloc:pump_unit.ads:30:15" "GP_Reason:VC_POSTCONDITION" "GP_Id:1" "comment:     Post =>  inReadyState(curr_pump(curr_fuel))
+              ^ pump_unit.ads:30:15:VC_POSTCONDITION" "GP_Shape:pragargs__call_inreadystate" ( "GP_Pretty_Ada:4668" "GP_Sloc:pump_unit.ads:30:15" ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__liftnozzle__curr_fuel.curr_fuel)) = True) ) ) }
    =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:27 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram pump_unit.ads:21 *)
   ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__inrange__n.n True False True) };
-  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump__inrange__v.v True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:27 *)
+  #"pump_unit.ads" 7 0 0# assume { (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content False False True) };
+  #"pump_type.ads" 4 0 0# assume { (Pump_type__fuel_type__axiom.dynamic_invariant Pump_unit__liftnozzle__curr_fuel.curr_fuel True False True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram pump_unit.ads:21 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:27 *)
+  () (* Check for RTE in the Pre of the subprogram pump_unit.ads:21 *)
   ;
-  #"pump.ads" 27 0 0# abstract ensures {true}(let _ = True in (
+  #"pump_unit.ads" 21 0 0# abstract ensures {true}(let _ = (Boolean.andb((Boolean.orb((Pump__inbasestate__axiom.inbasestate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__liftnozzle__curr_fuel.curr_fuel))))) ((Pump__inwaitingstate__axiom.inwaitingstate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__liftnozzle__curr_fuel.curr_fuel))))))) (( (let f = #"pump_unit.ads" 21 0 0# (any int
+  ) in (
+   (if ((Boolean.andb((0 <= f)) ((f <= 2)))) then (
+    #"pump_unit.ads" 21 0 0# abstract ensures {true}(let _ = ( (f <> Pump_unit__liftnozzle__curr_fuel.curr_fuel) && (Pump__inbasestate__axiom.inbasestate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (f)))) ) in (
+     ()))
+     end ))))
+  ;
+  #"pump_unit.ads" 28 0 0# (any bool
+  requires {true} 
+  ensures {( (result = True) <-> (forall f : int.
+   ( ( (0 <= f) /\ (f <= 2) ) -> ( (f <> Pump_unit__liftnozzle__curr_fuel.curr_fuel) /\ ((Pump__inbasestate.inbasestate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content f)) = True) ) )) )} 
+  ) ))) in (
    ()))
    end ;
-  () (* Assume Pre of the subprogram pump.ads:27 *)
+  () (* Assume Pre of the subprogram pump_unit.ads:21 *)
   ;
-  #"pump.ads" 27 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:27 *)
+  #"pump_unit.ads" 7 0 0# assume { ( ( ((Pump__inbasestate.inbasestate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__liftnozzle__curr_fuel.curr_fuel)) = True) \/ ((Pump__inwaitingstate.inwaitingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__liftnozzle__curr_fuel.curr_fuel)) = True) ) /\ (forall f : int.
+   ( ( (0 <= f) /\ (f <= 2) ) -> ( (f <> Pump_unit__liftnozzle__curr_fuel.curr_fuel) /\ ((Pump__inbasestate.inbasestate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content f)) = True) ) )) ) };
+  () (* checking of pragma precondition pump_unit.ads:21 *)
   ;
   try
-   ( ( "GP_Sloc:pump.adb:23:17" ( #"pump.adb" 23 0 0# pump__inrange__result.bool__content <- ( (Boolean.andb(((Pump_type__price.to_rep((Pump__nozzle.rec__p((Pump__nozzle.__split_fields(Pump__inrange__n.n)))))) <= 1000)) ((Pump__inrange__v.v <= 1000))) );
-   #"pump.adb" 23 0 0# raise Return__exc ) );
-   #"pump.adb" 22 0 0# raise Return__exc )
+   ( ( "GP_Sloc:pump_unit.adb:14:7" (let pump__enterreadystate__n__compl = (Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__liftnozzle__curr_fuel.curr_fuel)) in (
+    #"pump_unit.ads" 21 0 0# let pump__enterreadystate__n__fields = { Pump__nozzle.__split_fields__content = (Pump__nozzle.__split_fields(pump__enterreadystate__n__compl)) } in 
+     ( ( #"pump_unit.adb" 14 0 0# "model_vc" "keep_on_simp" "GP_Sloc:pump_unit.adb:14:7" "GP_Reason:VC_PRECONDITION" "GP_Id:0" "comment:      enterReadyState(curr_pump(curr_fuel));
+      ^ pump_unit.adb:14:7:VC_PRECONDITION" "GP_Shape:call_enterreadystate" (Pump__enterreadystate__axiom.enterreadystate(pump__enterreadystate__n__fields)) );
+     #"pump_unit.adb" 14 0 0# Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content <- ( (Array__Int__Pump__nozzle.set(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__liftnozzle__curr_fuel.curr_fuel) ({ Pump__nozzle.__split_fields = pump__enterreadystate__n__fields.Pump__nozzle.__split_fields__content })) ) )))
+    );
+   #"pump_unit.adb" 12 0 0# raise Return__exc )
   with
    Return__exc -> ()
   end;
-  () (* checking of pragma postcondition pump.ads:27 *)
+  () (* checking of pragma postcondition pump_unit.ads:21 *)
   ;
-  #"pump.adb" 22 0 0# abstract ensures {true}(let _ = True in (
+  #"pump_unit.adb" 12 0 0# abstract ensures {true}(let _ = (Pump__inreadystate__axiom.inreadystate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__liftnozzle__curr_fuel.curr_fuel)))) in (
    ()))
-   end ;
-  pump__inrange__result.bool__content )
+   end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "startpumping" defined at pump.ads:29, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__startpumping__subprogram_def
+(* Module for checking contracts and absence of run-time errors in subprogram "replacenozzle" defined at pump_unit.ads:33, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Pump_unit__replacenozzle__subprogram_def
+ use import "_gnatprove_standard".Main
+ use        Pump_type__fuel_type__axiom
+ use        Pump__nozzle
+ use        Pump__inreadystate
+ use        Pump__inreadystate__axiom
+ use        Pump__inwaitingstate
+ use        Pump__inwaitingstate__axiom
+ use        Pump__enterwaitingstate__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+ use        Pump_unit__replacenozzle__curr_fuel
+ use        Pump_unit__three_pumps__axiom
+ use        Pump_unit__curr_pump__axiom
+ use        Pump_unit__replacenozzle__curr_fuel__axiom
+ use        Pump__inreadystate__axiom
+ use        Pump__inwaitingstate__axiom
+ use        Pump__enterwaitingstate__axiom
+ use        Pump__nozzle__axiom
+ use        Pump_type__fuel_type__axiom
+ use        Pump_type__price__axiom
+ use        Pump_type__state__axiom
+ use        Pump_type__nozzle_in_cradle__axiom
+ use        Pump_type__full_tank_sensor__axiom
+
+ let def #"pump_unit.ads" 21 0 0# "W:diverges:N" "GP_Subp:pump_unit.ads:33" 
+   (__void_param : unit)
+  requires { true }
+  ensures { ( #"pump_unit.ads" 39 0 0# "model_vc_post" "keep_on_simp" "GP_Reason:VC_POSTCONDITION" "GP_Sloc:pump_unit.ads:39:15" "GP_Id:3" "comment:       Post=> inWaitingState(curr_pump(curr_fuel))
+              ^ pump_unit.ads:39:15:VC_POSTCONDITION" "GP_Shape:pragargs__call_inwaitingstate" ( "GP_Pretty_Ada:4726" "GP_Sloc:pump_unit.ads:39:15" ((Pump__inwaitingstate.inwaitingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__replacenozzle__curr_fuel.curr_fuel)) = True) ) ) }
+   =
+  ( () (* Assume dynamic invariants of inputs of the subprogram pump_unit.ads:33 *)
+  ;
+  #"pump_unit.ads" 7 0 0# assume { (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content False False True) };
+  #"pump_type.ads" 4 0 0# assume { (Pump_type__fuel_type__axiom.dynamic_invariant Pump_unit__replacenozzle__curr_fuel.curr_fuel True False True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram pump_unit.ads:33 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram pump_unit.ads:33 *)
+  ;
+  #"pump_unit.ads" 33 0 0# abstract ensures {true}(let _ = (Pump__inreadystate__axiom.inreadystate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__replacenozzle__curr_fuel.curr_fuel)))) in (
+   ()))
+   end ;
+  () (* Assume Pre of the subprogram pump_unit.ads:33 *)
+  ;
+  #"pump_unit.ads" 33 0 0# assume { ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__replacenozzle__curr_fuel.curr_fuel)) = True) };
+  () (* checking of pragma precondition pump_unit.ads:33 *)
+  ;
+  try
+   ( ( "GP_Sloc:pump_unit.adb:19:7" (let pump__enterwaitingstate__n__compl = (Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__replacenozzle__curr_fuel.curr_fuel)) in (
+    #"pump_unit.ads" 33 0 0# let pump__enterwaitingstate__n__fields = { Pump__nozzle.__split_fields__content = (Pump__nozzle.__split_fields(pump__enterwaitingstate__n__compl)) } in 
+     ( ( #"pump_unit.adb" 19 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_PRECONDITION" "GP_Sloc:pump_unit.adb:19:7" "GP_Id:2" "comment:      enterWaitingState(curr_pump(curr_fuel));
+      ^ pump_unit.adb:19:7:VC_PRECONDITION" "GP_Shape:call_enterwaitingstate" (Pump__enterwaitingstate__axiom.enterwaitingstate(pump__enterwaitingstate__n__fields)) );
+     #"pump_unit.adb" 19 0 0# Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content <- ( (Array__Int__Pump__nozzle.set(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__replacenozzle__curr_fuel.curr_fuel) ({ Pump__nozzle.__split_fields = pump__enterwaitingstate__n__fields.Pump__nozzle.__split_fields__content })) ) )))
+    );
+   #"pump_unit.adb" 17 0 0# raise Return__exc )
+  with
+   Return__exc -> ()
+  end;
+  () (* checking of pragma postcondition pump_unit.ads:33 *)
+  ;
+  #"pump_unit.adb" 17 0 0# abstract ensures {true}(let _ = (Pump__inwaitingstate__axiom.inwaitingstate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__replacenozzle__curr_fuel.curr_fuel)))) in (
+   ()))
+   end  )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "requestpumping" defined at pump_unit.ads:42, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Pump_unit__requestpumping__subprogram_def
  use import "_gnatprove_standard".Main
  use import "int".Int
  use        "_gnatprove_standard".Boolean
+ use        Pump_type__fuel_type__axiom
  use        Pump_type__price
  use        Pump_type__price__axiom
- use        Pump_type__state
- use        Pump_type__full_tank_sensor
  use        Pump__nozzle
- use        Pump__nozzle__axiom
  use        Pump__inreadystate
  use        Pump__inreadystate__axiom
  use        Pump__inpumpingstate
  use        Pump__inpumpingstate__axiom
+ use        Pump__enterreadystate__axiom
  use        Pump__inrange
  use        Pump__inrange__axiom
- use        Pump__startpumping__n
- use        Pump__startpumping__v
+ use        Pump__startpumping__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+ use        Pump_unit__fuel_needed
+ use        Pump_unit__fuel_pumped
+ use        Pump_unit__requestpumping__curr_fuel
+ use        Pump_unit__requestpumping__f
+ use        Pump_unit__requestpumping__fuel_to_be_pumped
+ use        Pump_unit__requestpumping__fuel_to_be_pumped__axiom
+ use        Pump_unit__three_pumps__axiom
+ use        Pump_unit__curr_pump__axiom
+ use        Pump_unit__fuel_needed__axiom
+ use        Pump_unit__fuel_pumped__axiom
+ use        Pump_unit__requestpumping__curr_fuel__axiom
+ use        Pump_unit__requestpumping__f__axiom
+ use        Pump__inbasestate__axiom
  use        Pump__inreadystate__axiom
  use        Pump__inpumpingstate__axiom
+ use        Pump__inwaitingstate__axiom
+ use        Pump__enterreadystate__axiom
  use        Pump__inrange__axiom
- use        Pump__startpumping__n__axiom
- use        Pump__startpumping__v__axiom
+ use        Pump__startpumping__axiom
  use        Pump__nozzle__axiom
+ use        Pump_type__fuel_type__axiom
  use        Pump_type__price__axiom
  use        Pump_type__state__axiom
  use        Pump_type__nozzle_in_cradle__axiom
  use        Pump_type__full_tank_sensor__axiom
 
- let def #"pump.adb" 22 0 0# "W:diverges:N" "GP_Subp:pump.ads:29" 
+ let def #"pump_unit.ads" 33 0 0# "W:diverges:N" "GP_Subp:pump_unit.ads:42" 
    (__void_param : unit)
   requires { true }
-  ensures { ( #"pump.ads" 35 0 0# "model_vc_post" "keep_on_simp" "GP_Reason:VC_POSTCONDITION" "GP_Sloc:pump.ads:35:16" "GP_Id:4" "comment:       Post => (inPumpingState(n) and v<=v'Old)
-               ^ pump.ads:35:16:VC_POSTCONDITION" "GP_Shape:pragargs__and" ( ( "GP_Pretty_Ada:3193" "GP_Sloc:pump.ads:35:17" ((Pump__inpumpingstate.inpumpingstate { Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) ) /\ ( "GP_Pretty_Ada:3197" "GP_Sloc:pump.ads:35:39" (Pump__startpumping__v.v.int__content <= (old Pump__startpumping__v.v.int__content )) ) ) ) }
+  ensures { ( #"pump_unit.ads" 51 0 0# "model_vc_post" "keep_on_simp" "GP_Reason:VC_POSTCONDITION" "GP_Sloc:pump_unit.ads:51:14" "GP_Id:8" "comment:     Post => (inPumpingState(curr_pump(curr_fuel)) or inReadyState(curr_pump(curr_fuel)))
+             ^ pump_unit.ads:51:14:VC_POSTCONDITION" "GP_Shape:pragargs__or" ( "GP_Pretty_Ada:4829" "GP_Sloc:pump_unit.ads:51:14" ( ((Pump__inpumpingstate.inpumpingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__requestpumping__curr_fuel.curr_fuel)) = True) \/ ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__requestpumping__curr_fuel.curr_fuel)) = True) ) ) ) }
    =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:29 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram pump_unit.ads:42 *)
   ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant { Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content } True False True) };
-  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump__startpumping__v.v.int__content True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:29 *)
+  #"pump_unit.ads" 7 0 0# assume { (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content False False True) };
+  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump_unit__fuel_needed.fuel_needed.int__content False False True) };
+  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump_unit__fuel_pumped.fuel_pumped.int__content False False True) };
+  #"pump_type.ads" 4 0 0# assume { (Pump_type__fuel_type__axiom.dynamic_invariant Pump_unit__requestpumping__curr_fuel.curr_fuel True False True) };
+  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump_unit__requestpumping__f.f True False True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram pump_unit.ads:42 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:29 *)
+  () (* Check for RTE in the Pre of the subprogram pump_unit.ads:42 *)
   ;
-  #"pump_type.ads" 5 0 0# abstract ensures {true}(let _ = (Boolean.andb((Boolean.orb((Pump__inreadystate__axiom.inreadystate({ Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content }))) ((Pump__inpumpingstate__axiom.inpumpingstate({ Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content }))))) ((Pump__inrange__axiom.inrange({ Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content }) (Pump__startpumping__v.v.int__content)))) in (
+  #"pump_unit.ads" 42 0 0# abstract ensures {true}(let _ = (Boolean.andb((Boolean.andb((Boolean.andb((Boolean.orb((Pump__inreadystate__axiom.inreadystate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requestpumping__curr_fuel.curr_fuel))))) ((Pump__inpumpingstate__axiom.inpumpingstate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requestpumping__curr_fuel.curr_fuel))))))) ((Pump_unit__requestpumping__f.f <= 100)))) ((Pump_unit__fuel_pumped.fuel_pumped.int__content <= 200)))) ((Boolean.orb((Pump_unit__fuel_needed.fuel_needed.int__content = 0)) ((Pump_unit__fuel_needed.fuel_needed.int__content > Pump_unit__fuel_pumped.fuel_pumped.int__content))))) in (
    ()))
    end ;
-  () (* Assume Pre of the subprogram pump.ads:29 *)
+  () (* Assume Pre of the subprogram pump_unit.ads:42 *)
   ;
-  #"pump_type.ads" 5 0 0# assume { ( ( ((Pump__inreadystate.inreadystate { Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) \/ ((Pump__inpumpingstate.inpumpingstate { Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) ) /\ ((Pump__inrange.inrange { Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content } Pump__startpumping__v.v.int__content) = True) ) };
-  #"pump_type.ads" 5 0 0# abstract ensures {true}(let _ = Pump__startpumping__v.v.int__content in (
-   ()))
-   end ;
-  (let temp___266 = #"pump.ads" 29 0 0# (any int
-  ensures {(result = Pump__startpumping__v.v.int__content)} 
-  ) in (
-   ( () (* checking of pragma precondition pump.ads:29 *)
-   ;
-   try
-    ( ( "GP_Sloc:pump.adb:27:10" (let temp___257 = (let temp___256 = { Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-     ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__s((Pump__nozzle.__split_fields(temp___256)))) in (
-      ()))
-      end ;
-     { ( temp___256 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___256)) ) with Pump__nozzle.rec__s = (Pump_type__state.of_rep 2) } } )))
-     in (
-     #"pump.adb" 27 0 0# Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___257)) )))
-     );
-    ( "GP_Sloc:pump.adb:28:7" (if ((Boolean.of_int((Pump_type__full_tank_sensor.to_rep((Pump__nozzle.rec__f((Pump__nozzle.__split_fields({ Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content }))))))))) then (
-     ( "GP_Sloc:pump.adb:30:11" #"pump.adb" 30 0 0# Pump__startpumping__v.v.int__content <- ( 0 ) )) else (
-     ( "GP_Sloc:pump.adb:32:10" (if ((Pump__startpumping__v.v.int__content > (Pump_type__price.to_rep((Pump__nozzle.rec__r((Pump__nozzle.__split_fields({ Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content })))))))) then (
-      ( ( "GP_Sloc:pump.adb:34:14" #"pump.adb" 34 0 0# Pump__startpumping__v.v.int__content <- ( (Pump_type__price.to_rep((Pump__nozzle.rec__r((Pump__nozzle.__split_fields({ Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content })))))) ) );
-      ( "GP_Sloc:pump.adb:35:16" (let temp___263 = (let temp___262 = { Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-       ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__r((Pump__nozzle.__split_fields(temp___262)))) in (
-        ()))
-        end ;
-       { ( temp___262 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___262)) ) with Pump__nozzle.rec__r = (Pump_type__price.of_rep 0) } } )))
-       in (
-       #"pump.adb" 35 0 0# Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___263)) )))
-       );
-      ( "GP_Sloc:pump.adb:36:16" (let temp___265 = (let temp___264 = { Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-       ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__p((Pump__nozzle.__split_fields(temp___264)))) in (
-        ()))
-        end ;
-       { ( temp___264 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___264)) ) with Pump__nozzle.rec__p = (Pump_type__price.of_rep ( #"pump.adb" 36 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_RANGE_CHECK" "GP_Shape:if__if__n_assign__add" "GP_Sloc:pump.adb:36:21" "GP_Id:3" "comment:            n.P:=n.P+v;
-                    ^ pump.adb:36:21:VC_RANGE_CHECK" (Pump_type__price.range_check_(((Pump_type__price.to_rep((Pump__nozzle.rec__p((Pump__nozzle.__split_fields({ Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content })))))) + Pump__startpumping__v.v.int__content))) )) } } )))
-       in (
-       #"pump.adb" 36 0 0# Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___265)) )))
-       ) )) else (
-      ( ( "GP_Sloc:pump.adb:39:16" (let temp___259 = (let temp___258 = { Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-       ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__r((Pump__nozzle.__split_fields(temp___258)))) in (
-        ()))
-        end ;
-       { ( temp___258 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___258)) ) with Pump__nozzle.rec__r = (Pump_type__price.of_rep ( #"pump.adb" 39 0 0# "model_vc" "keep_on_simp" "GP_Sloc:pump.adb:39:21" "GP_Reason:VC_RANGE_CHECK" "GP_Id:1" "comment:            n.R:=n.R-v;
-                    ^ pump.adb:39:21:VC_RANGE_CHECK" "GP_Shape:if__if__n_assign__sub" (Pump_type__price.range_check_(((Pump_type__price.to_rep((Pump__nozzle.rec__r((Pump__nozzle.__split_fields({ Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content })))))) - Pump__startpumping__v.v.int__content))) )) } } )))
-       in (
-       #"pump.adb" 39 0 0# Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___259)) )))
-       );
-      ( "GP_Sloc:pump.adb:40:16" (let temp___261 = (let temp___260 = { Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-       ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__p((Pump__nozzle.__split_fields(temp___260)))) in (
-        ()))
-        end ;
-       { ( temp___260 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___260)) ) with Pump__nozzle.rec__p = (Pump_type__price.of_rep ( #"pump.adb" 40 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_RANGE_CHECK" "GP_Sloc:pump.adb:40:21" "GP_Id:2" "comment:            n.P:=n.P+v;
-                    ^ pump.adb:40:21:VC_RANGE_CHECK" "GP_Shape:if__if__n_assign__add" (Pump_type__price.range_check_(((Pump_type__price.to_rep((Pump__nozzle.rec__p((Pump__nozzle.__split_fields({ Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content })))))) + Pump__startpumping__v.v.int__content))) )) } } )))
-       in (
-       #"pump.adb" 40 0 0# Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___261)) )))
-       ) ))) ))) );
-    #"pump.adb" 25 0 0# raise Return__exc )
-   with
-    Return__exc -> ()
-   end;
-   () (* checking of pragma postcondition pump.ads:29 *)
-   ;
-   #"pump.adb" 25 0 0# abstract ensures {true}(let _ = (Boolean.andb((Pump__inpumpingstate__axiom.inpumpingstate({ Pump__nozzle.__split_fields = Pump__startpumping__n.n__split_fields.Pump__nozzle.__split_fields__content }))) ((Pump__startpumping__v.v.int__content <= temp___266))) in (
-    ()))
-    end  )))
-   )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "enterwaitingstate" defined at pump.ads:38, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__enterwaitingstate__subprogram_def
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        Pump_type__state
- use        Pump_type__nozzle_in_cradle
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__inreadystate
- use        Pump__inreadystate__axiom
- use        Pump__inwaitingstate
- use        Pump__inwaitingstate__axiom
- use        Pump__enterwaitingstate__n
- use        Pump__inreadystate__axiom
- use        Pump__inwaitingstate__axiom
- use        Pump__enterwaitingstate__n__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- let def #"pump.ads" 29 0 0# "W:diverges:N" "GP_Subp:pump.ads:38" 
-   (__void_param : unit)
-  requires { true }
-  ensures { ( #"pump.ads" 43 0 0# "model_vc_post" "keep_on_simp" "GP_Reason:VC_POSTCONDITION" "GP_Sloc:pump.ads:43:14" "GP_Id:5" "comment:     Post => (inWaitingState(n));
-             ^ pump.ads:43:14:VC_POSTCONDITION" "GP_Shape:pragargs__call_inwaitingstate" ( "GP_Pretty_Ada:4097" "GP_Sloc:pump.ads:43:14" ((Pump__inwaitingstate.inwaitingstate { Pump__nozzle.__split_fields = Pump__enterwaitingstate__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) ) ) }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:38 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant { Pump__nozzle.__split_fields = Pump__enterwaitingstate__n.n__split_fields.Pump__nozzle.__split_fields__content } True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:38 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:38 *)
-  ;
-  #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__inreadystate__axiom.inreadystate({ Pump__nozzle.__split_fields = Pump__enterwaitingstate__n.n__split_fields.Pump__nozzle.__split_fields__content })) in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:38 *)
-  ;
-  #"pump.ads" 83 0 0# assume { ((Pump__inreadystate.inreadystate { Pump__nozzle.__split_fields = Pump__enterwaitingstate__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) };
-  () (* checking of pragma precondition pump.ads:38 *)
+  #"pump_type.ads" 5 0 0# assume { ( ( ( ( ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__requestpumping__curr_fuel.curr_fuel)) = True) \/ ((Pump__inpumpingstate.inpumpingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__requestpumping__curr_fuel.curr_fuel)) = True) ) /\ (Pump_unit__requestpumping__f.f <= 100) ) /\ (Pump_unit__fuel_pumped.fuel_pumped.int__content <= 200) ) /\ ( (Pump_unit__fuel_needed.fuel_needed.int__content = 0) \/ (Pump_unit__fuel_needed.fuel_needed.int__content > Pump_unit__fuel_pumped.fuel_pumped.int__content) ) ) };
+  () (* checking of pragma precondition pump_unit.ads:42 *)
   ;
   try
-   ( ( "GP_Sloc:pump.adb:47:10" (let temp___268 = (let temp___267 = { Pump__nozzle.__split_fields = Pump__enterwaitingstate__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-    ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__c((Pump__nozzle.__split_fields(temp___267)))) in (
-     ()))
-     end ;
-    { ( temp___267 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___267)) ) with Pump__nozzle.rec__c = (Pump_type__nozzle_in_cradle.of_rep 1) } } )))
-    in (
-    #"pump.adb" 47 0 0# Pump__enterwaitingstate__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___268)) )))
+   ( #"pump_unit.adb" 24 0 0# Pump_unit__requestpumping__fuel_to_be_pumped.fuel_to_be_pumped.int__content <- ( Pump_unit__requestpumping__f.f );
+   #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump_unit__requestpumping__fuel_to_be_pumped.fuel_to_be_pumped.int__content True False True) };
+   ( "GP_Sloc:pump_unit.adb:27:7" (if ((Boolean.andb((Pump_unit__fuel_needed.fuel_needed.int__content <> 0)) ((Pump_unit__requestpumping__fuel_to_be_pumped.fuel_to_be_pumped.int__content > (Pump_unit__fuel_needed.fuel_needed.int__content - Pump_unit__fuel_pumped.fuel_pumped.int__content))))) then (
+    ( "GP_Sloc:pump_unit.adb:28:27" #"pump_unit.adb" 28 0 0# Pump_unit__requestpumping__fuel_to_be_pumped.fuel_to_be_pumped.int__content <- ( ( #"pump_unit.adb" 28 0 0# "model_vc" "keep_on_simp" "GP_Sloc:pump_unit.adb:28:40" "GP_Reason:VC_RANGE_CHECK" "GP_Id:4" "comment:         fuel_to_be_pumped:=fuel_needed-fuel_pumped;
+                                       ^ pump_unit.adb:28:40:VC_RANGE_CHECK" "GP_Shape:if__fuel_to_be_pumped_assign__sub" (Pump_type__price.range_check_((Pump_unit__fuel_needed.fuel_needed.int__content - Pump_unit__fuel_pumped.fuel_pumped.int__content))) ) ) )) else (
+    ())) );
+   ( "GP_Sloc:pump_unit.adb:31:7" ( #"pump_type.ads" 5 0 0# abstract ensures {true}(let _ = (Pump__inrange__axiom.inrange((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requestpumping__curr_fuel.curr_fuel))) (Pump_unit__requestpumping__fuel_to_be_pumped.fuel_to_be_pumped.int__content)) in (
+    ()))
+    end ;
+   #"pump_type.ads" 5 0 0# assume { ( "GP_Pretty_Ada:2458" "GP_Sloc:pump_unit.adb:31:22" ((Pump__inrange.inrange (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__requestpumping__curr_fuel.curr_fuel) Pump_unit__requestpumping__fuel_to_be_pumped.fuel_to_be_pumped.int__content) = True) ) } ) );
+   ( "GP_Sloc:pump_unit.adb:32:7" (let pump__startpumping__n__compl = (Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requestpumping__curr_fuel.curr_fuel)) in (
+    #"pump_unit.ads" 42 0 0# let pump__startpumping__n__fields = { Pump__nozzle.__split_fields__content = (Pump__nozzle.__split_fields(pump__startpumping__n__compl)) } in 
+     ( ( #"pump_unit.adb" 32 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_PRECONDITION" "GP_Sloc:pump_unit.adb:32:7" "GP_Id:5" "comment:      startPumping(curr_pump(curr_fuel), fuel_to_be_pumped);
+      ^ pump_unit.adb:32:7:VC_PRECONDITION" "GP_Shape:call_startpumping" (Pump__startpumping__axiom.startpumping(pump__startpumping__n__fields) (Pump_unit__requestpumping__fuel_to_be_pumped.fuel_to_be_pumped)) );
+     #"pump_unit.adb" 32 0 0# Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content <- ( (Array__Int__Pump__nozzle.set(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requestpumping__curr_fuel.curr_fuel) ({ Pump__nozzle.__split_fields = pump__startpumping__n__fields.Pump__nozzle.__split_fields__content })) ) )))
     );
-   ( "GP_Sloc:pump.adb:48:10" (let temp___270 = (let temp___269 = { Pump__nozzle.__split_fields = Pump__enterwaitingstate__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-    ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__s((Pump__nozzle.__split_fields(temp___269)))) in (
-     ()))
-     end ;
-    { ( temp___269 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___269)) ) with Pump__nozzle.rec__s = (Pump_type__state.of_rep 3) } } )))
-    in (
-    #"pump.adb" 48 0 0# Pump__enterwaitingstate__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___270)) )))
-    );
-   #"pump.adb" 45 0 0# raise Return__exc )
+   ( "GP_Sloc:pump_unit.adb:34:7" (if ((Pump_unit__requestpumping__fuel_to_be_pumped.fuel_to_be_pumped.int__content > 0)) then (
+    ( "GP_Sloc:pump_unit.adb:35:21" #"pump_unit.adb" 35 0 0# Pump_unit__fuel_pumped.fuel_pumped.int__content <- ( ( #"pump_unit.adb" 35 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_RANGE_CHECK" "GP_Sloc:pump_unit.adb:35:36" "GP_Id:7" "comment:        fuel_pumped := fuel_pumped + fuel_to_be_pumped;
+                                   ^ pump_unit.adb:35:36:VC_RANGE_CHECK" "GP_Shape:if__fuel_pumped_assign__add" (Pump_type__price.range_check_((Pump_unit__fuel_pumped.fuel_pumped.int__content + Pump_unit__requestpumping__fuel_to_be_pumped.fuel_to_be_pumped.int__content))) ) ) )) else (
+    ( "GP_Sloc:pump_unit.adb:38:10" (let pump__enterreadystate__n__compl = (Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requestpumping__curr_fuel.curr_fuel)) in (
+     #"pump_unit.ads" 42 0 0# let pump__enterreadystate__n__fields = { Pump__nozzle.__split_fields__content = (Pump__nozzle.__split_fields(pump__enterreadystate__n__compl)) } in 
+      ( ( #"pump_unit.adb" 38 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_PRECONDITION" "GP_Sloc:pump_unit.adb:38:10" "GP_Id:6" "comment:         enterReadyState(curr_pump(curr_fuel));
+         ^ pump_unit.adb:38:10:VC_PRECONDITION" "GP_Shape:if__call_enterreadystate" (Pump__enterreadystate__axiom.enterreadystate(pump__enterreadystate__n__fields)) );
+      #"pump_unit.adb" 38 0 0# Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content <- ( (Array__Int__Pump__nozzle.set(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requestpumping__curr_fuel.curr_fuel) ({ Pump__nozzle.__split_fields = pump__enterreadystate__n__fields.Pump__nozzle.__split_fields__content })) ) )))
+     ))) );
+   #"pump_unit.adb" 22 0 0# raise Return__exc )
   with
    Return__exc -> ()
   end;
-  () (* checking of pragma postcondition pump.ads:38 *)
+  () (* checking of pragma postcondition pump_unit.ads:42 *)
   ;
-  #"pump.adb" 45 0 0# abstract ensures {true}(let _ = (Pump__inwaitingstate__axiom.inwaitingstate({ Pump__nozzle.__split_fields = Pump__enterwaitingstate__n.n__split_fields.Pump__nozzle.__split_fields__content })) in (
+  #"pump_unit.adb" 22 0 0# abstract ensures {true}(let _ = (Boolean.orb((Pump__inpumpingstate__axiom.inpumpingstate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requestpumping__curr_fuel.curr_fuel))))) ((Pump__inreadystate__axiom.inreadystate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requestpumping__curr_fuel.curr_fuel)))))) in (
    ()))
    end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "nounpaid" defined at pump.ads:59, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__nounpaid__subprogram_def
+(* Module for checking contracts and absence of run-time errors in subprogram "requeststoppumping" defined at pump_unit.ads:54, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Pump_unit__requeststoppumping__subprogram_def
  use import "_gnatprove_standard".Main
- use import "int".Int
- use        Pump_type__price
+ use        Pump_type__fuel_type__axiom
  use        Pump__nozzle
+ use        Pump__inreadystate
+ use        Pump__inreadystate__axiom
+ use        Pump__inpumpingstate
+ use        Pump__inpumpingstate__axiom
+ use        Pump__enterreadystate__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+ use        Pump_unit__requeststoppumping__curr_fuel
+ use        Pump_unit__three_pumps__axiom
+ use        Pump_unit__curr_pump__axiom
+ use        Pump_unit__requeststoppumping__curr_fuel__axiom
+ use        Pump__inbasestate__axiom
+ use        Pump__inreadystate__axiom
+ use        Pump__inpumpingstate__axiom
+ use        Pump__inwaitingstate__axiom
+ use        Pump__enterreadystate__axiom
  use        Pump__nozzle__axiom
- use        Pump__nounpaid__n
- use        Pump__nounpaid__n__axiom
- use        Pump__nozzle__axiom
+ use        Pump_type__fuel_type__axiom
  use        Pump_type__price__axiom
  use        Pump_type__state__axiom
  use        Pump_type__nozzle_in_cradle__axiom
  use        Pump_type__full_tank_sensor__axiom
 
- val pump__nounpaid__result #"pump.ads" 83 0 0# "model" "model_trace:3352@result"  : bool__ref 
- 
- let def #"pump.ads" 83 0 0# "W:diverges:N" "GP_Subp:pump.ads:59" 
+ let def #"pump_unit.ads" 42 0 0# "W:diverges:N" "GP_Subp:pump_unit.ads:54" 
+   (__void_param : unit)
+  requires { true }
+  ensures { ( #"pump_unit.ads" 59 0 0# "model_vc_post" "keep_on_simp" "GP_Reason:VC_POSTCONDITION" "GP_Shape:pragargs__call_inreadystate" "GP_Sloc:pump_unit.ads:59:15" "GP_Id:10" "comment:       Post=> inReadyState(curr_pump(curr_fuel))
+              ^ pump_unit.ads:59:15:VC_POSTCONDITION" ( "GP_Pretty_Ada:4887" "GP_Sloc:pump_unit.ads:59:15" ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__requeststoppumping__curr_fuel.curr_fuel)) = True) ) ) }
+   =
+  ( () (* Assume dynamic invariants of inputs of the subprogram pump_unit.ads:54 *)
+  ;
+  #"pump_unit.ads" 7 0 0# assume { (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content False False True) };
+  #"pump_type.ads" 4 0 0# assume { (Pump_type__fuel_type__axiom.dynamic_invariant Pump_unit__requeststoppumping__curr_fuel.curr_fuel True False True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram pump_unit.ads:54 *)
+  ;
+  () (* Check for RTE in the Pre of the subprogram pump_unit.ads:54 *)
+  ;
+  #"pump_unit.ads" 54 0 0# abstract ensures {true}(let _ = (Pump__inpumpingstate__axiom.inpumpingstate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requeststoppumping__curr_fuel.curr_fuel)))) in (
+   ()))
+   end ;
+  () (* Assume Pre of the subprogram pump_unit.ads:54 *)
+  ;
+  #"pump_unit.ads" 54 0 0# assume { ((Pump__inpumpingstate.inpumpingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__requeststoppumping__curr_fuel.curr_fuel)) = True) };
+  () (* checking of pragma precondition pump_unit.ads:54 *)
+  ;
+  try
+   ( ( "GP_Sloc:pump_unit.adb:45:7" (let pump__enterreadystate__n__compl = (Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requeststoppumping__curr_fuel.curr_fuel)) in (
+    #"pump_unit.ads" 54 0 0# let pump__enterreadystate__n__fields = { Pump__nozzle.__split_fields__content = (Pump__nozzle.__split_fields(pump__enterreadystate__n__compl)) } in 
+     ( ( #"pump_unit.adb" 45 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_PRECONDITION" "GP_Shape:call_enterreadystate" "GP_Sloc:pump_unit.adb:45:7" "GP_Id:9" "comment:      enterReadyState(curr_pump(curr_fuel));
+      ^ pump_unit.adb:45:7:VC_PRECONDITION" (Pump__enterreadystate__axiom.enterreadystate(pump__enterreadystate__n__fields)) );
+     #"pump_unit.adb" 45 0 0# Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content <- ( (Array__Int__Pump__nozzle.set(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requeststoppumping__curr_fuel.curr_fuel) ({ Pump__nozzle.__split_fields = pump__enterreadystate__n__fields.Pump__nozzle.__split_fields__content })) ) )))
+    );
+   #"pump_unit.adb" 43 0 0# raise Return__exc )
+  with
+   Return__exc -> ()
+  end;
+  () (* checking of pragma postcondition pump_unit.ads:54 *)
+  ;
+  #"pump_unit.adb" 43 0 0# abstract ensures {true}(let _ = (Pump__inreadystate__axiom.inreadystate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__requeststoppumping__curr_fuel.curr_fuel)))) in (
+   ()))
+   end  )
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "tanksensorinput" defined at pump_unit.ads:63, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Pump_unit__tanksensorinput__subprogram_def
+ use import "_gnatprove_standard".Main
+ use        "_gnatprove_standard".Boolean
+ use        Pump_type__fuel_type__axiom
+ use        Pump__nozzle
+ use        Pump__inreadystate
+ use        Pump__inreadystate__axiom
+ use        Pump__inpumpingstate
+ use        Pump__inpumpingstate__axiom
+ use        Pump__registertanksensor__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+ use        Pump_unit__tanksensorinput__curr_fuel
+ use        Pump_unit__tanksensorinput__signal
+ use        Pump_unit__three_pumps__axiom
+ use        Pump_unit__curr_pump__axiom
+ use        Pump_unit__tanksensorinput__curr_fuel__axiom
+ use        Pump_unit__tanksensorinput__signal__axiom
+ use        Pump__inreadystate__axiom
+ use        Pump__inpumpingstate__axiom
+ use        Pump__registertanksensor__axiom
+ use        Pump__nozzle__axiom
+ use        Pump_type__fuel_type__axiom
+ use        Pump_type__price__axiom
+ use        Pump_type__state__axiom
+ use        Pump_type__nozzle_in_cradle__axiom
+ use        Pump_type__full_tank_sensor__axiom
+
+ let def #"pump_unit.ads" 54 0 0# "W:diverges:N" "GP_Subp:pump_unit.ads:63" 
    (__void_param : unit)
   requires { true }
   ensures { true }
    =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:59 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram pump_unit.ads:63 *)
   ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__nounpaid__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:59 *)
+  #"pump_unit.ads" 7 0 0# assume { (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content False False True) };
+  #"pump_type.ads" 4 0 0# assume { (Pump_type__fuel_type__axiom.dynamic_invariant Pump_unit__tanksensorinput__curr_fuel.curr_fuel True False True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram pump_unit.ads:63 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:59 *)
+  () (* Check for RTE in the Pre of the subprogram pump_unit.ads:63 *)
   ;
-  #"pump.ads" 59 0 0# abstract ensures {true}(let _ = True in (
+  #"pump_unit.ads" 63 0 0# abstract ensures {true}(let _ = (Boolean.orb((Pump__inpumpingstate__axiom.inpumpingstate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__tanksensorinput__curr_fuel.curr_fuel))))) ((Pump__inreadystate__axiom.inreadystate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__tanksensorinput__curr_fuel.curr_fuel)))))) in (
    ()))
    end ;
-  () (* Assume Pre of the subprogram pump.ads:59 *)
+  () (* Assume Pre of the subprogram pump_unit.ads:63 *)
   ;
-  #"pump.ads" 59 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:59 *)
+  #"pump_unit.ads" 63 0 0# assume { ( ((Pump__inpumpingstate.inpumpingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__tanksensorinput__curr_fuel.curr_fuel)) = True) \/ ((Pump__inreadystate.inreadystate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__tanksensorinput__curr_fuel.curr_fuel)) = True) ) };
+  () (* checking of pragma precondition pump_unit.ads:63 *)
   ;
   try
-   ( ( "GP_Sloc:pump.adb:69:11" ( #"pump.adb" 69 0 0# pump__nounpaid__result.bool__content <- ( ((Pump_type__price.to_rep((Pump__nozzle.rec__p((Pump__nozzle.__split_fields(Pump__nounpaid__n.n)))))) = 0) );
-   #"pump.adb" 69 0 0# raise Return__exc ) );
-   #"pump.adb" 68 0 0# raise Return__exc )
+   ( ( "GP_Sloc:pump_unit.adb:50:7" (let pump__registertanksensor__n__compl = (Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__tanksensorinput__curr_fuel.curr_fuel)) in (
+    #"pump_unit.ads" 63 0 0# let pump__registertanksensor__n__fields = { Pump__nozzle.__split_fields__content = (Pump__nozzle.__split_fields(pump__registertanksensor__n__compl)) } in 
+     ( (Pump__registertanksensor__axiom.registertanksensor(pump__registertanksensor__n__fields) (Pump_unit__tanksensorinput__signal.signal));
+     #"pump_unit.adb" 50 0 0# Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content <- ( (Array__Int__Pump__nozzle.set(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__tanksensorinput__curr_fuel.curr_fuel) ({ Pump__nozzle.__split_fields = pump__registertanksensor__n__fields.Pump__nozzle.__split_fields__content })) ) )))
+    );
+   #"pump_unit.adb" 48 0 0# raise Return__exc )
   with
    Return__exc -> ()
   end;
-  () (* checking of pragma postcondition pump.ads:59 *)
+  () (* checking of pragma postcondition pump_unit.ads:63 *)
   ;
-  #"pump.adb" 68 0 0# abstract ensures {true}(let _ = True in (
+  #"pump_unit.adb" 48 0 0# abstract ensures {true}(let _ = True in (
    ()))
-   end ;
-  pump__nounpaid__result.bool__content )
+   end  )
 end
 
-(* Module for checking contracts and absence of run-time errors in subprogram "enterbasestate" defined at pump.ads:45, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__enterbasestate__subprogram_def
+(* Module for checking contracts and absence of run-time errors in subprogram "setpayment" defined at pump_unit.ads:71, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Pump_unit__setpayment__subprogram_def
  use import "_gnatprove_standard".Main
  use import "int".Int
  use        "_gnatprove_standard".Boolean
- use        Pump_type__state
+ use        Pump_type__fuel_type__axiom
+ use        Pump_type__price__axiom
  use        Pump__nozzle
- use        Pump__nozzle__axiom
  use        Pump__inbasestate
  use        Pump__inbasestate__axiom
  use        Pump__inwaitingstate
  use        Pump__inwaitingstate__axiom
- use        Pump__enterbasestate__n
- use        Pump__nounpaid
- use        Pump__nounpaid__axiom
- use        Pump__inbasestate__axiom
- use        Pump__inwaitingstate__axiom
- use        Pump__enterbasestate__n__axiom
- use        Pump__nounpaid__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- let def #"pump.adb" 68 0 0# "W:diverges:N" "GP_Subp:pump.ads:45" 
-   (__void_param : unit)
-  requires { true }
-  ensures { ( #"pump.ads" 50 0 0# "model_vc_post" "keep_on_simp" "GP_Reason:VC_POSTCONDITION" "GP_Sloc:pump.ads:50:14" "GP_Id:6" "comment:     Post => (inBaseState(n));
-             ^ pump.ads:50:14:VC_POSTCONDITION" "GP_Shape:pragargs__call_inbasestate" ( "GP_Pretty_Ada:4152" "GP_Sloc:pump.ads:50:14" ((Pump__inbasestate.inbasestate { Pump__nozzle.__split_fields = Pump__enterbasestate__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) ) ) }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:45 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant { Pump__nozzle.__split_fields = Pump__enterbasestate__n.n__split_fields.Pump__nozzle.__split_fields__content } True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:45 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:45 *)
-  ;
-  #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Boolean.andb((Pump__inwaitingstate__axiom.inwaitingstate({ Pump__nozzle.__split_fields = Pump__enterbasestate__n.n__split_fields.Pump__nozzle.__split_fields__content }))) ((Pump__nounpaid__axiom.nounpaid({ Pump__nozzle.__split_fields = Pump__enterbasestate__n.n__split_fields.Pump__nozzle.__split_fields__content })))) in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:45 *)
-  ;
-  #"pump.ads" 83 0 0# assume { ( ((Pump__inwaitingstate.inwaitingstate { Pump__nozzle.__split_fields = Pump__enterbasestate__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) /\ ((Pump__nounpaid.nounpaid { Pump__nozzle.__split_fields = Pump__enterbasestate__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) ) };
-  () (* checking of pragma precondition pump.ads:45 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:53:10" (let temp___272 = (let temp___271 = { Pump__nozzle.__split_fields = Pump__enterbasestate__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-    ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__s((Pump__nozzle.__split_fields(temp___271)))) in (
-     ()))
-     end ;
-    { ( temp___271 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___271)) ) with Pump__nozzle.rec__s = (Pump_type__state.of_rep 0) } } )))
-    in (
-    #"pump.adb" 53 0 0# Pump__enterbasestate__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___272)) )))
-    );
-   #"pump.adb" 51 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:45 *)
-  ;
-  #"pump.adb" 51 0 0# abstract ensures {true}(let _ = (Pump__inbasestate__axiom.inbasestate({ Pump__nozzle.__split_fields = Pump__enterbasestate__n.n__split_fields.Pump__nozzle.__split_fields__content })) in (
-   ()))
-   end  )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "registertanksensor" defined at pump.ads:52, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__registertanksensor__subprogram_def
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        Pump_type__full_tank_sensor
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__registertanksensor__n
- use        Pump__registertanksensor__s
- use        Pump__registertanksensor__n__axiom
- use        Pump__registertanksensor__s__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- let def #"pump.ads" 83 0 0# "W:diverges:N" "GP_Subp:pump.ads:52" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:52 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant { Pump__nozzle.__split_fields = Pump__registertanksensor__n.n__split_fields.Pump__nozzle.__split_fields__content } True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:52 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:52 *)
-  ;
-  #"pump.ads" 83 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:52 *)
-  ;
-  #"pump.ads" 83 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:52 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:58:7" (if (Pump__registertanksensor__s.s) then (
-    ( "GP_Sloc:pump.adb:59:13" (let temp___276 = (let temp___275 = { Pump__nozzle.__split_fields = Pump__registertanksensor__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-     ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__f((Pump__nozzle.__split_fields(temp___275)))) in (
-      ()))
-      end ;
-     { ( temp___275 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___275)) ) with Pump__nozzle.rec__f = (Pump_type__full_tank_sensor.of_rep 1) } } )))
-     in (
-     #"pump.adb" 59 0 0# Pump__registertanksensor__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___276)) )))
-     )) else (
-    ( "GP_Sloc:pump.adb:61:13" (let temp___274 = (let temp___273 = { Pump__nozzle.__split_fields = Pump__registertanksensor__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-     ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__f((Pump__nozzle.__split_fields(temp___273)))) in (
-      ()))
-      end ;
-     { ( temp___273 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___273)) ) with Pump__nozzle.rec__f = (Pump_type__full_tank_sensor.of_rep 0) } } )))
-     in (
-     #"pump.adb" 61 0 0# Pump__registertanksensor__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___274)) )))
-     ))) );
-   #"pump.adb" 56 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:52 *)
-  ;
-  #"pump.adb" 56 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end  )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "balancecheck" defined at pump.ads:57, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__balancecheck__subprogram_def
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        "_gnatprove_standard".Boolean
- use        Pump_type__price
- use        Pump_type__price__axiom
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__balancecheck__n
- use        Pump__balancecheck__payment
- use        Pump__balancecheck__n__axiom
- use        Pump__balancecheck__payment__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- val pump__balancecheck__result #"pump.adb" 56 0 0# "model" "model_trace:3324@result"  : bool__ref 
- 
- let def #"pump.adb" 56 0 0# "W:diverges:N" "GP_Subp:pump.ads:57" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:57 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__balancecheck__n.n True False True) };
-  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump__balancecheck__payment.payment True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:57 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:57 *)
-  ;
-  #"pump.ads" 57 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:57 *)
-  ;
-  #"pump.ads" 57 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:57 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:66:36" ( #"pump.adb" 66 0 0# pump__balancecheck__result.bool__content <- ( (Boolean.andb((Boolean.andb((Pump__balancecheck__payment.payment = (Pump_type__price.to_rep((Pump__nozzle.rec__p((Pump__nozzle.__split_fields(Pump__balancecheck__n.n)))))))) (((Pump_type__price.to_rep((Pump__nozzle.rec__cash((Pump__nozzle.__split_fields(Pump__balancecheck__n.n)))))) <= 1000)))) ((Pump__balancecheck__payment.payment <= 1000))) );
-   #"pump.adb" 66 0 0# raise Return__exc ) );
-   #"pump.adb" 65 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:57 *)
-  ;
-  #"pump.adb" 65 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__balancecheck__result.bool__content )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "setbalance" defined at pump.ads:61, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__setbalance__subprogram_def
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        "_gnatprove_standard".Boolean
- use        Pump_type__price
- use        Pump_type__price__axiom
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__inwaitingstate
- use        Pump__inwaitingstate__axiom
- use        Pump__nounpaid
- use        Pump__nounpaid__axiom
+ use        Pump__enterbasestate__axiom
  use        Pump__balancecheck
  use        Pump__balancecheck__axiom
- use        Pump__setbalance__n
- use        Pump__setbalance__payment
+ use        Pump__setbalance__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__three_pumps__axiom
+ use        Array__Int__Pump__nozzle
+ use        Pump_unit__curr_pump
+ use        Pump_unit__fuel_needed
+ use        Pump_unit__fuel_pumped
+ use        Pump_unit__setpayment__curr_fuel
+ use        Pump_unit__setpayment__payment
+ use        Pump_unit__three_pumps__axiom
+ use        Pump_unit__curr_pump__axiom
+ use        Pump_unit__fuel_needed__axiom
+ use        Pump_unit__fuel_pumped__axiom
+ use        Pump_unit__setpayment__curr_fuel__axiom
+ use        Pump_unit__setpayment__payment__axiom
+ use        Pump__inbasestate__axiom
  use        Pump__inwaitingstate__axiom
+ use        Pump__enterbasestate__axiom
  use        Pump__balancecheck__axiom
  use        Pump__nounpaid__axiom
- use        Pump__setbalance__n__axiom
- use        Pump__setbalance__payment__axiom
+ use        Pump__setbalance__axiom
  use        Pump__nozzle__axiom
+ use        Pump_type__fuel_type__axiom
  use        Pump_type__price__axiom
  use        Pump_type__state__axiom
  use        Pump_type__nozzle_in_cradle__axiom
  use        Pump_type__full_tank_sensor__axiom
 
- let def #"pump.adb" 65 0 0# "W:diverges:N" "GP_Subp:pump.ads:61" 
+ let def #"pump_unit.adb" 48 0 0# "W:diverges:N" "GP_Subp:pump_unit.ads:71" 
    (__void_param : unit)
   requires { true }
-  ensures { ( #"pump.ads" 67 0 0# "model_vc_post" "keep_on_simp" "GP_Reason:VC_POSTCONDITION" "GP_Shape:pragargs__and" "GP_Sloc:pump.ads:67:14" "GP_Id:9" "comment:     Post => inWaitingState(n) and noUnPaid(n);
-             ^ pump.ads:67:14:VC_POSTCONDITION" ( ( "GP_Pretty_Ada:3425" "GP_Sloc:pump.ads:67:14" ((Pump__inwaitingstate.inwaitingstate { Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) ) /\ ( "GP_Pretty_Ada:3429" "GP_Sloc:pump.ads:67:36" ((Pump__nounpaid.nounpaid { Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) ) ) ) }
+  ensures { ( #"pump_unit.ads" 80 0 0# "model_vc_post" "keep_on_simp" "GP_Reason:VC_POSTCONDITION" "GP_Sloc:pump_unit.ads:80:16" "GP_Id:13" "comment:       Post => inBaseState(curr_pump(curr_fuel)) and
+               ^ pump_unit.ads:80:16:VC_POSTCONDITION" "GP_Shape:pragargs__and" ( ( ( "GP_Pretty_Ada:3110" "GP_Sloc:pump_unit.ads:80:16" ((Pump__inbasestate.inbasestate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__setpayment__curr_fuel.curr_fuel)) = True) ) /\ ( "GP_Pretty_Ada:3114" "GP_Sloc:pump_unit.ads:81:18" (Pump_unit__fuel_pumped.fuel_pumped.int__content = 0) ) ) /\ ( "GP_Pretty_Ada:3118" "GP_Sloc:pump_unit.ads:81:37" (Pump_unit__fuel_needed.fuel_needed.int__content = 0) ) ) ) }
    =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:61 *)
+  ( () (* Assume dynamic invariants of inputs of the subprogram pump_unit.ads:71 *)
   ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant { Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content } True False True) };
-  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump__setbalance__payment.payment True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:61 *)
+  #"pump_unit.ads" 7 0 0# assume { (Pump_unit__three_pumps__axiom.dynamic_invariant Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content False False True) };
+  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump_unit__fuel_needed.fuel_needed.int__content False False True) };
+  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump_unit__fuel_pumped.fuel_pumped.int__content False False True) };
+  #"pump_type.ads" 4 0 0# assume { (Pump_type__fuel_type__axiom.dynamic_invariant Pump_unit__setpayment__curr_fuel.curr_fuel True False True) };
+  #"pump_type.ads" 5 0 0# assume { (Pump_type__price__axiom.dynamic_invariant Pump_unit__setpayment__payment.payment True False True) };
+  () (* Declarations introduced by the compiler at the beginning of the subprogram pump_unit.ads:71 *)
   ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:61 *)
+  () (* Check for RTE in the Pre of the subprogram pump_unit.ads:71 *)
   ;
-  #"pump.ads" 61 0 0# abstract ensures {true}(let _ = (Boolean.andb((Pump__balancecheck__axiom.balancecheck({ Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content }) (Pump__setbalance__payment.payment))) ((Pump__inwaitingstate__axiom.inwaitingstate({ Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content })))) in (
+  #"pump_unit.ads" 71 0 0# abstract ensures {true}(let _ = (Boolean.andb((Pump__inwaitingstate__axiom.inwaitingstate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__setpayment__curr_fuel.curr_fuel))))) ((Pump__balancecheck__axiom.balancecheck((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__setpayment__curr_fuel.curr_fuel))) (Pump_unit__setpayment__payment.payment)))) in (
    ()))
    end ;
-  () (* Assume Pre of the subprogram pump.ads:61 *)
+  () (* Assume Pre of the subprogram pump_unit.ads:71 *)
   ;
-  #"pump.ads" 83 0 0# assume { ( ((Pump__balancecheck.balancecheck { Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content } Pump__setbalance__payment.payment) = True) /\ ((Pump__inwaitingstate.inwaitingstate { Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content }) = True) ) };
-  () (* checking of pragma precondition pump.ads:61 *)
+  #"pump_unit.ads" 71 0 0# assume { ( ((Pump__inwaitingstate.inwaitingstate (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__setpayment__curr_fuel.curr_fuel)) = True) /\ ((Pump__balancecheck.balancecheck (Array__Int__Pump__nozzle.get Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content Pump_unit__setpayment__curr_fuel.curr_fuel) Pump_unit__setpayment__payment.payment) = True) ) };
+  () (* checking of pragma precondition pump_unit.ads:71 *)
   ;
   try
-   ( ( "GP_Sloc:pump.adb:73:10" (let temp___278 = (let temp___277 = { Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-    ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__p((Pump__nozzle.__split_fields(temp___277)))) in (
-     ()))
-     end ;
-    { ( temp___277 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___277)) ) with Pump__nozzle.rec__p = (Pump_type__price.of_rep ( #"pump.adb" 73 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_RANGE_CHECK" "GP_Sloc:pump.adb:73:15" "GP_Id:7" "comment:      n.P:=n.P-payment;
-              ^ pump.adb:73:15:VC_RANGE_CHECK" "GP_Shape:n_assign__sub" (Pump_type__price.range_check_(((Pump_type__price.to_rep((Pump__nozzle.rec__p((Pump__nozzle.__split_fields({ Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content })))))) - Pump__setbalance__payment.payment))) )) } } )))
-    in (
-    #"pump.adb" 73 0 0# Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___278)) )))
+   ( ( "GP_Sloc:pump_unit.adb:55:7" (let pump__setbalance__n__compl = (Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__setpayment__curr_fuel.curr_fuel)) in (
+    #"pump_unit.ads" 71 0 0# let pump__setbalance__n__fields = { Pump__nozzle.__split_fields__content = (Pump__nozzle.__split_fields(pump__setbalance__n__compl)) } in 
+     ( ( #"pump_unit.adb" 55 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_PRECONDITION" "GP_Sloc:pump_unit.adb:55:7" "GP_Id:11" "comment:      setBalance(curr_pump(curr_fuel), payment);
+      ^ pump_unit.adb:55:7:VC_PRECONDITION" "GP_Shape:call_setbalance" (Pump__setbalance__axiom.setbalance(pump__setbalance__n__fields) (Pump_unit__setpayment__payment.payment)) );
+     #"pump_unit.adb" 55 0 0# Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content <- ( (Array__Int__Pump__nozzle.set(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__setpayment__curr_fuel.curr_fuel) ({ Pump__nozzle.__split_fields = pump__setbalance__n__fields.Pump__nozzle.__split_fields__content })) ) )))
     );
-   ( "GP_Sloc:pump.adb:74:14" (let temp___280 = (let temp___279 = { Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content } in (
-    ( #"pump.ads" 83 0 0# abstract ensures {true}(let _ = (Pump__nozzle.rec__cash((Pump__nozzle.__split_fields(temp___279)))) in (
-     ()))
-     end ;
-    { ( temp___279 ) with Pump__nozzle.__split_fields = { ( (Pump__nozzle.__split_fields(temp___279)) ) with Pump__nozzle.rec__cash = (Pump_type__price.of_rep ( #"pump.adb" 74 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_RANGE_CHECK" "GP_Sloc:pump.adb:74:24" "GP_Id:8" "comment:      n.Cash := n.Cash +payment;
-                       ^ pump.adb:74:24:VC_RANGE_CHECK" "GP_Shape:n_assign__add" (Pump_type__price.range_check_(((Pump_type__price.to_rep((Pump__nozzle.rec__cash((Pump__nozzle.__split_fields({ Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content })))))) + Pump__setbalance__payment.payment))) )) } } )))
-    in (
-    #"pump.adb" 74 0 0# Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content <- ( (Pump__nozzle.__split_fields(temp___280)) )))
+   ( "GP_Sloc:pump_unit.adb:56:18" #"pump_unit.adb" 56 0 0# Pump_unit__fuel_pumped.fuel_pumped.int__content <- ( 0 ) );
+   ( "GP_Sloc:pump_unit.adb:57:18" #"pump_unit.adb" 57 0 0# Pump_unit__fuel_needed.fuel_needed.int__content <- ( 0 ) );
+   ( "GP_Sloc:pump_unit.adb:58:7" (let pump__enterbasestate__n__compl = (Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__setpayment__curr_fuel.curr_fuel)) in (
+    #"pump_unit.ads" 71 0 0# let pump__enterbasestate__n__fields = { Pump__nozzle.__split_fields__content = (Pump__nozzle.__split_fields(pump__enterbasestate__n__compl)) } in 
+     ( ( #"pump_unit.adb" 58 0 0# "model_vc" "keep_on_simp" "GP_Reason:VC_PRECONDITION" "GP_Sloc:pump_unit.adb:58:7" "GP_Id:12" "comment:      enterBaseState(curr_pump(curr_fuel));
+      ^ pump_unit.adb:58:7:VC_PRECONDITION" "GP_Shape:call_enterbasestate" (Pump__enterbasestate__axiom.enterbasestate(pump__enterbasestate__n__fields)) );
+     #"pump_unit.adb" 58 0 0# Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content <- ( (Array__Int__Pump__nozzle.set(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__setpayment__curr_fuel.curr_fuel) ({ Pump__nozzle.__split_fields = pump__enterbasestate__n__fields.Pump__nozzle.__split_fields__content })) ) )))
     );
-   #"pump.adb" 71 0 0# raise Return__exc )
+   #"pump_unit.adb" 53 0 0# raise Return__exc )
   with
    Return__exc -> ()
   end;
-  () (* checking of pragma postcondition pump.ads:61 *)
+  () (* checking of pragma postcondition pump_unit.ads:71 *)
   ;
-  #"pump.adb" 71 0 0# abstract ensures {true}(let _ = (Boolean.andb((Pump__inwaitingstate__axiom.inwaitingstate({ Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content }))) ((Pump__nounpaid__axiom.nounpaid({ Pump__nozzle.__split_fields = Pump__setbalance__n.n__split_fields.Pump__nozzle.__split_fields__content })))) in (
+  #"pump_unit.adb" 53 0 0# abstract ensures {true}(let _ = (Boolean.andb((Boolean.andb((Pump__inbasestate__axiom.inbasestate((Array__Int__Pump__nozzle.get(Pump_unit__curr_pump.curr_pump.Array__Int__Pump__nozzle.map__content) (Pump_unit__setpayment__curr_fuel.curr_fuel))))) ((Pump_unit__fuel_pumped.fuel_pumped.int__content = 0)))) ((Pump_unit__fuel_needed.fuel_needed.int__content = 0))) in (
    ()))
    end  )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "getstate" defined at pump.ads:69, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__getstate__subprogram_def
- use import "_gnatprove_standard".Main
- use        Pump_type__state
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__getstate__n
- use        Pump__getstate__n__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- val pump__getstate__result #"pump.ads" 83 0 0# "model" "model_trace:3430@result"  : int__ref 
- 
- let def #"pump_type.ads" 6 0 0# "W:diverges:N" "GP_Subp:pump.ads:69" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:69 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__getstate__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:69 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:69 *)
-  ;
-  #"pump.ads" 69 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:69 *)
-  ;
-  #"pump.ads" 69 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:69 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:79:7" ( #"pump.adb" 79 0 0# pump__getstate__result.int__content <- ( (Pump_type__state.to_rep((Pump__nozzle.rec__s((Pump__nozzle.__split_fields(Pump__getstate__n.n)))))) );
-   #"pump.adb" 79 0 0# raise Return__exc ) );
-   #"pump.adb" 77 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:69 *)
-  ;
-  #"pump.adb" 77 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__getstate__result.int__content )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "getcradle" defined at pump.ads:71, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__getcradle__subprogram_def
- use import "_gnatprove_standard".Main
- use        Pump_type__nozzle_in_cradle
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__getcradle__n
- use        Pump__getcradle__n__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- val pump__getcradle__result #"pump_type.ads" 6 0 0# "model" "model_trace:3449@result"  : int__ref 
- 
- let def #"pump_type.ads" 7 0 0# "W:diverges:N" "GP_Subp:pump.ads:71" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:71 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__getcradle__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:71 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:71 *)
-  ;
-  #"pump.ads" 71 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:71 *)
-  ;
-  #"pump.ads" 71 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:71 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:84:7" ( #"pump.adb" 84 0 0# pump__getcradle__result.int__content <- ( (Pump_type__nozzle_in_cradle.to_rep((Pump__nozzle.rec__c((Pump__nozzle.__split_fields(Pump__getcradle__n.n)))))) );
-   #"pump.adb" 84 0 0# raise Return__exc ) );
-   #"pump.adb" 82 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:71 *)
-  ;
-  #"pump.adb" 82 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__getcradle__result.int__content )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "gettanksensor" defined at pump.ads:73, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__gettanksensor__subprogram_def
- use import "_gnatprove_standard".Main
- use        Pump_type__full_tank_sensor
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__gettanksensor__n
- use        Pump__gettanksensor__n__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- val pump__gettanksensor__result #"pump_type.ads" 7 0 0# "model" "model_trace:3468@result"  : int__ref 
- 
- let def #"pump_type.ads" 8 0 0# "W:diverges:N" "GP_Subp:pump.ads:73" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:73 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__gettanksensor__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:73 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:73 *)
-  ;
-  #"pump.ads" 73 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:73 *)
-  ;
-  #"pump.ads" 73 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:73 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:89:7" ( #"pump.adb" 89 0 0# pump__gettanksensor__result.int__content <- ( (Pump_type__full_tank_sensor.to_rep((Pump__nozzle.rec__f((Pump__nozzle.__split_fields(Pump__gettanksensor__n.n)))))) );
-   #"pump.adb" 89 0 0# raise Return__exc ) );
-   #"pump.adb" 87 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:73 *)
-  ;
-  #"pump.adb" 87 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__gettanksensor__result.int__content )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "getreservior" defined at pump.ads:75, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__getreservior__subprogram_def
- use import "_gnatprove_standard".Main
- use        Pump_type__price
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__getreservior__n
- use        Pump__getreservior__n__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- val pump__getreservior__result #"pump_type.ads" 8 0 0# "model" "model_trace:3487@result"  : int__ref 
- 
- let def #"pump_type.ads" 5 0 0# "W:diverges:N" "GP_Subp:pump.ads:75" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:75 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__getreservior__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:75 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:75 *)
-  ;
-  #"pump.ads" 75 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:75 *)
-  ;
-  #"pump.ads" 75 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:75 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:94:7" ( #"pump.adb" 94 0 0# pump__getreservior__result.int__content <- ( (Pump_type__price.to_rep((Pump__nozzle.rec__r((Pump__nozzle.__split_fields(Pump__getreservior__n.n)))))) );
-   #"pump.adb" 94 0 0# raise Return__exc ) );
-   #"pump.adb" 92 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:75 *)
-  ;
-  #"pump.adb" 92 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__getreservior__result.int__content )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "getunpaid" defined at pump.ads:77, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__getunpaid__subprogram_def
- use import "_gnatprove_standard".Main
- use        Pump_type__price
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__getunpaid__n
- use        Pump__getunpaid__n__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- val pump__getunpaid__result #"pump_type.ads" 5 0 0# "model" "model_trace:3506@result"  : int__ref 
- 
- let def #"pump_type.ads" 5 0 0# "W:diverges:N" "GP_Subp:pump.ads:77" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:77 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__getunpaid__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:77 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:77 *)
-  ;
-  #"pump.ads" 77 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:77 *)
-  ;
-  #"pump.ads" 77 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:77 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:99:7" ( #"pump.adb" 99 0 0# pump__getunpaid__result.int__content <- ( (Pump_type__price.to_rep((Pump__nozzle.rec__p((Pump__nozzle.__split_fields(Pump__getunpaid__n.n)))))) );
-   #"pump.adb" 99 0 0# raise Return__exc ) );
-   #"pump.adb" 97 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:77 *)
-  ;
-  #"pump.adb" 97 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__getunpaid__result.int__content )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "getcash" defined at pump.ads:79, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__getcash__subprogram_def
- use import "_gnatprove_standard".Main
- use        Pump_type__price
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__getcash__n
- use        Pump__getcash__n__axiom
- use        Pump__nozzle__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- val pump__getcash__result #"pump_type.ads" 5 0 0# "model" "model_trace:3525@result"  : int__ref 
- 
- let def #"pump_type.ads" 5 0 0# "W:diverges:N" "GP_Subp:pump.ads:79" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:79 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__getcash__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:79 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:79 *)
-  ;
-  #"pump.ads" 79 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:79 *)
-  ;
-  #"pump.ads" 79 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:79 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.adb:104:7" ( #"pump.adb" 104 0 0# pump__getcash__result.int__content <- ( (Pump_type__price.to_rep((Pump__nozzle.rec__cash((Pump__nozzle.__split_fields(Pump__getcash__n.n)))))) );
-   #"pump.adb" 104 0 0# raise Return__exc ) );
-   #"pump.adb" 102 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:79 *)
-  ;
-  #"pump.adb" 102 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__getcash__result.int__content )
-end
-
-(* Module for checking contracts and absence of run-time errors in subprogram "balance" defined at pump.ads:93, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
-module Pump__balance__subprogram_def
- use import "_gnatprove_standard".Main
- use import "int".Int
- use        "_gnatprove_standard".Boolean
- use        Pump_type__price
- use        Pump__nozzle
- use        Pump__nozzle__axiom
- use        Pump__balance__n
- use        Pump__nozzle__axiom
- use        Pump__balance__n__axiom
- use        Pump_type__price__axiom
- use        Pump_type__state__axiom
- use        Pump_type__nozzle_in_cradle__axiom
- use        Pump_type__full_tank_sensor__axiom
-
- val pump__balance__result #"pump_type.ads" 5 0 0# "model" "model_trace:3628@result"  : bool__ref 
- 
- let def #"pump_type.ads" 5 0 0# "W:diverges:N" "GP_Subp:pump.ads:93" 
-   (__void_param : unit)
-  requires { true }
-  ensures { true }
-   =
-  ( () (* Assume dynamic invariants of inputs of the subprogram pump.ads:93 *)
-  ;
-  #"pump.ads" 5 0 0# assume { (Pump__nozzle__axiom.dynamic_invariant Pump__balance__n.n True False True) };
-  () (* Declarations introduced by the compiler at the beginning of the subprogram pump.ads:93 *)
-  ;
-  () (* Check for RTE in the Pre of the subprogram pump.ads:93 *)
-  ;
-  #"pump.ads" 93 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  () (* Assume Pre of the subprogram pump.ads:93 *)
-  ;
-  #"pump.ads" 93 0 0# assume { true };
-  () (* checking of pragma precondition pump.ads:93 *)
-  ;
-  try
-   ( ( "GP_Sloc:pump.ads:95:49" ( #"pump.ads" 95 0 0# pump__balance__result.bool__content <- ( (Boolean.andb((Boolean.andb((Boolean.andb(((Pump_type__price.to_rep((Pump__nozzle.rec__p((Pump__nozzle.__split_fields(Pump__balance__n.n)))))) <= 1000)) (((Pump_type__price.to_rep((Pump__nozzle.rec__cash((Pump__nozzle.__split_fields(Pump__balance__n.n)))))) <= 1000)))) (((Pump_type__price.to_rep((Pump__nozzle.rec__r((Pump__nozzle.__split_fields(Pump__balance__n.n)))))) <= 1000)))) (((((Pump_type__price.to_rep((Pump__nozzle.rec__r((Pump__nozzle.__split_fields(Pump__balance__n.n)))))) + (Pump_type__price.to_rep((Pump__nozzle.rec__p((Pump__nozzle.__split_fields(Pump__balance__n.n))))))) + (Pump_type__price.to_rep((Pump__nozzle.rec__cash((Pump__nozzle.__split_fields(Pump__balance__n.n))))))) = 1000))) );
-   #"pump.ads" 95 0 0# raise Return__exc ) );
-   #"pump.ads" 93 0 0# raise Return__exc )
-  with
-   Return__exc -> ()
-  end;
-  () (* checking of pragma postcondition pump.ads:93 *)
-  ;
-  #"pump.ads" 93 0 0# abstract ensures {true}(let _ = True in (
-   ()))
-   end ;
-  pump__balance__result.bool__content )
 end

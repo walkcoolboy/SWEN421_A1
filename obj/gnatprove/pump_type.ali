@@ -3,24 +3,29 @@ A -gnatc
 P GP ZX
 
 RN
-RV NO_FLOATING_POINT
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U pump_type%s		pump_type.ads		6fac45b5 EE OO PK
+U pump_type%s		pump_type.ads		93ea9c50 EE OO PK
 W system%s		system.ads		system.ali
 
-D pump_type.ads		20170502070258 6fac45b5 pump_type%s
-D system.ads		20160516092929 6326c08a system%s
+D pump_type.ads		20170507122254 93ea9c50 pump_type%s
+D system.ads		20160516092930 2da59038 system%s
 X 1 pump_type.ads
-2K9*Pump_type 8l5 8e14
+2K9*Pump_type 10l5 10e14
 4E9*fuel_type 4e50
 4n23*Petrol91{4E9}
 4n33*Petrol95{4E9}
 4n43*Diesel{4E9}
-5F9*fuel_volume<float>
-6F9*price<float>
+5I9*price<integer>
+6E9*state 6e49
+6n19*Base{6E9}
+6n25*Ready{6E9}
+6n32*Pumping{6E9}
+6n41*Waiting{6E9}
+7B9*nozzle_in_cradle<boolean>
+8B9*full_tank_sensor<boolean>
 FD 1 pump_type.ads
 FS .1 2K9 pump_type
 FD 2 system.ads

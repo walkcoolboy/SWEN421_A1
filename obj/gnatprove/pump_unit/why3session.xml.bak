@@ -2,9 +2,9 @@
 <!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
 "http://why3.lri.fr/why3session.dtd">
 <why3session shape_version="4">
-<prover id="0" name="CVC4" version="1.5" timelimit="0" steplimit="75000" memlimit="0"/>
-<prover id="1" name="CVC4_CE" version="1.5" timelimit="0" steplimit="75000" memlimit="0"/>
-<file name="..\pump.mlw" expanded="true">
+<prover id="0" name="CVC4_CE" version="1.5" timelimit="0" steplimit="75000" memlimit="0"/>
+<prover id="1" name="CVC4" version="1.5" timelimit="0" steplimit="75000" memlimit="0"/>
+<file name="..\pump_unit.mlw" expanded="true">
 <theory name="Standard__short_short_integer" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Standard__short_integer" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -177,6 +177,52 @@
 </theory>
 <theory name="Pump__balance" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Array__Int__Pump__nozzle" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__Tthree_pumpsB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__three_pumps" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__setfuelvolume__f" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__setfuelvolume__f__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__liftnozzle__curr_fuel" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__liftnozzle__curr_fuel__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__replacenozzle__curr_fuel" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__replacenozzle__curr_fuel__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requestpumping__curr_fuel" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requestpumping__curr_fuel__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requestpumping__f" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requestpumping__f__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requeststoppumping__curr_fuel" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requeststoppumping__curr_fuel__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__tanksensorinput__curr_fuel" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__tanksensorinput__curr_fuel__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__tanksensorinput__signal" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__tanksensorinput__signal__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__setpayment__curr_fuel" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__setpayment__curr_fuel__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__setpayment__payment" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__setpayment__payment__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="System__name" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__system_name" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -343,6 +389,22 @@
 </theory>
 <theory name="Pump__setbalance__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Pump_unit__curr_pump" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__curr_pump__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__fuel_needed" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__fuel_needed__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__fuel_pumped" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__fuel_pumped__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requestpumping__fuel_to_be_pumped" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requestpumping__fuel_to_be_pumped__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Standard__short_short_integer__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Standard__short_integer__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -403,6 +465,20 @@
 </theory>
 <theory name="Pump__setbalance" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Pump_unit__setfuelvolume" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__liftnozzle" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__replacenozzle" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requestpumping" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requeststoppumping" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__tanksensorinput" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__setpayment" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="System__min_int" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__max_int" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -446,6 +522,10 @@
 <theory name="Pump_type__full_tank_sensor__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump__nozzle__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__Tthree_pumpsB__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__three_pumps__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__name__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -597,6 +677,20 @@
 </theory>
 <theory name="Pump__balance__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Pump_unit__setfuelvolume__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__liftnozzle__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__replacenozzle__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requestpumping__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__requeststoppumping__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__tanksensorinput__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump_unit__setpayment__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="System__Olt__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__Ole__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -607,160 +701,100 @@
 </theory>
 <theory name="System__Oeq__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump__package_def" sum="68d85ea08773c83fbb28b61054b5d437" expanded="true">
+<theory name="Pump_unit__package_def" sum="fca9790068b194ae46a7ec1be2715cc1" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
  </transf>
  </goal>
 </theory>
-<theory name="Pump__inbasestate__subprogram_def" sum="683a5d162887ed08219057daa4e9ebb3" expanded="true">
+<theory name="Pump_unit__setfuelvolume__subprogram_def" sum="7f4d0528aaab52f49cb16f641dfb97d6" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
  </transf>
  </goal>
 </theory>
-<theory name="Pump__inreadystate__subprogram_def" sum="683a5d162887ed08219057daa4e9ebb3" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__inpumpingstate__subprogram_def" sum="683a5d162887ed08219057daa4e9ebb3" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__inwaitingstate__subprogram_def" sum="683a5d162887ed08219057daa4e9ebb3" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__enterreadystate__subprogram_def" sum="b8069ac7dda1093d79642056610f353d" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
-  <goal name="WP_parameter def.1" expl="1. postcondition">
-  <proof prover="0"><result status="valid" time="0.05" steps="210"/></proof>
-  </goal>
- </transf>
- </goal>
-</theory>
-<theory name="Pump__inrange__subprogram_def" sum="57f27ad3a8781ffa75e853814f278959" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__startpumping__subprogram_def" sum="7a9df6249fad059befbb906ac14bf3a2" expanded="true">
+<theory name="Pump_unit__liftnozzle__subprogram_def" sum="f526ca2876274c5271cf133e87629dee" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
   <goal name="WP_parameter def.1" expl="1. precondition">
-  <proof prover="0"><result status="valid" time="0.03" steps="340"/></proof>
+  <proof prover="1"><result status="valid" time="0.05" steps="210"/></proof>
+  </goal>
+  <goal name="WP_parameter def.2" expl="2. postcondition">
+  <proof prover="1"><result status="valid" time="0.03" steps="0"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump_unit__replacenozzle__subprogram_def" sum="59cabf8cf12f55e0f11e01fe3eaa46b5" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+  <goal name="WP_parameter def.1" expl="1. precondition">
+  <proof prover="0" obsolete="true"><result status="unknown" time="0.06" steps="4560"/></proof>
+  <proof prover="1"><result status="valid" time="0.03" steps="100"/></proof>
+  </goal>
+  <goal name="WP_parameter def.2" expl="2. postcondition">
+  <proof prover="0" obsolete="true"><result status="unknown" time="0.06" steps="1610"/></proof>
+  <proof prover="1"><result status="valid" time="0.03" steps="0"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump_unit__requestpumping__subprogram_def" sum="50a848c686aea33bef6b24742531f101" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+  <goal name="WP_parameter def.1" expl="1. precondition">
+  <proof prover="0" obsolete="true"><result status="unknown" time="2.50" steps="75050"/></proof>
+  <proof prover="1"><result status="valid" time="0.03" steps="40"/></proof>
   </goal>
   <goal name="WP_parameter def.2" expl="2. precondition">
-  <proof prover="0"><result status="valid" time="0.05" steps="270"/></proof>
+  <proof prover="0" obsolete="true"><result status="unknown" time="0.30" steps="33910"/></proof>
+  <proof prover="1"><result status="valid" time="0.03" steps="440"/></proof>
   </goal>
   <goal name="WP_parameter def.3" expl="3. precondition">
-  <proof prover="0"><result status="valid" time="0.05" steps="400"/></proof>
+  <proof prover="0" obsolete="true"><result status="unknown" time="0.63" steps="56370"/></proof>
+  <proof prover="1"><result status="valid" time="0.03" steps="110"/></proof>
   </goal>
-  <goal name="WP_parameter def.4" expl="4. postcondition">
-  <proof prover="0"><result status="valid" time="0.08" steps="1170"/></proof>
+  <goal name="WP_parameter def.4" expl="4. precondition">
+  <proof prover="1"><result status="valid" time="0.05" steps="0"/></proof>
   </goal>
- </transf>
- </goal>
-</theory>
-<theory name="Pump__enterwaitingstate__subprogram_def" sum="0c625d45c7a8648a4ab315b890a5bf77" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
-  <goal name="WP_parameter def.1" expl="1. postcondition">
-  <proof prover="0"><result status="valid" time="0.03" steps="160"/></proof>
-  <proof prover="1" obsolete="true"><result status="unknown" time="0.03" steps="510"/></proof>
+  <goal name="WP_parameter def.5" expl="5. postcondition">
+  <proof prover="1"><result status="valid" time="0.03" steps="220"/></proof>
   </goal>
  </transf>
  </goal>
 </theory>
-<theory name="Pump__nounpaid__subprogram_def" sum="1192be01db77dcb5728d05a239c7fdf4" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__enterbasestate__subprogram_def" sum="819685235dc975276de8b720a744d27b" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
-  <goal name="WP_parameter def.1" expl="1. postcondition">
-  <proof prover="0"><result status="valid" time="0.05" steps="150"/></proof>
-  </goal>
- </transf>
- </goal>
-</theory>
-<theory name="Pump__registertanksensor__subprogram_def" sum="a896e493c4e98644cbf1b5b4de0e6df8" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__balancecheck__subprogram_def" sum="57f27ad3a8781ffa75e853814f278959" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__setbalance__subprogram_def" sum="cfe80f836052f9364a6d5fe96c667f34" expanded="true">
+<theory name="Pump_unit__requeststoppumping__subprogram_def" sum="e46119bb0e300f08150cd26f77379b09" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
   <goal name="WP_parameter def.1" expl="1. precondition">
-  <proof prover="0"><result status="valid" time="0.03" steps="200"/></proof>
+  <proof prover="1"><result status="valid" time="0.03" steps="100"/></proof>
+  </goal>
+  <goal name="WP_parameter def.2" expl="2. postcondition">
+  <proof prover="1"><result status="valid" time="0.02" steps="0"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump_unit__tanksensorinput__subprogram_def" sum="29091e5ab8dcd47103fa002737fdaed0" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump_unit__setpayment__subprogram_def" sum="7befe092245a213384154808e7e01e81" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+  <goal name="WP_parameter def.1" expl="1. precondition">
+  <proof prover="0" obsolete="true"><result status="unknown" time="0.09" steps="6840"/></proof>
+  <proof prover="1"><result status="valid" time="0.03" steps="210"/></proof>
   </goal>
   <goal name="WP_parameter def.2" expl="2. precondition">
-  <proof prover="0"><result status="valid" time="0.03" steps="240"/></proof>
+  <proof prover="0" obsolete="true"><result status="unknown" time="0.06" steps="6120"/></proof>
+  <proof prover="1"><result status="valid" time="0.03" steps="0"/></proof>
   </goal>
   <goal name="WP_parameter def.3" expl="3. postcondition">
-  <proof prover="0"><result status="valid" time="0.05" steps="250"/></proof>
+  <proof prover="1"><result status="valid" time="0.05" steps="0"/></proof>
   </goal>
- </transf>
- </goal>
-</theory>
-<theory name="Pump__getstate__subprogram_def" sum="5c88c3cc2fbcc82bd7f0db663e814f85" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__getcradle__subprogram_def" sum="a29d136f688ad152fed37a8117dcd13c" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__gettanksensor__subprogram_def" sum="8ba52703c09cd5697b04c243df0d3bdd" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__getreservior__subprogram_def" sum="1192be01db77dcb5728d05a239c7fdf4" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__getunpaid__subprogram_def" sum="1192be01db77dcb5728d05a239c7fdf4" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__getcash__subprogram_def" sum="1192be01db77dcb5728d05a239c7fdf4" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
- </transf>
- </goal>
-</theory>
-<theory name="Pump__balance__subprogram_def" sum="b13b4ae2930bcc2a0cd99cab88117556" expanded="true">
- <goal name="WP_parameter def" expl="VC for def" expanded="true">
- <transf name="split_goal_wp" expanded="true">
  </transf>
  </goal>
 </theory>

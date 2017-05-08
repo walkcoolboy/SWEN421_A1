@@ -2,9 +2,9 @@
 <!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
 "http://why3.lri.fr/why3session.dtd">
 <why3session shape_version="4">
-<prover id="0" name="CVC4_CE" version="1.5" timelimit="0" steplimit="75000" memlimit="0"/>
-<prover id="1" name="CVC4" version="1.5" timelimit="0" steplimit="75000" memlimit="0"/>
-<file name="../pump.mlw" expanded="true">
+<prover id="0" name="CVC4" version="1.5" timelimit="0" steplimit="75000" memlimit="0"/>
+<prover id="1" name="CVC4_CE" version="1.5" timelimit="0" steplimit="75000" memlimit="0"/>
+<file name="..\pump.mlw" expanded="true">
 <theory name="Standard__short_short_integer" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Standard__short_integer" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -61,23 +61,19 @@
 </theory>
 <theory name="Pump_type__fuel_type" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump_type__Tfuel_volumeB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Pump_type__fuel_volume" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
 <theory name="Pump_type__TpriceB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump_type__price" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump__state" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Pump_type__state" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump__nozzle_in_cradleB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Pump_type__nozzle_in_cradleB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump__nozzle_in_cradle" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Pump_type__nozzle_in_cradle" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump__full_tank_sensorB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Pump_type__full_tank_sensorB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump__full_tank_sensor" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Pump_type__full_tank_sensor" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump__nozzle" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -105,9 +101,81 @@
 </theory>
 <theory name="Pump__inwaitingstate" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Pump__inrange__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__inrange__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__inrange__v" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__inrange__v__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__inrange" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__nounpaid__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__nounpaid__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__nounpaid" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Pump__registertanksensor__s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump__registertanksensor__s__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__balancecheck__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__balancecheck__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__balancecheck__payment" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__balancecheck__payment__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__balancecheck" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__setbalance__payment" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__setbalance__payment__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getstate__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getstate__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getstate" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getcradle__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getcradle__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getcradle" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__gettanksensor__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__gettanksensor__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__gettanksensor" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getreservior__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getreservior__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getreservior" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getunpaid__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getunpaid__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getunpaid" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getcash__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getcash__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getcash" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__balance__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__balance__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__balance" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__name" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -235,6 +303,18 @@
 </theory>
 <theory name="System__zcx_by_default" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Array__Int__Standard__integer" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="System__Tpriorities_mappingB" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="System__priorities_mapping" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="System__T3s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="System__T4s" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="System__underlying_priorities" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Pump__enterreadystate__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump__enterreadystate__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -258,6 +338,10 @@
 <theory name="Pump__registertanksensor__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump__registertanksensor__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__setbalance__n" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__setbalance__n__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Standard__short_short_integer__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -317,6 +401,8 @@
 </theory>
 <theory name="Pump__registertanksensor" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Pump__setbalance" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="System__min_int" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__max_int" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -337,27 +423,27 @@
 </theory>
 <theory name="System__storage_unit" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="System__word_size" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="System__memory_size" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="System__underlying_priorities__aggregate_def" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Pump_type__fuel_type__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Pump_type__Tfuel_volumeB__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
-</theory>
-<theory name="Pump_type__fuel_volume__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump_type__TpriceB__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump_type__price__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump__state__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Pump_type__state__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump__nozzle_in_cradleB__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Pump_type__nozzle_in_cradleB__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump__nozzle_in_cradle__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Pump_type__nozzle_in_cradle__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump__full_tank_sensorB__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Pump_type__full_tank_sensorB__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
-<theory name="Pump__full_tank_sensor__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+<theory name="Pump_type__full_tank_sensor__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump__nozzle__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -372,6 +458,14 @@
 <theory name="System__priority__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__interrupt_priority__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="System__Tpriorities_mappingB__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="System__priorities_mapping__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="System__T3s__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="System__T4s__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__system_name__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -394,6 +488,8 @@
 <theory name="System__tick__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__storage_unit__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="System__word_size__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__memory_size__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -459,6 +555,8 @@
 </theory>
 <theory name="System__zcx_by_default__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="System__underlying_priorities__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Pump__inbasestate__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump__inreadystate__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
@@ -469,13 +567,35 @@
 </theory>
 <theory name="Pump__enterreadystate__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Pump__inrange__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Pump__startpumping__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump__enterwaitingstate__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
+<theory name="Pump__nounpaid__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
 <theory name="Pump__enterbasestate__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="Pump__registertanksensor__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__balancecheck__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__setbalance__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getstate__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getcradle__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__gettanksensor__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getreservior__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getunpaid__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__getcash__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
+</theory>
+<theory name="Pump__balance__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
 <theory name="System__Olt__axiom" sum="d41d8cd98f00b204e9800998ecf8427e" expanded="true">
 </theory>
@@ -493,75 +613,152 @@
  </transf>
  </goal>
 </theory>
-<theory name="Pump__inbasestate__subprogram_def" sum="a5f8d8af9b0d90a7374a1107b479b641" expanded="true">
+<theory name="Pump__inbasestate__subprogram_def" sum="683a5d162887ed08219057daa4e9ebb3" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
  </transf>
  </goal>
 </theory>
-<theory name="Pump__inreadystate__subprogram_def" sum="a5f8d8af9b0d90a7374a1107b479b641" expanded="true">
+<theory name="Pump__inreadystate__subprogram_def" sum="683a5d162887ed08219057daa4e9ebb3" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
  </transf>
  </goal>
 </theory>
-<theory name="Pump__inpumpingstate__subprogram_def" sum="a5f8d8af9b0d90a7374a1107b479b641" expanded="true">
+<theory name="Pump__inpumpingstate__subprogram_def" sum="683a5d162887ed08219057daa4e9ebb3" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
  </transf>
  </goal>
 </theory>
-<theory name="Pump__inwaitingstate__subprogram_def" sum="a5f8d8af9b0d90a7374a1107b479b641" expanded="true">
+<theory name="Pump__inwaitingstate__subprogram_def" sum="683a5d162887ed08219057daa4e9ebb3" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
  </transf>
  </goal>
 </theory>
-<theory name="Pump__enterreadystate__subprogram_def" sum="74d9e861b18cb07cc33387fe6b7b11e8" expanded="true">
+<theory name="Pump__enterreadystate__subprogram_def" sum="b8069ac7dda1093d79642056610f353d" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
   <goal name="WP_parameter def.1" expl="1. postcondition">
-  <proof prover="1"><result status="valid" time="0.02" steps="370"/></proof>
+  <proof prover="0"><result status="valid" time="0.05" steps="210"/></proof>
   </goal>
  </transf>
  </goal>
 </theory>
-<theory name="Pump__startpumping__subprogram_def" sum="7d6249ac3baeca8d27e33b3c25528a6e" expanded="true">
+<theory name="Pump__inrange__subprogram_def" sum="57f27ad3a8781ffa75e853814f278959" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump__startpumping__subprogram_def" sum="7a9df6249fad059befbb906ac14bf3a2" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
   <goal name="WP_parameter def.1" expl="1. precondition">
-  <proof prover="0" obsolete="true"><result status="unknown" time="0.07" steps="21520"/></proof>
-  <proof prover="1"><result status="valid" time="0.02" steps="890"/></proof>
+  <proof prover="0"><result status="valid" time="0.03" steps="340"/></proof>
   </goal>
   <goal name="WP_parameter def.2" expl="2. precondition">
-  <proof prover="1"><result status="valid" time="0.03" steps="880"/></proof>
+  <proof prover="0"><result status="valid" time="0.05" steps="270"/></proof>
+  </goal>
+  <goal name="WP_parameter def.3" expl="3. precondition">
+  <proof prover="0"><result status="valid" time="0.05" steps="400"/></proof>
+  </goal>
+  <goal name="WP_parameter def.4" expl="4. postcondition">
+  <proof prover="0"><result status="valid" time="0.08" steps="1170"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump__enterwaitingstate__subprogram_def" sum="0c625d45c7a8648a4ab315b890a5bf77" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+  <goal name="WP_parameter def.1" expl="1. postcondition">
+  <proof prover="0"><result status="valid" time="0.03" steps="160"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" time="0.03" steps="510"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump__nounpaid__subprogram_def" sum="1192be01db77dcb5728d05a239c7fdf4" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump__enterbasestate__subprogram_def" sum="819685235dc975276de8b720a744d27b" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+  <goal name="WP_parameter def.1" expl="1. postcondition">
+  <proof prover="0"><result status="valid" time="0.05" steps="150"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump__registertanksensor__subprogram_def" sum="a896e493c4e98644cbf1b5b4de0e6df8" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump__balancecheck__subprogram_def" sum="57f27ad3a8781ffa75e853814f278959" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump__setbalance__subprogram_def" sum="cfe80f836052f9364a6d5fe96c667f34" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+  <goal name="WP_parameter def.1" expl="1. precondition">
+  <proof prover="0"><result status="valid" time="0.03" steps="200"/></proof>
+  </goal>
+  <goal name="WP_parameter def.2" expl="2. precondition">
+  <proof prover="0"><result status="valid" time="0.03" steps="240"/></proof>
   </goal>
   <goal name="WP_parameter def.3" expl="3. postcondition">
-  <proof prover="1"><result status="valid" time="0.03" steps="2150"/></proof>
+  <proof prover="0"><result status="valid" time="0.05" steps="250"/></proof>
   </goal>
  </transf>
  </goal>
 </theory>
-<theory name="Pump__enterwaitingstate__subprogram_def" sum="4215e7958f34f149820165ff15c71c62" expanded="true">
+<theory name="Pump__getstate__subprogram_def" sum="5c88c3cc2fbcc82bd7f0db663e814f85" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
-  <goal name="WP_parameter def.1" expl="1. postcondition">
-  <proof prover="1"><result status="valid" time="0.02" steps="320"/></proof>
-  </goal>
  </transf>
  </goal>
 </theory>
-<theory name="Pump__enterbasestate__subprogram_def" sum="9714a492974f80dc82c2f397d90dcd77" expanded="true">
+<theory name="Pump__getcradle__subprogram_def" sum="a29d136f688ad152fed37a8117dcd13c" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
-  <goal name="WP_parameter def.1" expl="1. postcondition">
-  <proof prover="0"><result status="unknown" time="0.03" steps="5260"/></proof>
-  <proof prover="1"><result status="unknown" time="0.03" steps="4900"/></proof>
-  </goal>
  </transf>
  </goal>
 </theory>
-<theory name="Pump__registertanksensor__subprogram_def" sum="0c8c26cdd637b9bd744daa4be05a0efb" expanded="true">
+<theory name="Pump__gettanksensor__subprogram_def" sum="8ba52703c09cd5697b04c243df0d3bdd" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump__getreservior__subprogram_def" sum="1192be01db77dcb5728d05a239c7fdf4" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump__getunpaid__subprogram_def" sum="1192be01db77dcb5728d05a239c7fdf4" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump__getcash__subprogram_def" sum="1192be01db77dcb5728d05a239c7fdf4" expanded="true">
+ <goal name="WP_parameter def" expl="VC for def" expanded="true">
+ <transf name="split_goal_wp" expanded="true">
+ </transf>
+ </goal>
+</theory>
+<theory name="Pump__balance__subprogram_def" sum="b13b4ae2930bcc2a0cd99cab88117556" expanded="true">
  <goal name="WP_parameter def" expl="VC for def" expanded="true">
  <transf name="split_goal_wp" expanded="true">
  </transf>

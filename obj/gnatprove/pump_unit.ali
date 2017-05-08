@@ -4,115 +4,121 @@ P GP ZX
 
 RN
 RV NO_DIRECT_BOOLEAN_OPERATORS
-RV NO_FLOATING_POINT
 RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 RV SPARK_05
 
-U pump_unit%b		pump_unit.adb		d020981a OO PK
+U pump_unit%b		pump_unit.adb		7e8c8ad9 OO PK
 W pump%s		pump.adb		pump.ali
 W pump_type%s		pump_type.ads		pump_type.ali
 W system%s		system.ads		system.ali
 
-U pump_unit%s		pump_unit.ads		872a5dc7 EE OO PK
+U pump_unit%s		pump_unit.ads		1e560a28 EE OO PK
 W pump%s		pump.adb		pump.ali
 W pump_type%s		pump_type.ads		pump_type.ali
 
-D pump.ads		20170505001247 b418f39f pump%s
-D pump_type.ads		20170502070258 6fac45b5 pump_type%s
-D pump_unit.ads		20170505005416 5c9eebed pump_unit%s
-D pump_unit.adb		20170505003304 570ac5dd pump_unit%b
-D system.ads		20160516092929 6326c08a system%s
+D pump.ads		20170507125436 d250ad71 pump%s
+D pump_type.ads		20170507122254 93ea9c50 pump_type%s
+D pump_unit.ads		20170507124526 5fec3b09 pump_unit%s
+D pump_unit.adb		20170507124230 60da80f1 pump_unit%b
+D system.ads		20160516092930 2da59038 system%s
 X 1 pump.ads
-3K9*Pump 67e9 3|2w6 2r16 4|3w6 3r16
-5R9*nozzle 64e16 3|7r45
-19U14*enterReadyState 4|21s7 48s10 55s7
-26U14*startPumping 4|42s7
-34U14*enterWaitingState 4|26s7
-41U14*enterBaseState 4|68s7
-48U14*registerTankSensor 4|60s7
+3K9*Pump 97e9 3|2w6 2r16 4|3w6 3r16
+5R9*nozzle 91e9 3|7r45
+7V13*inBaseState{boolean} 3|26s15 28s66 80s16
+10V13*inReadyState{boolean} 3|30s15 38s16 48s16 51s55 59s15 67s56
+13V13*inPumpingState{boolean} 3|48s54 51s15 58s15 67s16
+16V13*inWaitingState{boolean} 3|26s52 39s15 78s13
+20U14*enterReadyState 4|14s7 38s10 45s7
+27V13*inRange{boolean} 4|31s22
+29U14*startPumping 4|32s7
+38U14*enterWaitingState 4|19s7
+45U14*enterBaseState 4|58s7
+52U14*registerTankSensor 4|50s7
+57V13*balanceCheck{boolean} 3|79s17
+61U14*setBalance 4|55s7
 X 2 pump_type.ads
-2K9*Pump_type 8e14 3|3w6 3r21 4|2w6 2r21
-4E9*fuel_type 4e50 3|7r31 11r35 31r40 39r43 47r44 56r48 65r45 72r40 4|19r40
-. 24r43 29r44 53r48 58r45 63r40
-4n23*Petrol91{4E9} 4|14r18
-4n33*Petrol95{4E9} 4|15r18
-4n43*Diesel{4E9} 4|16r18
-5F9*fuel_volume<float> 4|30r24 40r25
-6F9*price<float> 3|10r26 19r35 47r61 72r63 4|7r35 29r61 31r25 45r38 63r63
+2K9*Pump_type 10e14 3|3w6 3r21 4|2w6 2r21
+4E9*fuel_type 4e50 3|7r31 21r40 28r28 33r43 42r44 54r48 63r45 71r40 4|12r40
+. 17r43 22r44 43r48 48r45 53r40
+5I9*price<integer> 3|10r17 11r17 13r35 42r61 71r63 4|7r35 22r61 24r25 53r63
 X 3 pump_unit.ads
-5K9*Pump_Unit 81l5 81e14 4|5b14 71l5 71t14
-7A9*Three_pumps(1|5R9)<2|4E9> 14r15
-10F12*fuel_price{2|6F9} 11r49 15r17 16r17 17r20 24r45 4|12r45
-11A9*fuel_unit_price(10F12)<2|4E9> 12r15
-12a4*curr_price{11A9} 26r29 27r20 49r41 51r59 52r51 4|14m7 15m7 16m7 40r68
-. 45r74
-14a4*curr_pump{7A9} 33r29 34r20 41r29 42r20 50r32 51r20 52r74 58r29 59r20
-. 67r29 68r20 74r30 76r20 4|21m23 21r23 26m25 26r25 42m20 42r20 48m26 48r26
-. 55m23 55r23 60m26 60r26 68m22 68r22
-15f4*fuel_needed{10F12} 21r29 22r18 49r29 51r45 52r37 75r43 78r34 4|9m7 34r12
-. 34r38 35r29 67m7
-16f4*fuel_pumped{10F12} 50r42 51r71 52r20 75r30 78r21 4|34r50 35r41 45m9
-. 45r24 66m7
-17f4*cashInRegister{10F12} 74r41 77r20 4|65m7 65r25
-19U14*setFuelVolume 19>29 4|7b14 10l8 10t21
-19f29 f{2|6F9} 22r33 4|7b29 9r22
-24U14*setFuelPrice 24>28 24>33 24>38 4|12b14 17l8 17t20
-24f28 P91{10F12} 27r35 4|12b28 14r29
-24f33 P95{10F12} 27r40 4|12b33 15r29
-24f38 PD{10F12} 27r45 4|12b38 16r27
-31U14*liftNozzle 31>26 4|19b14 22l8 22t18
-31e26 curr_fuel{2|4E9} 34r34 4|19b26 21r33
-39U14*replaceNozzle 39>29 4|24b14 27l8 27t21
-39e29 curr_fuel{2|4E9} 42r34 4|24b29 26r35
-47U14*requestPumping 47>30 47>55 4|29b14 51l8 51t22
-47e30 curr_fuel{2|4E9} 51r35 52r63 4|29b30 40r79 42r30 45r85 48r36
-47f55 f{2|6F9} 51r57 52r49 4|29b55 34r35 37r29
-56U14*requestStopPumping 56>34 4|53b14 56l8 56t26
-56e34 curr_fuel{2|4E9} 59r34 4|53b34 55r33
-65U14*TankSensorInput 65>31 65>56 4|58b14 61l8 61t23
-65e31 curr_fuel{2|4E9} 68r35 4|58b31 60r36
-65b56 signal{boolean} 68r46 4|58b56 60r48
-72U14*setPayment 72>26 72>51 4|63b14 69l8 69t18
-72e26 curr_fuel{2|4E9} 76r34 4|63b26 68r32
-72f51 payment{2|6F9} 77r39 4|63b51 65r42
+5K9*Pump_Unit 84l5 84e14 4|5b14 61l5 61t14
+7A9*Three_pumps(1|5R9)<2|4E9> 9r15
+9a4*curr_pump{7A9} 23r29 24r20 26r27 26r67 28r78 30r28 35r29 36r20 38r29
+. 39r30 45r32 46r20 47r63 48r29 48r69 51r30 51r68 56r29 57r20 58r30 59r28
+. 65r29 66r20 67r31 67r69 73r30 75r20 78r28 79r30 80r28 4|14m23 14r23 19m25
+. 19r25 31r30 32m20 32r20 38m26 38r26 45m23 45r23 50m26 50r26 55m18 55r18
+. 58m22 58r22
+10i4*fuel_needed{2|5I9} 15r29 16r20 44r29 46r45 47r37 50r17 50r34 74r29 76r34
+. 81r37 4|9m7 27r12 27r52 28r29 57m7
+11i4*fuel_pumped{2|5I9} 45r42 46r60 47r20 49r29 50r46 73r41 76r21 77r28 81r18
+. 4|27r64 28r41 35m9 35r24 56m7
+13U14*setFuelVolume 13>29 4|7b14 10l8 10t21
+13i29 f{2|5I9} 16r35 17r16 4|7b29 9r22
+21U14*liftNozzle 21>26 4|12b14 15l8 15t18
+21e26 curr_fuel{2|4E9} 24r34 26r37 26r77 28r47 30r38 4|12b26 14r33
+28e23 f{2|4E9} 28r42 28r88
+33U14*replaceNozzle 33>29 4|17b14 20l8 20t21
+33e29 curr_fuel{2|4E9} 36r34 38r39 39r40 4|17b29 19r35
+42U14*requestPumping 42>30 42>55 4|22b14 41l8 41t22
+42e30 curr_fuel{2|4E9} 46r35 47r52 48r39 48r79 51r40 51r78 4|22b30 31r40
+. 32r30 38r36
+42i55 f{2|5I9} 46r57 47r49 49r18 4|22b55 24r32
+54U14*requestStopPumping 54>34 4|43b14 46l8 46t26
+54e34 curr_fuel{2|4E9} 57r34 58r40 59r38 4|43b34 45r33
+63U14*TankSensorInput 63>31 63>56 4|48b14 51l8 51t23
+63e31 curr_fuel{2|4E9} 66r35 67r41 67r79 4|48b31 50r36
+63b56 signal{boolean} 66r46 4|48b56 50r48
+71U14*setPayment 71>26 71>51 4|53b14 59l8 59t18
+71e26 curr_fuel{2|4E9} 75r35 78r38 79r40 80r38 4|53b26 55r28 58r32
+71i51 payment{2|5I9} 75r46 79r51 4|53b51 55r40
 X 4 pump_unit.adb
-30f7 fuel_pump_volume{2|5F9} 40m7 42m41 42r41 44r11 45r50
-31f7 fuel_to_be_pumped{2|6F9} 35m10 37m10 40r43
+24i7 fuel_to_be_pumped{2|5I9} 27r33 28m10 31r52 32m42 32r42 34r11 35r38
 FD 1 pump.ads
 FS .1 3K9 pump
 FS .2 7V13 pump__inbasestate
 FS .3 10V13 pump__inreadystate
 FS .4 13V13 pump__inpumpingstate
 FS .5 16V13 pump__inwaitingstate
-FS .6 19U14 pump__enterreadystate
-FS .7 26U14 pump__startpumping
-FS .8 34U14 pump__enterwaitingstate
-FS .9 41U14 pump__enterbasestate
-FS .10 48U14 pump__registertanksensor
+FS .6 20U14 pump__enterreadystate
+FS .7 27V13 pump__inrange
+FS .8 29U14 pump__startpumping
+FS .9 38U14 pump__enterwaitingstate
+FS .10 45U14 pump__enterbasestate
+FS .11 52U14 pump__registertanksensor
+FS .12 57V13 pump__balancecheck
+FS .13 59V13 pump__nounpaid
+FS .14 61U14 pump__setbalance
+FS .15 69V13 pump__getstate
+FS .16 71V13 pump__getcradle
+FS .17 73V13 pump__gettanksensor
+FS .18 75V13 pump__getreservior
+FS .19 77V13 pump__getunpaid
+FS .20 79V13 pump__getcash
+FS .21 93V13 pump__balance
+FS .22 93V13 pump__balance -> 1.21
 FD 2 pump_type.ads
 FS .1 2K9 pump_type
 FD 3 pump_unit.ads
 FS .1 5K9 pump_unit
-FS .2 19U14 pump_unit__setfuelvolume
-FS .3 24U14 pump_unit__setfuelprice
-FS .4 31U14 pump_unit__liftnozzle
-FS .5 39U14 pump_unit__replacenozzle
-FS .6 47U14 pump_unit__requestpumping
-FS .7 56U14 pump_unit__requeststoppumping
-FS .8 65U14 pump_unit__tanksensorinput
-FS .9 72U14 pump_unit__setpayment
+FS .2 13U14 pump_unit__setfuelvolume
+FS .3 21U14 pump_unit__liftnozzle
+FS .4 33U14 pump_unit__replacenozzle
+FS .5 42U14 pump_unit__requestpumping
+FS .6 54U14 pump_unit__requeststoppumping
+FS .7 63U14 pump_unit__tanksensorinput
+FS .8 71U14 pump_unit__setpayment
 FD 4 pump_unit.adb
 FS .1 5K14 standard__pump_unit -> 3.1
 FS .2 7U14 pump_unit__setfuelvolume -> 3.2
-FS .3 12U14 pump_unit__setfuelprice -> 3.3
-FS .4 19U14 pump_unit__liftnozzle -> 3.4
-FS .5 24U14 pump_unit__replacenozzle -> 3.5
-FS .6 29U14 pump_unit__requestpumping -> 3.6
-FS .7 53U14 pump_unit__requeststoppumping -> 3.7
-FS .8 58U14 pump_unit__tanksensorinput -> 3.8
-FS .9 63U14 pump_unit__setpayment -> 3.9
+FS .3 12U14 pump_unit__liftnozzle -> 3.3
+FS .4 17U14 pump_unit__replacenozzle -> 3.4
+FS .5 22U14 pump_unit__requestpumping -> 3.5
+FS .6 43U14 pump_unit__requeststoppumping -> 3.6
+FS .7 48U14 pump_unit__tanksensorinput -> 3.7
+FS .8 53U14 pump_unit__setpayment -> 3.8
 FD 5 system.ads
 FS .1 37K9 system
 FS .2 77V13 system__Olt
@@ -121,60 +127,61 @@ FS .4 79V13 system__Ogt
 FS .5 80V13 system__Oge
 FS .6 81V13 system__Oeq
 FX 1 pump.ads .1 pump
-F 19*14 pump__enterreadystate 4|.4:21s7 .6:48s10 .7:55s7
-F 26*14 pump__startpumping 4|.6:42s7
-F 34*14 pump__enterwaitingstate 4|.5:26s7
-F 41*14 pump__enterbasestate 4|.9:68s7
-F 48*14 pump__registertanksensor 4|.8:60s7
+F 7*13 pump__inbasestate 3|.3:26s15 28s66 .8:80s16
+F 10*13 pump__inreadystate 3|.3:30s15 .4:38s16 .5:48s16 51s55 .6:59s15 .7:67s56
+F 13*13 pump__inpumpingstate 3|.5:48s54 51s15 .6:58s15 .7:67s16
+F 16*13 pump__inwaitingstate 3|.3:26s52 .4:39s15 .8:78s13
+F 20*14 pump__enterreadystate 4|.3:14s7 .5:38s10 .6:45s7
+F 27*13 pump__inrange 4|.5:31s22
+F 29*14 pump__startpumping 4|.5:32s7
+F 38*14 pump__enterwaitingstate 4|.4:19s7
+F 45*14 pump__enterbasestate 4|.8:58s7
+F 52*14 pump__registertanksensor 4|.7:50s7
+F 57*13 pump__balancecheck 3|.8:79s17
+F 61*14 pump__setbalance 4|.8:55s7
 FX 3 pump_unit.ads .1 pump_unit
-F 12*4 pump_unit__curr_price .3:26r29 27r20 .6:49r41 51r59 52r51 4|.3:14m7
-. 15m7 16m7 .6:40r68 45r74
-F 14*4 pump_unit__curr_pump .4:33r29 34r20 .5:41r29 42r20 .6:50r32 51r20
-. 52r74 .7:58r29 59r20 .8:67r29 68r20 .9:74r30 76r20 4|.4:21m23 21r23 .5:26m25
-. 26r25 .6:42m20 42r20 48m26 48r26 .7:55m23 55r23 .8:60m26 60r26 .9:68m22
-. 68r22
-F 15*4 pump_unit__fuel_needed .2:21r29 22r18 .6:49r29 51r45 52r37 .9:75r43
-. 78r34 4|.2:9m7 .6:34r12 34r38 35r29 .9:67m7
-F 16*4 pump_unit__fuel_pumped .6:50r42 51r71 52r20 .9:75r30 78r21 4|.6:34r50
-. 35r41 45m9 45r24 .9:66m7
-F 17*4 pump_unit__cashinregister .9:74r41 77r20 4|.9:65m7 65r25
+F 9*4 pump_unit__curr_pump .3:23r29 24r20 26r27 26r67 28r78 30r28 .4:35r29
+. 36r20 38r29 39r30 .5:45r32 46r20 47r63 48r29 48r69 51r30 51r68 .6:56r29
+. 57r20 58r30 59r28 .7:65r29 66r20 67r31 67r69 .8:73r30 75r20 78r28 79r30
+. 80r28 4|.3:14m23 14r23 .4:19m25 19r25 .5:31r30 32m20 32r20 38m26 38r26
+. .6:45m23 45r23 .7:50m26 50r26 .8:55m18 55r18 58m22 58r22
+F 10*4 pump_unit__fuel_needed .2:15r29 16r20 .5:44r29 46r45 47r37 50r17 50r34
+. .8:74r29 76r34 81r37 4|.2:9m7 .5:27r12 27r52 28r29 .8:57m7
+F 11*4 pump_unit__fuel_pumped .5:45r42 46r60 47r20 49r29 50r46 .8:73r41 76r21
+. 77r28 81r18 4|.5:27r64 28r41 35m9 35r24 .8:56m7
 FX 3 pump_unit.ads .2 pump_unit__setfuelvolume
-F 19>29 pump_unit__setfuelvolume__f 22c33 4|.2:9c22
-FX 3 pump_unit.ads .3 pump_unit__setfuelprice
-F 24>28 pump_unit__setfuelprice__p91 27c35 4|.3:14c29
-F 24>33 pump_unit__setfuelprice__p95 27c40 4|.3:15c29
-F 24>38 pump_unit__setfuelprice__pd 27c45 4|.3:16c27
-FX 3 pump_unit.ads .4 pump_unit__liftnozzle
-F 31>26 pump_unit__liftnozzle__curr_fuel 34c34 4|.4:21c33
-FX 3 pump_unit.ads .5 pump_unit__replacenozzle
-F 39>29 pump_unit__replacenozzle__curr_fuel 42c34 4|.5:26c35
-FX 3 pump_unit.ads .6 pump_unit__requestpumping
-F 47>30 pump_unit__requestpumping__curr_fuel 51c35 52c63 4|.6:40c79 42c30
-. 45c85 48c36
-F 47>55 pump_unit__requestpumping__f 51c57 52c49 4|.6:34c35 37c29
-FX 3 pump_unit.ads .7 pump_unit__requeststoppumping
-F 56>34 pump_unit__requeststoppumping__curr_fuel 59c34 4|.7:55c33
-FX 3 pump_unit.ads .8 pump_unit__tanksensorinput
-F 65>31 pump_unit__tanksensorinput__curr_fuel 68c35 4|.8:60c36
-F 65>56 pump_unit__tanksensorinput__signal 68c46 4|.8:60c48
-FX 3 pump_unit.ads .9 pump_unit__setpayment
-F 72>26 pump_unit__setpayment__curr_fuel 76c34 4|.9:68c32
-F 72>51 pump_unit__setpayment__payment 77c39 4|.9:65c42
-FX 4 pump_unit.adb .6 pump_unit__requestpumping
-F 30*7 pump_unit__requestpumping__fuel_pump_volume 40m7 42m41 42r41 44r11
-. 45r50
-F 31*7 pump_unit__requestpumping__fuel_to_be_pumped 35m10 37m10 40r43
+F 13>29 pump_unit__setfuelvolume__f 16c35 17c16 4|.2:9c22
+FX 3 pump_unit.ads .3 pump_unit__liftnozzle
+F 21>26 pump_unit__liftnozzle__curr_fuel 24c34 26c37 26c77 28c47 30c38 4|.3:14c33
+F 28*23 pump_unit__liftnozzle__L15s__f 28c42 28c88
+FX 3 pump_unit.ads .4 pump_unit__replacenozzle
+F 33>29 pump_unit__replacenozzle__curr_fuel 36c34 38c39 39c40 4|.4:19c35
+FX 3 pump_unit.ads .5 pump_unit__requestpumping
+F 42>30 pump_unit__requestpumping__curr_fuel 46c35 47c52 48c39 48c79 51c40
+. 51c78 4|.5:31c40 32c30 38c36
+F 42>55 pump_unit__requestpumping__f 46c57 47c49 49c18 4|.5:24c32
+FX 3 pump_unit.ads .6 pump_unit__requeststoppumping
+F 54>34 pump_unit__requeststoppumping__curr_fuel 57c34 58c40 59c38 4|.6:45c33
+FX 3 pump_unit.ads .7 pump_unit__tanksensorinput
+F 63>31 pump_unit__tanksensorinput__curr_fuel 66c35 67c41 67c79 4|.7:50c36
+F 63>56 pump_unit__tanksensorinput__signal 66c46 4|.7:50c48
+FX 3 pump_unit.ads .8 pump_unit__setpayment
+F 71>26 pump_unit__setpayment__curr_fuel 75c35 78c38 79c40 80c38 4|.8:55c28
+. 58c32
+F 71>51 pump_unit__setpayment__payment 75c46 79c51 4|.8:55c40
+FX 4 pump_unit.adb .5 pump_unit__requestpumping
+F 24*7 pump_unit__requestpumping__fuel_to_be_pumped 27r33 28m10 31r52 32m42
+. 32r42 34r11 35r38
 
 GG EK_REMOTE_STATES
-GG EK_GLOBALS pump_unit KIND_PACKAGE_BODY ORIGIN_FLOW c:local_var [ pump_unit__curr_price pump_unit__curr_pump pump_unit__fuel_needed pump_unit__fuel_pumped pump_unit__cashinregister ] c:local_sub [ pump_unit__setfuelvolume pump_unit__setfuelprice pump_unit__liftnozzle pump_unit__replacenozzle pump_unit__requestpumping pump_unit__requeststoppumping pump_unit__tanksensorinput pump_unit__setpayment ] c:local_init [ pump_unit__curr_pump pump_unit__fuel_needed pump_unit__fuel_pumped pump_unit__cashinregister ]
+GG EK_GLOBALS pump_unit KIND_PACKAGE_BODY ORIGIN_FLOW c:local_var [ pump_unit__fuel_needed pump_unit__fuel_pumped pump_unit__curr_pump ] c:local_sub [ pump_unit__setfuelvolume pump_unit__liftnozzle pump_unit__replacenozzle pump_unit__requestpumping pump_unit__requeststoppumping pump_unit__tanksensorinput pump_unit__setpayment ] c:local_init [ pump_unit__fuel_needed pump_unit__fuel_pumped pump_unit__curr_pump ]
 GG EK_VOLATILES
-GG EK_TASKING_NONBLOCKING [ pump_unit__setfuelvolume pump_unit__setfuelprice pump_unit__liftnozzle pump_unit__replacenozzle pump_unit__requestpumping pump_unit__requeststoppumping pump_unit__tanksensorinput pump_unit__setpayment ]
+GG EK_TASKING_NONBLOCKING [ pump__balance pump_unit__setfuelvolume pump_unit__liftnozzle pump_unit__replacenozzle pump_unit__requestpumping pump_unit__requeststoppumping pump_unit__tanksensorinput pump_unit__setpayment ]
 GG EK_TASKING_INFO pump_unit__setfuelvolume c:UNSYNCH_ACCESSES [ pump_unit__fuel_needed ]
-GG EK_TASKING_INFO pump_unit__setfuelprice c:UNSYNCH_ACCESSES [ pump_unit__curr_price ]
 GG EK_TASKING_INFO pump_unit__liftnozzle c:UNSYNCH_ACCESSES [ pump_unit__curr_pump ]
 GG EK_TASKING_INFO pump_unit__replacenozzle c:UNSYNCH_ACCESSES [ pump_unit__curr_pump ]
-GG EK_TASKING_INFO pump_unit__requestpumping c:UNSYNCH_ACCESSES [ pump_unit__curr_price pump_unit__curr_pump pump_unit__fuel_needed pump_unit__fuel_pumped ]
+GG EK_TASKING_INFO pump_unit__requestpumping c:UNSYNCH_ACCESSES [ pump_unit__fuel_needed pump_unit__fuel_pumped pump_unit__curr_pump ]
 GG EK_TASKING_INFO pump_unit__requeststoppumping c:UNSYNCH_ACCESSES [ pump_unit__curr_pump ]
 GG EK_TASKING_INFO pump_unit__tanksensorinput c:UNSYNCH_ACCESSES [ pump_unit__curr_pump ]
-GG EK_TASKING_INFO pump_unit__setpayment c:UNSYNCH_ACCESSES [ pump_unit__curr_pump pump_unit__fuel_needed pump_unit__fuel_pumped pump_unit__cashinregister ]
+GG EK_TASKING_INFO pump_unit__setpayment c:UNSYNCH_ACCESSES [ pump_unit__fuel_needed pump_unit__fuel_pumped pump_unit__curr_pump ]
 GG EK_END_MARKER

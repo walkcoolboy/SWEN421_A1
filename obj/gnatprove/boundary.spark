@@ -1,0 +1,100 @@
+{
+  "spark": [
+    {
+      "name": "boundary.InputFuelVolume",
+      "sloc": [
+        {
+          "file": "boundary.ads",
+          "line": 9
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "boundary.InputNozzleLift",
+      "sloc": [
+        {
+          "file": "boundary.ads",
+          "line": 11
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "boundary.InputTankSensor",
+      "sloc": [
+        {
+          "file": "boundary.ads",
+          "line": 13
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "boundary.InputPressNozzle",
+      "sloc": [
+        {
+          "file": "boundary.ads",
+          "line": 15
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "boundary.InputReleaseNozzle",
+      "sloc": [
+        {
+          "file": "boundary.ads",
+          "line": 17
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "boundary.InputReplaceNozzle",
+      "sloc": [
+        {
+          "file": "boundary.ads",
+          "line": 19
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "boundary.InputPayment",
+      "sloc": [
+        {
+          "file": "boundary.ads",
+          "line": 21
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "boundary.OutputStatus",
+      "sloc": [
+        {
+          "file": "boundary.ads",
+          "line": 23
+        }
+      ],
+      "spark": "no"
+    },
+    {
+      "name": "boundary",
+      "sloc": [
+        {
+          "file": "boundary.ads",
+          "line": 6
+        }
+      ],
+      "spark": "no"
+    }
+  ],
+  "flow": [
+  ],
+  "proof": [
+  ],
+  "assumptions": [
+  ]
+}

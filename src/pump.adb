@@ -19,19 +19,25 @@ package body Pump is
       n.S:=Ready;
    end enterReadyState;
 
-   procedure startPumping (n: in out nozzle; v:in out fuel_volume) is
+   function inRange(n: in nozzle; v:in price) return Boolean is
+     (n.p<=1000 and v<=1000);
+
+   procedure startPumping (n: in out nozzle; v:in out price) is
    begin
       n.S:=Pumping;
       if (n.F) then
          --the tank is full
-         v:=0.0;
+         v:=0;
       else
          if (v>n.R) then
             --reservior fuel less than requested
             v:=n.R;
+            n.R:=0;
+            n.P:=n.P+v;
          else
             --call pumping driver
             n.R:=n.R-v;
+            n.P:=n.P+v;
          end if;
       end if;
    end startPumping;
@@ -55,5 +61,47 @@ package body Pump is
          n.F:=False;
       end if;
    end registerTankSensor;
+
+   function balanceCheck(n: in nozzle; payment: in price) return Boolean is
+     (payment=n.P and n.Cash<=1000 and payment<=1000);
+
+   function noUnPaid (n: in nozzle) return Boolean is
+      (n.P=0);
+
+   procedure setBalance (n: in out nozzle; payment: in price) is
+   begin
+      n.P:=n.P-payment;
+      n.Cash := n.Cash +payment;
+   end setBalance;
+
+   function getState(n: in nozzle) return State is
+   begin
+      return n.S;
+   end getState;
+
+   function getCradle(n: in nozzle) return nozzle_in_cradle is
+   begin
+      return n.C;
+   end getCradle;
+
+   function getTankSensor(n: in nozzle) return full_tank_sensor is
+   begin
+      return n.F;
+   end getTankSensor;
+
+   function getReservior(n: in nozzle) return price is
+   begin
+      return n.R;
+   end getReservior;
+
+   function getUnPaid(n: in nozzle) return price is
+   begin
+      return n.P;
+   end getUnPaid;
+
+   function getCash(n: in nozzle) return price is
+   begin
+      return n.Cash;
+   end getCash;
 
 end Pump;

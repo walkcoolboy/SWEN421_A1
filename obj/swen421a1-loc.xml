@@ -1,49 +1,26 @@
 <?xml version="1.0"?>
 <Locations >
   <Project>
-    <vfs_file>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/swen421a1.gpr</vfs_file>
-    <file_marker column=" 1" line=" 12" >
-      <vfs_project>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/swen421a1.gpr</vfs_project>
-      <vfs_file>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/src/pump.adb</vfs_file>
+    <vfs_file>D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_project>
+      <vfs_file>D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\src\main.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 35" line=" 19" >
-      <vfs_project>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/swen421a1.gpr</vfs_project>
-      <vfs_file>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/src/pump_unit.ads</vfs_file>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_project>
+      <vfs_file>D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\src\pump.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 17" >
-      <vfs_project>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/swen421a1.gpr</vfs_project>
-      <vfs_file>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/src/main.adb</vfs_file>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_project>
+      <vfs_file>D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\src\pump_unit.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 9" line=" 8" >
-      <vfs_project>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/swen421a1.gpr</vfs_project>
-      <vfs_file>/am/rialto/home1/lili5/SWEN421/SWEN421_A1/src/pump_unit.adb</vfs_file>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_project>
+      <vfs_file>D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\src\pump.adb</vfs_file>
     </file_marker>
-  </Project>
-  <Project >
-    <vfs_file >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_file>
-    <file_marker column=" 1" line=" 1">
-      <vfs_project >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_project>
-      <vfs_file >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\src\main.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1">
-      <vfs_project >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_project>
-      <vfs_file >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\src\pump.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1">
-      <vfs_project >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_project>
-      <vfs_file >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\src\pump.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1">
-      <vfs_project >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_project>
-      <vfs_file >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\src\pump_unit.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 14" line=" 14">
-      <vfs_project >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_project>
-      <vfs_file >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\src\main.adb</vfs_file>
-    </file_marker>
-    <file_marker current="true" column=" 14" line=" 5">
-      <vfs_project >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_project>
-      <vfs_file >D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\src\pump_unit.adb</vfs_file>
+    <file_marker current="true" column=" 9" line=" 7" >
+      <vfs_project>D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\swen421a1.gpr</vfs_project>
+      <vfs_file>D:\OneDrive\2017 VUW\SWEN421 Formal SWEN\A1\SWEN421_A1\src\pump_unit.ads</vfs_file>
     </file_marker>
   </Project>
 </Locations>
